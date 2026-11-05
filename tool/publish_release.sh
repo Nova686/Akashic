@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-releases_repository=Nova686/akashic-releases
+releases_repository=Nova686/akashic-history
 source_repository=Nova686/Akashic
 version_name=$(sed -n 's/^version: *\([0-9.]*\).*/\1/p' pubspec.yaml)
 tag="v${version_name}"
@@ -24,6 +24,7 @@ fi
 flutter analyze
 flutter test
 
+tool/sync_history.sh
 tool/build_release.sh
 release_directory=$(mktemp -d)
 cp build/app/outputs/flutter-apk/app-arm64-v8a-release.apk "${release_directory}/akashic.apk"
