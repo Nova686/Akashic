@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-history_url=git@github.com:Nova686/akashic-history.git
+history_url=${AKASHIC_HISTORY_URL:-git@github.com:Nova686/akashic-history.git}
 history_ref=refs/remotes/history/main
 
 git fetch -q origin main
