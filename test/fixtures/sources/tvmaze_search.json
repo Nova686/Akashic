@@ -1,0 +1,25 @@
+[
+ {
+  "score": 0.89553404,
+  "show": {
+   "id": 431,
+   "name": "Friends",
+   "premiered": "1994-09-22",
+   "image": {
+    "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/41/104565.jpg",
+    "original": "https://static.tvmaze.com/uploads/images/original_untouched/41/104565.jpg"
+   },
+   "network": {
+    "id": 1,
+    "name": "NBC",
+    "country": {
+     "name": "United States",
+     "code": "US",
+     "timezone": "America/New_York"
+    },
+    "officialSite": "https://www.nbc.com/"
+   },
+   "webChannel": null
+  }
+ }
+]

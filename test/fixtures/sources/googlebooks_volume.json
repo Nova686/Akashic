@@ -1,0 +1,14 @@
+{
+ "kind": "books#volume",
+ "id": "zyTCAlFPjgYC",
+ "volumeInfo": {
+  "title": "The Hobbit",
+  "authors": ["J.R.R. Tolkien"],
+  "publisher": "Houghton Mifflin Harcourt",
+  "publishedDate": "2012-02-15",
+  "description": "<p>Bilbo Baggins is a hobbit who enjoys a comfortable, unambitious life.</p><br><b>Now a major motion picture.</b>",
+  "pageCount": 300,
+  "categories": ["Fiction / Fantasy / Epic", "Juvenile Fiction / Classics"],
+  "infoLink": "http://books.google.com/books?id=zyTCAlFPjgYC"
+ }
+}

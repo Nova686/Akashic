@@ -1,0 +1,65 @@
+# Secrets
+dart_defines.json
+dart_defines.*.json
+!dart_defines.example.json
+.env
+.env.*
+*.jks
+*.keystore
+*.p12
+*.pem
+android/key.properties
+google-services.json
+client_secret*.json
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+coverage/
+*.g.dart.bak
+.metadata
+
+# Android
+android/.gradle/
+android/.kotlin/
+android/captures/
+android/local.properties
+android/gradle/wrapper/gradle-wrapper.jar
+android/**/GeneratedPluginRegistrant.java
+android/app/debug
+android/app/profile
+android/app/release
+*.apk
+*.aab
+
+# iOS / macOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+**/xcuserdata/
+
+# IDE
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Golden test failures
+**/failures/
+
+# Assistant tooling
+.superpowers/
+.claude/

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akashic — typos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Cormorant+Garamond:wght@600;700&family=Marcellus&family=Cinzel:wght@500;700&family=Young+Serif&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E7E5F0;
+  --page-ink:#1C1838;
+  --page-soft:#5A557A;
+  --surface:#15122B;
+  --surface-2:#221E40;
+  --ink:#ECE9FA;
+  --ink-soft:#A39DC8;
+  --ink-faint:#6E6896;
+  --lavender:#B7A6FF;
+  --lavender-deep:#7C66E8;
+  --teal:#5ED1C3;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper)}
+body{font-family:Archivo,system-ui,sans-serif;color:var(--page-ink);line-height:1.45;-webkit-font-smoothing:antialiased}
+.page{max-width:1480px;margin:0 auto;padding:44px 32px 80px}
+.title{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:56px;line-height:.95}
+.lead{color:var(--page-soft);margin-top:12px;max-width:68ch}
+.typo{margin-top:44px;padding:26px;border-radius:28px;background:#F6F5FB;display:grid;grid-template-columns:minmax(0,1fr) 300px 300px;gap:32px;align-items:start;cursor:pointer;box-shadow:inset 0 0 0 2px transparent}
+.typo:hover{box-shadow:inset 0 0 0 2px #CFC8EC}
+.typo.selected{box-shadow:inset 0 0 0 3px var(--page-ink)}
+.typo__name{font-size:52px;line-height:1;color:var(--page-ink)}
+.typo__label{font-weight:700;font-size:15px;margin-top:10px}
+.typo__why{color:var(--page-soft);font-size:14px;margin-top:6px;max-width:48ch}
+.typo__digits{margin-top:18px;font-size:34px;letter-spacing:.02em;color:var(--page-ink)}
+.typo__digits-label{font-size:12px;color:var(--page-soft);margin-top:2px}
+.typo__pangram{margin-top:16px;font-size:24px;line-height:1.15}
+.typo__verdict-pill{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;border-radius:8px;padding:4px 10px}
+.pill--ok{background:#D5F2EE;color:#1E6E64}
+.pill--warn{background:#F3E3D3;color:#8A4B1E}
+
+.phone{width:300px;height:620px;border-radius:38px;background:#0A0817;padding:9px;box-shadow:0 26px 50px -28px rgba(28,24,56,.7)}
+.screen{position:relative;width:100%;height:100%;border-radius:30px;overflow:hidden;background-color:var(--surface);color:var(--ink);display:flex;flex-direction:column;background-image:radial-gradient(1px 1px at 12% 8%,rgba(236,233,250,.55),transparent 2px),radial-gradient(1px 1px at 78% 4%,rgba(236,233,250,.4),transparent 2px),radial-gradient(1.5px 1.5px at 60% 12%,rgba(94,209,195,.8),transparent 2px);background-repeat:no-repeat}
+.status{height:26px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:0 20px;font-size:11px;font-weight:600}
+.content{flex:1;padding:10px 16px 0;overflow:hidden}
+.d{font-family:var(--display);font-weight:var(--display-weight);font-variant-numeric:lining-nums}
+.h1{font-size:calc(30px * var(--scale));line-height:1}
+.meta{font-size:11px;color:var(--ink-soft);margin-top:5px}
+.search{display:flex;align-items:center;gap:8px;height:38px;border-radius:19px;background:var(--surface-2);padding:0 14px;color:var(--ink-soft);font-size:12px;margin-top:12px}
+.shelf{margin-top:12px}
+.shelf__head{display:flex;align-items:center;gap:7px;font-weight:700;font-size:13px}
+.dot{width:8px;height:8px;border-radius:50%}
+.shelf__count{margin-left:auto;font-weight:700;font-size:13px;color:var(--lavender)}
+.shelf__items{display:flex;align-items:flex-end;gap:3px;height:52px;margin-top:5px;padding:0 5px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent)}
+.lp{width:7px;height:50px;flex:none;border-radius:1px;box-shadow:inset -1.5px 0 0 rgba(0,0,0,.35)}
+.bk{width:11px;flex:none;border-radius:2px 2px 0 0;box-shadow:inset -2px 0 0 rgba(0,0,0,.22)}
+.bk--miss{background:transparent!important;border:1.5px dashed #8F89B8;border-bottom:0}
+.plank{height:7px;margin:0 -4px;border-radius:2px;background:linear-gradient(180deg,#4A4290,#25204A);box-shadow:inset 0 1px 0 rgba(183,166,255,.45),0 9px 12px -6px rgba(0,0,0,.7),0 -9px 20px -10px rgba(183,166,255,.35)}
+.fiche{margin-top:16px;display:grid;grid-template-columns:70px minmax(0,1fr);gap:12px;align-items:end}
+.cover{aspect-ratio:1;border-radius:5px;position:relative;overflow:hidden;background:linear-gradient(180deg,#0e1f3b 0 62%,#1a3c6e 62% 100%)}
+.cover::before{content:"";position:absolute;inset:14% 18% 44% 18%;background:radial-gradient(circle at 40% 40%,#3d6fb5,#0e1f3b 70%);border-radius:50%;opacity:.8}
+.fiche__title{font-size:calc(24px * var(--scale));line-height:1}
+.fiche__meta{font-size:11px;color:var(--ink-soft);margin-top:4px}
+.fiche__src{font-size:10px;color:var(--teal);margin-top:4px}
+
+.verdict{flex:1;display:flex;flex-direction:column;background:radial-gradient(circle at 80% 0%,#E2DAFF,transparent 55%),var(--lavender);color:var(--page-ink)}
+.verdict .status{color:var(--page-ink)}
+.stamp{font-size:calc(56px * var(--scale));line-height:.88;padding:24px 18px 0}
+.sub{padding:10px 18px 0;font-size:12px;opacity:.8}
+.card{margin:16px 12px 0;background:var(--surface);color:var(--ink);border-radius:18px;padding:12px;display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px}
+.card__title{font-size:calc(21px * var(--scale));line-height:1}
+.card__meta{font-size:11px;color:var(--ink-soft);margin-top:4px}
+.kv{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:2px 10px;font-size:11px}
+.kv dt{color:var(--ink-soft)}
+.kv dd{font-weight:600}
+.complete{margin:14px 12px 0;background:var(--surface);color:var(--ink);border-radius:18px;padding:12px}
+.complete__title{font-size:calc(20px * var(--scale));line-height:1}
+.complete__text{font-size:11px;color:var(--ink-soft);margin-top:6px}
+.btns{margin:auto 12px 18px;display:grid;gap:8px}
+.btn{display:flex;align-items:center;justify-content:center;height:42px;border-radius:21px;font-weight:700;font-size:13px}
+.btn--dark{background:var(--surface);color:var(--lavender)}
+.btn--ghost{box-shadow:inset 0 0 0 1.5px currentColor}
+.nav{flex:none;height:60px;display:grid;grid-template-columns:repeat(4,1fr);align-items:center;background:#1B1736;border-top:1px solid #332D5C;font-size:9.5px;font-weight:600;color:var(--ink-soft);text-align:center}
+.nav span:first-child{color:var(--teal)}
+.nav span:nth-child(2){color:var(--lavender)}
+@media (max-width:1100px){.typo{grid-template-columns:1fr}.phone{transform:none}}
+</style>
+</head>
+<body>
+<main class="page">
+  <h1 class="title">Une typo, deux écrans</h1>
+  <p class="lead">Chaque bloc montre la même maquette avec une seule chose qui change : la typo des titres (« Ma collection », noms d'objets, « Tu l'as déjà »). Le reste du texte garde la même police simple. La ligne de chiffres montre les chiffres natifs de la typo ; dans l'appli, les compteurs restent de toute façon droits. Clique sur ta préférée ou dis-la-moi dans le terminal.</p>
+  <div id="typos"></div>
+</main>
+
+<template id="typo-block">
+  <section class="typo" onclick="pickTypo(this)">
+    <div>
+      <div class="typo__name d"></div>
+      <div class="typo__label"></div>
+      <p class="typo__why"></p>
+      <div class="typo__pangram d">Kind of Blue · Frieren · Écarlate et Violet</div>
+      <div class="typo__digits" data-native-digits>0123456789</div>
+      <div class="typo__digits-label">Chiffres natifs de la typo</div>
+      <span class="typo__verdict-pill"></span>
+    </div>
+    <div class="phone"><div class="screen">
+      <div class="status"><span>20:10</span><span>●●</span></div>
+      <div class="content">
+        <div class="h1 d">Ma collection</div>
+        <div class="meta">1 284 objets dans 7 catégories</div>
+        <div class="search">Chercher dans ma collection</div>
+        <div class="shelf">
+          <div class="shelf__head"><span class="dot" style="background:#7FA8FF"></span>Vinyles<span class="shelf__count">212</span></div>
+          <div class="shelf__items" data-vinyl></div><div class="plank"></div>
+        </div>
+        <div class="shelf">
+          <div class="shelf__head"><span class="dot" style="background:#FF7A8A"></span>Mangas<span class="shelf__count">486</span></div>
+          <div class="shelf__items" data-manga></div><div class="plank"></div>
+        </div>
+        <div class="fiche">
+          <div class="cover"></div>
+          <div><div class="fiche__title d">Kind of Blue</div><div class="fiche__meta">Miles Davis · 1959</div><div class="fiche__src">Infos MusicBrainz</div></div>
+        </div>
+      </div>
+      <div class="nav"><span>Collection</span><span>Je l'ai ?</span><span>Envies</span><span>Découvertes</span></div>
+    </div></div>
+    <div class="phone"><div class="screen">
+      <div class="verdict">
+        <div class="status"><span>14:32</span><span>●●</span></div>
+        <div class="stamp d">Tu l'as<br>déjà.</div>
+        <div class="sub">Code-barres reconnu · Vinyles › Jazz</div>
+        <div class="card">
+          <div class="cover"></div>
+          <div><div class="card__title d">Kind of Blue</div><div class="card__meta">Miles Davis · 1959</div></div>
+          <dl class="kv"><dt>Rangé</dt><dd>Bac 2, salon</dd><dt>Disque</dt><dd>Très bon</dd></dl>
+        </div>
+        <div class="complete">
+          <div class="complete__title d">À compléter</div>
+          <div class="complete__text">Frieren : il te manque les tomes 4 et 7.</div>
+        </div>
+        <div class="btns"><div class="btn btn--dark">Voir la fiche</div><div class="btn btn--ghost">Scanner le suivant</div></div>
+      </div>
+    </div></div>
+  </section>
+</template>
+
+<script>
+var typefaces = [
+  { key: 'typo-cormorant', family: '"Cormorant Garamond",serif', weight: 700, scale: 1.05, label: 'Cormorant Garamond', why: "Un manuscrit ancien, fin et élégant. La plus « bibliothèque céleste », mais fragile en petit et ses chiffres natifs descendent sous la ligne.", pill: ['pill--warn', 'Chiffres à l\'ancienne'] },
+  { key: 'typo-marcellus', family: '"Marcellus",serif', weight: 400, scale: .9, label: 'Marcellus', why: "Des lettres gravées dans la pierre des temples, en plus douces. Mystique sans être déguisée, lisible en petit.", pill: ['pill--ok', 'Chiffres droits'] },
+  { key: 'typo-cinzel', family: '"Cinzel",serif', weight: 700, scale: .74, label: 'Cinzel', why: "Capitales d'inscription romaine, tout en majuscules. La plus « annales », mais les longs titres d'albums se lisent moins vite.", pill: ['pill--ok', 'Chiffres droits'] },
+  { key: 'typo-young-serif', family: '"Young Serif",serif', weight: 400, scale: .86, label: 'Young Serif', why: "Une serif ronde et chaleureuse, entre vieux livre et affiche. La plus lisible sur un petit écran.", pill: ['pill--ok', 'Chiffres droits'] },
+  { key: 'typo-syne', family: '"Syne",sans-serif', weight: 700, scale: .84, label: 'Syne', why: "Sans serif, côté cosmique et moderne plutôt que grimoire. Rompt avec l'univers bibliothèque.", pill: ['pill--ok', 'Chiffres droits'] }
+];
+var vinylColors = ['#1a3c6e','#0b0b0b','#d9cdb4','#000','#e4572e','#204a3f','#c9b28f','#0f3c63','#f1e9d8','#8a2f3a','#2d2d48','#e8c9a0','#3e5f8a','#b85c38','#d6d0e8','#5a6b3a','#c43','#203050','#e9d8a6','#4a7a8c','#7b4b8f','#2b4c6f','#a8643a','#1f3a2e','#d4513c'];
+var mangaSpines = [['#c8d6ea',48],['#b7c9e2',48],['#c8d6ea',48],['miss',48],['#bcd0e8',48],['#c8d6ea',48],['miss',48],['#b7c9e2',48],['#C2412D',51],['#d4513c',51],['#C2412D',51],['#b33a27',51],['#2E6B4F',46],['#357a5a',46],['#e8c9a0',50],['#dcb98c',50]];
+var container = document.getElementById('typos');
+var blockTemplate = document.getElementById('typo-block');
+typefaces.forEach(function (typeface) {
+  var block = blockTemplate.content.firstElementChild.cloneNode(true);
+  block.dataset.choice = typeface.key;
+  block.style.setProperty('--display', typeface.family);
+  block.style.setProperty('--display-weight', typeface.weight);
+  block.style.setProperty('--scale', typeface.scale);
+  block.querySelector('.typo__name').textContent = 'Akashic';
+  block.querySelector('.typo__label').textContent = typeface.label;
+  block.querySelector('.typo__why').textContent = typeface.why;
+  var nativeDigits = block.querySelector('[data-native-digits]');
+  nativeDigits.style.fontFamily = typeface.family;
+  nativeDigits.style.fontWeight = typeface.weight;
+  var pill = block.querySelector('.typo__verdict-pill');
+  pill.classList.add(typeface.pill[0]);
+  pill.textContent = typeface.pill[1];
+  block.querySelector('[data-vinyl]').innerHTML = vinylColors.map(function (color) { return '<div class="lp" style="background:' + color + '"></div>'; }).join('');
+  block.querySelector('[data-manga]').innerHTML = mangaSpines.map(function (spine) {
+    return spine[0] === 'miss' ? '<div class="bk bk--miss" style="height:' + spine[1] + 'px"></div>' : '<div class="bk" style="height:' + spine[1] + 'px;background:' + spine[0] + '"></div>';
+  }).join('');
+  container.appendChild(block);
+});
+function pickTypo(selectedBlock) {
+  document.querySelectorAll('.typo').forEach(function (block) { block.classList.remove('selected'); });
+  selectedBlock.classList.add('selected');
+}
+</script>
+</body>
+</html>

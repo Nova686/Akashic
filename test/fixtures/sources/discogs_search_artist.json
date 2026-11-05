@@ -1,0 +1,38 @@
+{
+ "pagination": {
+  "page": 1,
+  "pages": 1,
+  "per_page": 10,
+  "items": 3
+ },
+ "results": [
+  {
+   "id": 66299,
+   "type": "master",
+   "master_id": 66299,
+   "title": "Miles Davis - Sketches Of Spain",
+   "year": "1960",
+   "cover_image": "https://i.discogs.com/sketches.jpeg",
+   "style": [
+    "Modal",
+    "Cool Jazz"
+   ]
+  },
+  {
+   "id": 5460,
+   "type": "master",
+   "master_id": 5460,
+   "title": "Miles Davis - Kind Of Blue",
+   "year": "1959",
+   "cover_image": "https://i.discogs.com/kob.jpeg"
+  },
+  {
+   "id": 61542,
+   "type": "master",
+   "master_id": 61542,
+   "title": "Miles Davis (2) - Bitches Brew",
+   "year": "1970",
+   "cover_image": "https://st.discogs.com/images/spacer.gif"
+  }
+ ]
+}

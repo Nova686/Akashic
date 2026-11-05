@@ -1,0 +1,35 @@
+{
+ "releases": [
+  {
+   "id": "fa731de1-331d-4713-adcc-2c304817cb88",
+   "title": "Kind of Blue",
+   "date": "2007-10-24",
+   "barcode": "4547366033267",
+   "country": "JP",
+   "text-representation": {
+    "language": "eng",
+    "script": "Latn"
+   },
+   "artist-credit": [
+    {
+     "name": "Miles Davis"
+    }
+   ],
+   "release-group": {
+    "id": "8e8a594f-2175-38c7-a871-abb68ec363e7"
+   },
+   "label-info": [
+    {
+     "label": {
+      "name": "Sony Records International"
+     }
+    }
+   ],
+   "media": [
+    {
+     "format": "Hybrid SACD (CD layer)"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "page": 1,
+ "results": [
+  {
+   "id": 603,
+   "title": "Matrix",
+   "original_title": "The Matrix",
+   "poster_path": "/matrix.jpg",
+   "release_date": "1999-03-30",
+   "media_type": "movie"
+  },
+  {
+   "id": 78,
+   "title": "Blade Runner",
+   "poster_path": null,
+   "release_date": "1982-06-25",
+   "media_type": "movie"
+  }
+ ],
+ "total_pages": 1,
+ "total_results": 2
+}

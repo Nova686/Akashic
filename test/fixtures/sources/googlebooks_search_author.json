@@ -1,0 +1,27 @@
+{
+ "kind": "books#volumes",
+ "totalItems": 2,
+ "items": [
+  {
+   "id": "silm1",
+   "volumeInfo": {
+    "title": "Le Silmarillion",
+    "authors": [
+     "J.R.R. Tolkien"
+    ],
+    "publishedDate": "1977",
+    "imageLinks": {
+     "thumbnail": "http://books.google.com/silm.jpg"
+    }
+   }
+  },
+  {
+   "id": "notitle",
+   "volumeInfo": {
+    "authors": [
+     "Anonyme"
+    ]
+   }
+  }
+ ]
+}

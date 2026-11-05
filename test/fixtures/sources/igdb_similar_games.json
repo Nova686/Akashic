@@ -1,0 +1,31 @@
+[
+ {
+  "id": 1942,
+  "similar_games": [
+   {
+    "id": 1020,
+    "name": "Grand Theft Auto V",
+    "cover": {
+     "id": 1,
+     "image_id": "co2lbd"
+    },
+    "first_release_date": 1379376000,
+    "involved_companies": [
+     {
+      "id": 5,
+      "company": {
+       "id": 29,
+       "name": "Rockstar North"
+      },
+      "developer": true
+     }
+    ]
+   },
+   {
+    "id": 472,
+    "name": "The Elder Scrolls V: Skyrim",
+    "first_release_date": 1320969600
+   }
+  ]
+ }
+]

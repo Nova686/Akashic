@@ -1,0 +1,1 @@
+enum CheckQueryKind { barcode, text }

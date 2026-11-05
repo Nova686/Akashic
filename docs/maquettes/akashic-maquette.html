@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akashic — maquette v9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E7E5F0;
+  --page-ink:#1C1838;
+  --page-soft:#5A557A;
+  --surface:#15122B;
+  --surface-2:#221E40;
+  --ink:#ECE9FA;
+  --ink-soft:#A39DC8;
+  --ink-faint:#6E6896;
+  --line:#332D5C;
+  --gold:#B7A6FF;
+  --gold-deep:#7C66E8;
+  --teal:#5ED1C3;
+  --teal-soft:rgba(94,209,195,.14);
+  --mustard:#8F89B8;
+  --mustard-soft:rgba(143,137,184,.14);
+  --owned:#B7A6FF;
+  --owned-soft:rgba(183,166,255,.16);
+  --cat-vinyle:#7FA8FF;
+  --cat-manga:#FF7A8A;
+  --cat-livre:#6FD6B0;
+  --cat-jeu:#B58CFF;
+  --cat-film:#F2C46B;
+  --cat-bd:#FF9F5A;
+  --cat-tcg:#5FD3E8;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --numerals:"Cinzel",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--paper)}
+body{font-family:Archivo,system-ui,sans-serif;color:var(--page-ink);background:var(--paper);line-height:1.45;-webkit-font-smoothing:antialiased}
+.page{max-width:1480px;margin:0 auto;padding:48px 32px 96px}
+.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:48px;align-items:end;margin-bottom:56px}
+.intro__title{font-family:var(--serif);font-weight:600;font-size:clamp(64px,9vw,136px);line-height:.85;letter-spacing:-.01em;display:flex;align-items:flex-start;gap:14px}
+.intro__title svg{width:.32em;height:.32em;fill:var(--gold-deep);margin-top:.12em}
+.intro__lead{font-size:18px;max-width:60ch;margin-top:20px;color:var(--page-soft)}
+.intro__legend{background:#F6F5FB;border-radius:20px;padding:20px 22px;font-size:14px}
+.intro__legend h2{font-size:15px;font-weight:700;margin-bottom:10px}
+.intro__legend li{list-style:none;display:flex;gap:10px;align-items:baseline;margin:6px 0}
+.dot{width:10px;height:10px;border-radius:50%;flex:none;transform:translateY(1px)}
+
+.journey{margin-top:72px}
+.journey__head{display:flex;gap:24px;align-items:baseline;flex-wrap:wrap;border-top:1px solid var(--page-ink);padding-top:16px;margin-bottom:28px}
+.journey__title{font-family:var(--serif);font-weight:600;font-size:38px;line-height:1}
+.journey__why{color:var(--page-soft);max-width:70ch}
+.journey__row{display:flex;flex-wrap:wrap;gap:40px 36px}
+.shot{flex:none;width:360px;scroll-snap-align:start}
+.shot__caption{margin-top:16px;font-size:14px;color:var(--page-soft);padding:0 6px}
+.shot__caption strong{color:var(--page-ink);display:block;font-size:16px;margin-bottom:4px}
+.shot__caption ul{padding-left:18px;margin-top:6px}
+.shot__caption li{margin:3px 0}
+.shot__caption .ask{display:block;margin-top:8px;padding:8px 10px;background:#DDD6F7;border-radius:10px;color:var(--page-ink)}
+
+.phone{width:360px;height:760px;border-radius:44px;background:#0A0817;padding:10px;box-shadow:0 30px 60px -30px rgba(28,24,56,.7)}
+.screen{position:relative;width:100%;height:100%;border-radius:35px;overflow:hidden;background-color:var(--surface);color:var(--ink);display:flex;flex-direction:column}
+.screen,.verdict--new,.starfield{background-image:radial-gradient(1px 1px at 12% 8%,rgba(236,233,250,.55),transparent 2px),radial-gradient(1px 1px at 78% 4%,rgba(236,233,250,.4),transparent 2px),radial-gradient(1.5px 1.5px at 92% 16%,rgba(183,166,255,.7),transparent 2px),radial-gradient(1px 1px at 34% 2%,rgba(236,233,250,.35),transparent 2px),radial-gradient(1.5px 1.5px at 60% 12%,rgba(94,209,195,.8),transparent 2px);background-repeat:no-repeat}
+.status{height:30px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:0 22px;font-size:12px;font-weight:600}
+.status__icons{display:flex;gap:5px;align-items:center}
+.status__icons span{display:block;width:14px;height:9px;border-radius:2px;background:currentColor;opacity:.85}
+.status__icons span:first-child{width:10px;border-radius:50% 50% 2px 2px}
+.content{flex:1;overflow:hidden;padding:4px 18px 0}
+.appbar{display:flex;align-items:center;gap:10px;padding:8px 14px 10px}
+.appbar__title{font-weight:700;font-size:18px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.iconbtn{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:none}
+.iconbtn:hover{background:var(--surface-2)}
+svg.i{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+svg.i--sm{width:16px;height:16px}
+
+.nav{flex:none;height:76px;display:grid;grid-template-columns:repeat(4,1fr);align-items:center;background:#1B1736;border-top:1px solid var(--line);padding:0 6px 6px;position:relative}
+.nav__item{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:600;color:var(--ink-soft)}
+.nav__pill{width:56px;height:30px;border-radius:15px;display:grid;place-items:center}
+.nav__item--on{color:var(--ink)}
+.nav__item--on .nav__pill{background:var(--owned-soft)}
+.nav__check{color:var(--gold);display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:700}
+.nav__check .nav__pill{background:var(--gold);color:var(--surface);box-shadow:0 0 18px rgba(183,166,255,.45);width:64px;height:34px;border-radius:17px}
+
+.h1{font-family:var(--serif);font-weight:600;font-size:36px;line-height:.95}
+.muted{color:var(--ink-soft)}
+.faint{color:var(--ink-faint)}
+.small{font-size:12px}
+.searchfield{display:flex;align-items:center;gap:10px;height:48px;border-radius:24px;background:var(--surface-2);padding:0 16px;color:var(--ink-soft);font-size:14px}
+.searchfield--typed{color:var(--ink);background:var(--surface-2);box-shadow:inset 0 0 0 1.5px var(--gold)}
+.caret{display:inline-block;width:2px;height:17px;background:var(--gold);margin-left:-8px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+.catrow{display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}
+.spine{width:10px;height:10px;border-radius:50%;flex:none;margin:0 6px 0 2px;box-shadow:0 0 0 3px rgba(236,233,250,.06),0 0 12px rgba(236,233,250,.35)}
+.catrow__main{flex:1;min-width:0}
+.catrow__name{font-weight:700;font-size:16px}
+.catrow__subs{font-size:12px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.catrow__count{font-family:Archivo,system-ui,sans-serif;font-weight:700;font-size:16px;font-variant-numeric:lining-nums tabular-nums;color:var(--gold)}
+.addcat{display:flex;align-items:center;gap:10px;padding:14px 0;font-weight:600;color:var(--ink-soft)}
+
+.chips{display:flex;gap:8px;overflow:hidden;padding:2px 0}
+.chip{flex:none;height:32px;border-radius:9px;padding:0 12px;display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;box-shadow:inset 0 0 0 1px var(--line);white-space:nowrap}
+.chip--on{background:var(--gold);color:var(--surface);box-shadow:none}
+.chip b{font-weight:500;opacity:.7}
+
+.cover{position:relative;aspect-ratio:1;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:8px;color:#fff;font-weight:700;font-size:10px;line-height:1.1}
+.cover--book{aspect-ratio:2/3}
+.cover__big{font-stretch:125%;font-size:15px;font-weight:800;letter-spacing:-.01em}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 10px}
+.tile__t{font-size:12px;font-weight:650;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile__a{font-size:11px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.c-kob{background:linear-gradient(180deg,#0e1f3b 0 62%,#1a3c6e 62% 100%)}
+.c-kob::before{content:"";position:absolute;inset:14% 18% 44% 18%;background:radial-gradient(circle at 40% 40%,#3d6fb5,#0e1f3b 70%);border-radius:50%;opacity:.8}
+.c-ram{background:#0b0b0b}
+.c-ram::before{content:"";position:absolute;left:20%;right:20%;top:18%;height:48%;background:linear-gradient(90deg,#9aa1a6,#e8eaec 45%,#7f868b 55%,#c9cdd0);clip-path:polygon(0 30%,100% 30%,100% 70%,0 70%);border-radius:4px}
+.c-rum{background:#d9cdb4;color:#3a2a1a}
+.c-rum::before{content:"";position:absolute;left:30%;top:10%;width:40%;height:55%;background:radial-gradient(ellipse at 50% 30%,#7a5a3a 0 35%,transparent 36%),linear-gradient(#efe6d3,#efe6d3);border-radius:40% 40% 4px 4px}
+.c-blue{background:#0f3c63}
+.c-blue::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 52%,#2b6b9e 52% 70%,transparent 70%)}
+.c-dsotm{background:#000}
+.c-dsotm::before{content:"";position:absolute;left:28%;top:22%;width:0;height:0;border-left:22px solid transparent;border-right:22px solid transparent;border-bottom:38px solid transparent;box-shadow:none;outline:2px solid #fff;outline-offset:-2px;transform:scale(1.3)}
+.c-dsotm::after{content:"";position:absolute;left:58%;top:38%;width:38%;height:8px;background:linear-gradient(#e33 0 16%,#f90 16% 33%,#fd0 33% 50%,#3c3 50% 66%,#39f 66% 83%,#93f 83%)}
+.c-lmd{background:#f1e9d8;color:#222}
+.c-lmd::before{content:"";position:absolute;inset:16% 16% 40%;background:repeating-linear-gradient(90deg,#c43 0 6px,#f1e9d8 6px 12px)}
+.c-hon{background:#e4572e}
+.c-hon::before{content:"";position:absolute;inset:14%;border-radius:50%;background:radial-gradient(circle,#111 0 12%,#e4572e 13% 30%,#111 31% 100%)}
+.c-sun{background:#204a3f}
+.c-sun::before{content:"";position:absolute;left:12%;right:12%;top:12%;height:46%;background:repeating-linear-gradient(0deg,#e9d8a6 0 2px,transparent 2px 7px);opacity:.6}
+.c-moa{background:#c9b28f;color:#2a1a0a}
+.c-moa::before{content:"";position:absolute;left:18%;right:18%;top:12%;height:52%;background:linear-gradient(#5b3a22,#5b3a22) center/2px 100% no-repeat,radial-gradient(circle at 50% 40%,#f3e6cc 0 30%,transparent 31%)}
+.c-fri{background:linear-gradient(170deg,#e8eef6,#b7c9e2);color:#203050}
+.c-fri::before{content:"";position:absolute;left:30%;top:10%;width:40%;height:55%;background:radial-gradient(ellipse at 50% 25%,#f4f6fb 0 30%,transparent 31%),linear-gradient(180deg,transparent 30%,#dfe6f1 30%);border-radius:50% 50% 8px 8px;box-shadow:0 0 0 2px #fff}
+
+.verdict{position:absolute;inset:0;display:flex;flex-direction:column}
+.verdict--owned{background:radial-gradient(circle at 80% 0%,#E2DAFF,transparent 55%),var(--gold);color:var(--page-ink)}
+.verdict--new{background-color:var(--surface);color:var(--ink)}
+.verdict--new .verdict__stamp{color:var(--ink)}
+.verdict__stamp{font-family:var(--serif);font-weight:700;font-size:66px;line-height:.82;letter-spacing:-.01em;padding:6px 22px 0}
+.verdict__sub{padding:12px 22px 0;font-size:15px;opacity:.9}
+.verdict__card{margin:20px 14px 0;background:var(--surface);color:var(--ink);border-radius:22px;padding:14px;display:grid;grid-template-columns:96px 1fr;gap:14px}
+.verdict__card .cover{width:96px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:13px;margin-top:12px;padding:0 4px}
+.kv dt{color:var(--ink-soft)}
+.kv dd{font-weight:600}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;height:50px;border-radius:25px;font-weight:700;font-size:15px}
+.btn--ink{background:var(--gold);color:var(--surface)}
+.btn--light{background:var(--surface);color:var(--gold)}
+.btn--ghost{box-shadow:inset 0 0 0 1.5px currentColor}
+.btn--sm{height:36px;border-radius:18px;font-size:13px;padding:0 14px}
+.badge{display:inline-flex;align-items:center;gap:6px;height:26px;border-radius:13px;padding:0 10px;font-size:12px;font-weight:700}
+.badge--wish{background:var(--owned-soft);color:var(--gold)}
+
+.cam{position:relative;margin:0 -18px;height:430px;background:radial-gradient(ellipse at 50% 40%,#3d3760,#0d0b1c 75%);overflow:hidden}
+.cam__sleeve{position:absolute;left:50%;top:46%;width:250px;height:250px;transform:translate(-50%,-50%) rotate(-4deg);background:#ece6da;border-radius:4px;box-shadow:0 20px 40px rgba(0,0,0,.5);padding:16px;color:#333;font-size:7px;line-height:1.3}
+.cam__sleeve p{opacity:.55}
+.cam__barcode{position:absolute;left:50%;margin-left:-48px;bottom:42px;width:96px;height:56px;background:#fff;padding:5px;display:flex;flex-direction:column}
+.cam__bars{flex:1;background:repeating-linear-gradient(90deg,#111 0 2px,#fff 2px 3px,#111 3px 4px,#fff 4px 7px,#111 7px 8px,#fff 8px 9px,#111 9px 12px,#fff 12px 14px)}
+.cam__digits{font-size:6px;text-align:center;color:#111;letter-spacing:.08em}
+.cam__frame{position:absolute;left:50%;top:60%;width:220px;height:110px;transform:translate(-50%,-50%);border-radius:18px;box-shadow:0 0 0 999px rgba(13,11,28,.5)}
+.cam__frame::before{content:"";position:absolute;inset:0;border-radius:18px;border:3px solid var(--gold)}
+.cam__laser{position:absolute;left:12px;right:12px;top:50%;height:2px;background:var(--gold);box-shadow:0 0 12px var(--gold);animation:scan 2.2s ease-in-out infinite alternate}
+@keyframes scan{from{transform:translateY(-38px)}to{transform:translateY(38px)}}
+@media (prefers-reduced-motion:reduce){.cam__laser,.caret{animation:none}}
+.cam__hint{position:absolute;left:0;right:0;bottom:18px;text-align:center;color:#fff;font-size:13px;font-weight:600}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface-2);border-radius:16px;padding:4px;margin-top:16px}
+.seg__opt{height:52px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:12px;font-weight:650;color:var(--ink-soft)}
+.seg__opt--on{background:#332D5C;color:var(--gold)}
+.recent{display:flex;align-items:center;gap:10px;font-size:13px;padding:8px 0;border-bottom:1px solid var(--line)}
+.recent .cover{width:34px;padding:0}
+.pill{font-size:11px;font-weight:700;border-radius:8px;padding:3px 8px;flex:none}
+.pill--owned{background:var(--owned-soft);color:var(--owned)}
+.pill--new{background:var(--mustard-soft);color:var(--mustard)}
+
+.detail__hero{display:grid;grid-template-columns:132px minmax(0,1fr);gap:16px;align-items:end}
+.detail__hero .cover{width:132px}
+.detail__title{font-family:var(--serif);font-weight:700;font-size:28px;line-height:.95}
+.src{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--ink-faint);margin-top:6px}
+.stars{display:flex;gap:3px;color:var(--gold)}
+.stars svg{width:22px;height:22px;fill:currentColor;stroke:none}
+.stars .off{color:var(--line)}
+.field{padding:10px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:108px 1fr;gap:8px;font-size:14px;align-items:center}
+.field dt{color:var(--ink-soft);font-size:13px}
+.field dd{font-weight:600}
+.field dd.empty{color:var(--ink-faint);font-weight:500;font-style:italic}
+.condition{margin-top:14px}
+.condition__part{margin-top:10px}
+.condition__label{font-size:13px;font-weight:700;display:flex;justify-content:space-between}
+.scale{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin-top:6px}
+.scale span{height:30px;border-radius:7px;display:grid;place-items:center;font-size:10px;font-weight:650;background:var(--surface-2);color:var(--ink-soft)}
+.scale span.on{background:var(--gold);color:var(--surface)}
+.scale span.miss{box-shadow:inset 0 0 0 1px var(--line);background:transparent}
+.scale span.miss.on{background:var(--mustard);color:var(--surface);box-shadow:none}
+
+.complete{margin-top:16px;background:var(--surface-2);border-radius:18px;padding:14px}
+.complete__head{display:flex;justify-content:space-between;align-items:baseline}
+.complete__title{font-family:var(--serif);font-weight:700;font-size:22px}
+.vols{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-top:12px}
+.vol{aspect-ratio:2/3;border-radius:4px;background:linear-gradient(170deg,#D9CFFF,var(--gold-deep));display:grid;place-items:end center;padding-bottom:3px;font-size:10px;font-weight:800;color:var(--surface)}
+.vol--miss{background:var(--mustard-soft);border:1.5px dashed var(--mustard);color:var(--mustard);place-items:center;padding:0}
+.vol--soon{background:transparent;border:1.5px dotted var(--ink-faint);color:var(--ink-faint);place-items:center;padding:0;font-weight:600}
+
+.result{display:flex;gap:12px;padding:10px 8px;border-radius:14px;align-items:center}
+.result--on{background:var(--owned-soft)}
+.result .cover{width:48px;padding:0;flex:none}
+.result__t{font-weight:700;font-size:14px}
+.result__m{font-size:12px;color:var(--ink-soft)}
+.imgpick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.imgpick .cover{padding:0;border-radius:6px}
+.imgpick .sel{box-shadow:0 0 0 3px var(--surface),0 0 0 5px var(--gold)}
+.sectionlabel{font-weight:750;font-size:14px;margin-top:16px;display:flex;justify-content:space-between;align-items:baseline}
+
+.formrow{margin-top:14px}
+.formrow__label{font-size:12px;font-weight:700;color:var(--ink-soft);margin-bottom:6px}
+.input{height:48px;border-radius:12px;box-shadow:inset 0 0 0 1.5px var(--line);display:flex;align-items:center;padding:0 14px;font-weight:600;font-size:15px}
+.srcopts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.srcopt{border-radius:12px;padding:9px 4px;text-align:center;font-size:11px;font-weight:650;box-shadow:inset 0 0 0 1px var(--line)}
+.srcopt--on{background:var(--gold);color:var(--surface);box-shadow:none}
+.subrow{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:var(--surface-2);margin-top:6px;font-size:14px}
+.subrow__name{font-weight:700;flex:1}
+.subrow__src{font-size:11px;color:var(--ink-soft);display:flex;align-items:center;gap:4px}
+.parts{display:flex;gap:6px;flex-wrap:wrap}
+
+.wish{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.wish .cover{width:52px;padding:0;flex:none}
+.wish__main{flex:1;min-width:0}
+.wish__t{font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wish__m{font-size:12px;color:var(--ink-soft)}
+.wish__from{font-size:11px;color:var(--ink-faint);margin-top:2px}
+.toast{position:absolute;left:14px;right:14px;bottom:88px;background:var(--ink);color:var(--surface);box-shadow:0 10px 30px rgba(0,0,0,.4);border-radius:14px;padding:12px 14px;font-size:13px;display:flex;gap:10px;align-items:center}
+.toast b{color:#5B45C9}
+
+.because{margin-top:18px}
+.because__head{font-size:13px;color:var(--ink-soft)}
+.because__head b{color:var(--ink);font-family:var(--serif);font-weight:700;font-size:22px;display:block;line-height:1.05}
+.carousel{display:flex;gap:10px;margin-top:10px;overflow:hidden}
+.reco{flex:none;width:118px}
+.reco .cover{width:118px}
+.reco--book{width:86px}
+.reco--book .cover{width:86px}
+.reco__add{margin-top:6px;height:30px;border-radius:15px;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:4px;box-shadow:inset 0 0 0 1.5px var(--ink-faint)}
+.reco__add--done{background:var(--gold);color:var(--surface);box-shadow:none}
+
+.tabs2{display:flex;gap:18px;border-bottom:1px solid var(--line);margin:0 -18px;padding:0 18px}
+.tabs2 span{padding:10px 0;font-weight:650;font-size:14px;color:var(--ink-soft)}
+.tabs2 .on{color:var(--gold);box-shadow:inset 0 -2px 0 var(--gold)}
+
+.questions{margin-top:80px;background-color:var(--surface);color:var(--ink);border-radius:28px;padding:36px 40px}
+.questions h2{font-family:var(--serif);font-size:40px;font-weight:600;color:var(--gold)}
+.questions ol{margin-top:16px;padding-left:22px;max-width:80ch}
+.questions li{margin:10px 0;font-size:16px}
+.questions li span{color:var(--ink-soft)}
+
+button.toggle{font:inherit;font-size:13px;font-weight:700;border:0;cursor:pointer;background:var(--ink);color:var(--surface);border-radius:18px;padding:8px 14px;margin-top:10px}
+button.toggle:focus-visible{outline:3px solid var(--mustard);outline-offset:2px}
+
+
+.more{margin-top:14px}
+.more__block{padding:12px 0;border-bottom:1px solid var(--line)}
+.more__title{font-weight:750;font-size:14px;display:flex;justify-content:space-between;align-items:baseline}
+.more__title span{font-weight:500;font-size:11px;color:var(--ink-faint)}
+.tracks{margin-top:6px;font-size:13px;display:grid;grid-template-columns:auto 1fr auto;gap:3px 10px}
+.tracks span:nth-child(3n+1){color:var(--ink-faint)}
+.tracks span:nth-child(3n){color:var(--ink-soft)}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag{font-size:12px;font-weight:600;border-radius:8px;padding:4px 9px;background:var(--surface-2);color:var(--ink-soft)}
+.bio{font-size:13px;color:var(--ink-soft);margin-top:6px;line-height:1.5}
+.bio b{color:var(--gold);font-weight:650}
+.links{display:flex;gap:8px;margin-top:10px}
+.links span{display:inline-flex;align-items:center;gap:6px;height:32px;border-radius:16px;padding:0 12px;font-size:12px;font-weight:650;box-shadow:inset 0 0 0 1px var(--line)}
+.refresh{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-faint);margin-top:12px}
+.sources2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.source2{border-radius:18px;background:var(--surface-2);padding:12px;display:flex;flex-direction:column;gap:6px}
+.source2 .i{color:var(--gold)}
+.source2__t{font-weight:700;font-size:14px}
+.source2__d{font-size:12px;color:var(--ink-soft)}
+.source2--on{box-shadow:inset 0 0 0 1.5px var(--gold)}
+.webgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:10px}
+.webgrid div{aspect-ratio:1;border-radius:8px}
+.webgrid .sel{box-shadow:0 0 0 3px var(--surface),0 0 0 5px var(--gold)}
+.phoneopt{display:flex;align-items:center;gap:12px;padding:12px;border-radius:14px;background:var(--surface-2);font-weight:650;font-size:14px;margin-top:8px}
+.src,.more__title span,.refresh,.links span,.sectionlabel .small.muted,.subrow__src{color:var(--teal)}
+.links span{box-shadow:inset 0 0 0 1px rgba(94,209,195,.35)}
+.nav__item--on{color:var(--teal)}
+.nav__item--on .nav__pill{background:var(--teal-soft)}
+.catrow__subs .todo{color:var(--teal)}
+.shelf{margin-top:14px}
+.shelf__head{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px}
+.shelf__head .spine{margin:0 2px}
+.shelf__sub{font-weight:500;font-size:12px;color:var(--ink-soft)}
+.shelf__count{margin-left:auto;font-family:Archivo,system-ui,sans-serif;font-weight:700;font-size:15px;font-variant-numeric:lining-nums tabular-nums;color:var(--gold)}
+.shelf__chev{width:16px;height:16px;color:var(--ink-faint);transform:rotate(180deg)}
+.shelf__items{display:flex;align-items:flex-end;gap:4px;height:62px;margin-top:6px;padding:0 6px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent)}
+.shelf__items .cover{width:54px;flex:none;padding:0;border-radius:2px;box-shadow:inset -3px 0 0 rgba(0,0,0,.25)}
+.shelf--big .shelf__items{height:84px}
+.shelf--big .shelf__items .cover{width:76px}
+.plank{height:8px;margin:0 -4px;border-radius:2px;background:linear-gradient(180deg,#4A4290,#25204A);box-shadow:inset 0 1px 0 rgba(183,166,255,.45),0 10px 14px -6px rgba(0,0,0,.7),0 -10px 22px -10px rgba(183,166,255,.35)}
+.bookspine{width:13px;flex:none;border-radius:2px 2px 0 0;box-shadow:inset -2px 0 0 rgba(0,0,0,.22)}
+.bookspine--miss{background:transparent!important;border:1.5px dashed var(--mustard);border-bottom:0}
+.tcgcard{width:38px;height:54px;flex:none;border-radius:4px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.18)}
+.gamebox{width:42px;height:58px;flex:none;border-radius:3px;box-shadow:inset 3px 0 0 rgba(255,255,255,.15)}
+.viewtoggle{display:flex;gap:2px;background:var(--surface-2);border-radius:10px;padding:3px;margin-left:auto}
+.viewtoggle span{width:32px;height:26px;border-radius:7px;display:grid;place-items:center;color:var(--ink-faint)}
+.viewtoggle .on{background:#332D5C;color:var(--gold)}
+.h1,.detail__title,.verdict__stamp,.complete__title,.because__head b,.journey__title,.intro__title{font-variant-numeric:lining-nums}
+.lpspine{width:8px;height:60px;flex:none;border-radius:1px;box-shadow:inset -1.5px 0 0 rgba(0,0,0,.35),inset 1px 0 0 rgba(255,255,255,.12)}
+.shelf--big .lpspine{width:16px;height:82px;writing-mode:vertical-rl;transform:rotate(180deg);font-size:8px;font-weight:700;letter-spacing:.03em;display:flex;align-items:center;justify-content:flex-start;padding:5px 0;overflow:hidden;white-space:nowrap;color:rgba(255,255,255,.85)}
+.deckbox{width:40px;height:52px;flex:none;border-radius:5px;position:relative;box-shadow:inset 0 -2px 0 rgba(0,0,0,.25)}
+.deckbox::before{content:"";position:absolute;left:0;right:0;top:15px;height:1.5px;background:rgba(0,0,0,.35)}
+.deckbox::after{content:"";position:absolute;left:9px;right:9px;bottom:9px;height:18px;border-radius:3px;background:rgba(255,255,255,.22)}
+.gamespine{flex:none;border-radius:2px;position:relative;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(236,233,250,.22)}
+.gamespine--switch{width:7px;height:50px;background:#e60012}
+.gamespine--switch::before{content:"";position:absolute;left:0;right:0;top:0;height:9px;background:#fff}
+.gamespine--ps5{width:9px;height:54px;background:#f2f2f4}
+.gamespine--ps5::before{content:"";position:absolute;left:0;right:0;top:0;height:11px;background:#00439c}
+.gamespine--xbox{width:9px;height:54px;background:#1e1e1e}
+.gamespine--xbox::before{content:"";position:absolute;left:0;right:0;top:0;height:11px;background:#107c10}
+.gamespine--ps2{width:9px;height:60px;background:#111}
+.gamespine--ps2::before{content:"";position:absolute;left:0;right:0;top:0;height:8px;background:#2b2b6b}
+.gamespine--gc{width:10px;height:54px;background:#4b3b8f}
+.gamespine--snes{width:17px;height:44px;background:linear-gradient(180deg,#bdbdc7,#9a9aa8);border-radius:1px}
+.gamespine--snes::before{content:"";position:absolute;left:3px;right:3px;top:6px;bottom:6px;background:linear-gradient(180deg,#d33,#d33 25%,#36c 25% 50%,#fc3 50% 75%,#3a3 75%);opacity:.8}
+.gamespine--gb{width:22px;height:24px;background:#7d7d86;border-radius:2px 2px 6px 2px}
+.gamespine--gb::before{content:"";position:absolute;left:4px;right:4px;top:4px;height:10px;background:#c9c9d1;border-radius:1px}
+.shelf__gap{width:10px;flex:none}
+.shelf__count,.catrow__count{font-family:var(--numerals)!important;font-weight:700!important;font-size:15px!important}
+.chip b,.vol,.complete__head .small,.num{font-family:var(--numerals);font-weight:600}
+.vol{font-size:9px}
+.copies__head{display:flex;align-items:baseline;justify-content:space-between;margin-top:14px}
+.copies__title{font-weight:800;font-size:15px}
+.copies__title .num{color:var(--gold);margin-left:4px}
+.copies__add{font-size:12px;font-weight:650;color:var(--teal);display:flex;align-items:center;gap:4px}
+.copy{margin-top:8px;border-radius:16px;background:var(--surface-2);padding:12px}
+.copy--open{box-shadow:inset 0 0 0 1.5px rgba(183,166,255,.45)}
+.copy__top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.copy__name{font-weight:700;font-size:14px}
+.copy__price{font-size:13px;color:var(--gold)}
+.copy__meta{font-size:12px;color:var(--ink-soft);margin-top:2px;display:flex;align-items:center;gap:4px}
+.copy .condition__part{margin-top:8px}
+.copy .scale span{height:24px;font-size:9px}
+.copy__states{display:flex;gap:6px;margin-top:8px}
+.copy__states span{font-size:11px;font-weight:650;border-radius:7px;padding:3px 8px;background:#332D5C;color:var(--ink)}
+.owncopies{grid-column:1/-1;display:grid;gap:6px}
+.owncopy{display:grid;grid-template-columns:1fr auto;gap:2px 8px;font-size:12px;padding:8px 10px;border-radius:10px;background:var(--surface-2)}
+.owncopy b{font-weight:700}
+.owncopy span{color:var(--ink-soft)}
+.owncopy em{font-style:normal;color:var(--gold);font-weight:650;text-align:right}
+.divider{flex:none;width:15px;height:60px;margin-left:6px;border-radius:3px 3px 0 0;background:rgba(183,166,255,.2);box-shadow:inset 0 0 0 1px rgba(183,166,255,.55);writing-mode:vertical-rl;transform:rotate(180deg);font-size:7.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:15px;padding:5px 0;display:block}
+.divider:first-child{margin-left:0}
+.shelf--big .divider{width:18px;height:84px;line-height:18px;font-size:8.5px}
+.shelf--big .lpspine{display:block;width:16px;height:76px;line-height:16px;padding:5px 0;text-overflow:ellipsis;writing-mode:vertical-rl;transform:rotate(180deg);font-size:8px}
+.mvol{flex:none;width:12px;height:52px;border-radius:2px 2px 0 0;box-shadow:inset -2px 0 0 rgba(0,0,0,.22);font-family:var(--numerals);font-size:7px;font-weight:700;text-align:center;padding-top:3px;color:rgba(28,24,56,.75);overflow:hidden}
+.mvol--miss{background:transparent!important;border:1.5px dashed var(--mustard);border-bottom:0;color:var(--mustard)}
+.mvol--dark{color:rgba(255,255,255,.8)}
+.series{display:flex;align-items:flex-end;gap:3px;flex:none}
+.series .divider{cursor:pointer}
+.series .bundle{display:none}
+.series.is-collapsed .mvol,.series.is-collapsed .divider{display:none}
+.series.is-collapsed .bundle{display:block}
+.shelf--manga .shelf__items{height:84px;overflow-x:auto;scrollbar-width:none}
+.shelf--manga .divider{width:18px;height:84px;line-height:18px;font-size:8.5px}
+.shelf--manga .mvol{width:15px;height:74px;font-size:8px;padding-top:4px}
+.bundle{flex:none;width:40px;height:80px;overflow:visible;border-radius:2px 2px 0 0;cursor:pointer;position:relative;overflow:hidden;box-shadow:inset -3px 0 0 rgba(0,0,0,.25),inset 0 0 0 1px rgba(255,255,255,.12)}
+.bundle__count{position:absolute;top:4px;left:0;right:0;text-align:center;font-family:var(--numerals);font-size:10px;font-weight:700}
+.bundle__label{overflow:hidden;position:absolute;left:0;right:0;top:18px;bottom:0;writing-mode:vertical-rl;transform:rotate(180deg);display:block;padding:6px 0;line-height:40px;text-align:start;font-size:7.5px;font-weight:800;letter-spacing:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bundle__label .num{font-size:9px}
+.bundle__alert{position:absolute;top:-3px;right:-3px;width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal)}
+.foldall{margin-left:auto;font-size:12px;font-weight:650;color:var(--teal);cursor:pointer}
+@media (max-width:860px){.intro{grid-template-columns:1fr}.page{padding:32px 16px 64px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+  <symbol id="i-barcode" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 8v8M10 8v8M13 8v8M17 8v8"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="i-text" viewBox="0 0 24 24"><path d="M5 6h14M12 6v13M9 19h6"/></symbol>
+  <symbol id="i-shelf" viewBox="0 0 24 24"><path d="M4 4v15M8 6v13M12 4v15M15.5 6.5l3.8 12M3 20h18"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8L12 16.9l-5.3 2.7 1-5.8-4.2-4.1 5.9-.9z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-sort" viewBox="0 0 24 24"><path d="M7 4v16M3.5 16.5L7 20l3.5-3.5M17 20V4M13.5 7.5L17 4l3.5 3.5"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+  <symbol id="i-gallery" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 16l-5-5-8 8.5"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.7-4.3L4 8.5M4 4v4.5h4.5M4 13a8 8 0 0 0 14.7 4.3l1.3-1.8M20 20v-4.5h-4.5"/></symbol>
+  <symbol id="i-grip" viewBox="0 0 24 24"><path d="M9 6h.01M15 6h.01M9 12h.01M15 12h.01M9 18h.01M15 18h.01"/></symbol>
+</svg>
+
+<template id="nav-collection">
+  <nav class="nav">
+    <div class="nav__item nav__item--on"><div class="nav__pill"><svg class="i"><use href="#i-shelf"/></svg></div>Collection</div>
+    <div class="nav__check"><div class="nav__pill"><svg class="i"><use href="#i-barcode"/></svg></div>Je l'ai ?</div>
+    <div class="nav__item"><div class="nav__pill"><svg class="i"><use href="#i-heart"/></svg></div>Envies</div>
+    <div class="nav__item"><div class="nav__pill"><svg class="i"><use href="#i-spark"/></svg></div>Découvertes</div>
+  </nav>
+</template>
+
+<main class="page">
+  <header class="intro">
+    <div>
+      <h1 class="intro__title">Akashic<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l2.2 8.8L23 12l-8.8 2.2L12 23l-2.2-8.8L1 12l8.8-2.2z"/></svg></h1>
+      <p class="intro__lead">Maquette v9 de ton appli de bibliothèque, Android en Flutter. Les annales akashiques sont la bibliothèque céleste où tout serait inscrit : l'appli en reprend la nuit et ses étoiles, en bleu nuit et lavande. Tout se lit de gauche à droite, parcours par parcours. Les encadrés lavande sous les écrans sont les points sur lesquels j'ai besoin de ton avis.</p>
+    </div>
+    <aside class="intro__legend">
+      <h2>Ce que la maquette tient pour acquis</h2>
+      <ul>
+        <li><span class="dot" style="background:var(--gold-deep)"></span>Lavande pleine : tu l'as déjà.</li>
+        <li><span class="dot" style="background:var(--page-ink)"></span>Nuit : tu ne l'as pas encore. Pointillés : il te manque.</li>
+        <li><span class="dot" style="background:#2FA597"></span>Turquoise, par touches : liens, sources des infos, onglet actif.</li>
+        <li><span class="dot" style="background:#A39DC8"></span>Pas de compte, pas de connexion, tout est sur le téléphone.</li>
+        <li><span class="dot" style="background:var(--cat-tcg)"></span>Chaque catégorie a sa couleur, comme une étoile.</li>
+      </ul>
+    </aside>
+  </header>
+
+  <section class="journey">
+    <div class="journey__head">
+      <h2 class="journey__title">En magasin : je l'ai déjà ?</h2>
+      <p class="journey__why">Le moment qui a lancé l'idée. Un bouton central, toujours à portée de pouce, et une réponse lisible à un mètre : lavande ou nuit.</p>
+    </div>
+    <div class="journey__row">
+
+      <figure class="shot">
+        <div class="phone"><div class="screen">
+          <div class="status"><span>14:32</span><span class="status__icons"><span></span><span></span></span></div>
+          <div class="appbar"><div class="appbar__title">Je l'ai ?</div><div class="iconbtn"><svg class="i"><use href="#i-close"/></svg></div></div>
+          <div class="content">
+            <div class="cam">
+              <div class="cam__sleeve">
+                <p>STEREO · CS 8163</p>
+                <p style="margin-top:6px">Side One — So What · Freddie Freeloader · Blue in Green</p>
+                <p>Side Two — All Blues · Flamenco Sketches</p>
+                <div class="cam__barcode"><div class="cam__bars"></div><div class="cam__digits">8 89853 13541 2</div></div>
+              </div>
+              <div class="cam__frame"><div class="cam__laser"></div></div>
+              <div class="cam__hint">Vise le code-barres au dos</div>
+            </div>
+            <div class="seg">
+              <div class="seg__opt seg__opt--on"><svg class="i"><use href="#i-barcode"/></svg>Code-barres</div>
+              <div class="seg__opt"><svg class="i"><use href="#i-camera"/></svg>Pochette</div>
+              <div class="seg__opt"><svg class="i"><use href="#i-text"/></svg>Titre, artiste</div>
+            </div>
+            <div class="sectionlabel" style="margin-top:14px"><span>Vérifiés tout à l'heure</span></div>
+            <div class="recent"><div class="cover c-rum"></div><span style="flex:1">Rumours — Fleetwood Mac</span><span class="pill pill--owned">À toi</span></div>
+          </div>
+          <template data-nav="check"></template>
+        </div></div>
+        <figcaption class="shot__caption">
+          <strong>Le scanner s'ouvre directement</strong>
+          Trois façons de vérifier, sans changer d'écran : code-barres, photo de la pochette, ou titre et artiste au clavier. La recherche couvre toutes les catégories d'un coup.
+          <span class="ask">La photo de pochette : je lirais le texte imprimé dessus (gratuit, sans connexion), puis je chercherais dans ta collection. Une vraie reconnaissance d'image passerait par un service payant. Ça te va ?</span>
+        </figcaption>
+      </figure>
+
+      <figure class="shot">
+        <div class="phone"><div class="screen">
+          <div class="verdict verdict--owned">
+            <div class="status"><span>14:32</span><span class="status__icons"><span></span><span></span></span></div>
+            <div class="appbar"><div class="iconbtn"><svg class="i"><use href="#i-back"/></svg></div><div class="appbar__title"></div></div>
+            <div class="verdict__stamp">Tu l'as<br>déjà.</div>
+            <div class="verdict__sub">Tu en as <b class="num">2</b> exemplaires · Vinyles › Jazz</div>
+            <div class="verdict__card">
+              <div class="cover c-kob"><span class="cover__big">Kind<br>of Blue</span></div>
+              <div>
+                <div style="font-weight:800;font-size:17px;line-height:1.1">Kind of Blue</div>
+                <div class="muted" style="font-size:13px">Miles Davis · 1959</div>
+                <div class="stars" style="margin-top:8px"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+              </div>
+              <div class="owncopies">
+                <div class="owncopy"><b>Réédition 2015, 180 g</b><em>Très bon</em><span>Bac 2, salon</span><span></span></div>
+                <div class="owncopy"><b>Pressage original 1959</b><em>Bon</em><span>Étagère bureau</span><span></span></div>
+              </div>
+            </div>
+            <div style="margin:auto 14px 22px;display:grid;gap:10px">
+              <div class="btn btn--light">Voir la fiche</div>
+              <div class="btn btn--ghost" style="color:var(--page-ink)">Scanner le suivant</div>
+            </div>
+          </div>
+        </div></div>
+        <figcaption class="shot__caption">
+          <strong>Réponse : tu l'as déjà</strong>
+          Plein écran lavande, lisible même en jetant un œil au téléphone. Juste en dessous : chacun de tes exemplaires, avec son édition, son état et où il est rangé. Utile si tu hésites à racheter une meilleure version.
+        </figcaption>
+      </figure>
+
+      <figure class="shot">
+        <div class="phone"><div class="screen">
+          <div class="verdict verdict--new">
+            <div class="status"><span>14:35</span><span class="status__icons"><span></span><span></span></span></div>
+            <div class="appbar"><div class="iconbtn"><svg class="i"><use href="#i-back"/></svg></div><div class="appbar__title"></div></div>
+            <div class="verdict__stamp">Pas encore<br>à toi.</div>
+            <div class="verdict__sub"><span class="badge badge--wish"><svg class="i i--sm" style="fill:var(--mustard);stroke:none"><use href="#i-heart"/></svg>Dans tes envies depuis le 12 sept.</span></div>
+            <div class="verdict__card">
+              <div class="cover c-blue"><span class="cover__big">Blue<br>Train</span></div>
+              <div>
+                <div style="font-weight:800;font-size:17px;line-height:1.1">Blue Train</div>
+                <div class="muted" style="font-size:13px">John Coltrane · 1957</div>
+                <div class="src"><svg class="i i--sm"><use href="#i-link"/></svg>Infos MusicBrainz</div>
+              </div>
+              <dl class="kv" style="grid-column:1/-1">
+                <dt>Label</dt><dd>Blue Note</dd>
+                <dt>Ce code</dt><dd>Réédition Tone Poet, 2022</dd>
+                <dt>Tu as aussi</dt><dd>Giant Steps, A Love Supreme</dd>
+              </dl>
+            </div>
+            <div style="margin:auto 14px 22px;display:grid;gap:10px">
+              <div class="btn btn--ink">Je l'achète, l'ajouter à ma collection</div>
+              <div class="btn btn--ghost">Scanner le suivant</div>
+            </div>
+          </div>
+        </div></div>
+        <figcaption class="shot__caption">
+          <strong>Réponse : pas encore à toi</strong>
+          Fond nuit. Si l'objet est dans tes envies, l'appli te le rappelle. « Je l'achète » l'ajoute à la collection avec les infos déjà trouvées et le retire de tes envies tout seul.
+          <span class="ask">Quand tu as le même album dans une autre édition, je l'affiche en lavande avec « autre édition », ou en nuit ?</span>
+        </figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <section class="journey">
+    <div class="journey__head">
+      <h2 class="journey__title">Ma collection</h2>
+      <p class="journey__why">Les catégories que tu crées, un seul niveau de sous-catégories, et une fiche par objet avec tes infos facultatives.</p>
+    </div>
+    <div class="journey__row">
+
+      <figure class="shot">
+        <div class="phone"><div class="screen">
+          <div class="status"><span>20:10</span><span class="status__icons"><span></span><span></span></span></div>
+          <div class="content" style="padding-top:14px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-end">
+              <div><div class="h1">Ma collection</div><div class="muted small" style="margin-top:6px"><span class="num">1 284</span> objets dans <span class="num">7</span> catégories</div></div>
+              <div class="iconbtn"><svg class="i"><use href="#i-more"/></svg></div>
+            </div>
+            <div class="searchfield" style="margin-top:16px"><svg class="i"><use href="#i-search"/></svg>Chercher dans ma collection</div>
+            <div style="margin-top:4px">
+              <div class="shelf"><div class="shelf__head"><span class="spine" style="background:var(--cat-vinyle)"></span>Vinyles<span class="shelf__count">212</span><svg class="i shelf__chev"><use href="#i-back"/></svg></div>
+                <div class="shelf__items"><div class="divider">Miles Davis</div><div class="lpspine" style="background:#20304a"></div><div class="lpspine" style="background:#b5502a"></div><div class="lpspine" style="background:#2d2a55"></div><div class="divider">John Coltrane</div><div class="lpspine" style="background:#1b1b1b"></div><div class="lpspine" style="background:#3d7c99"></div><div class="lpspine" style="background:#1f4f7a"></div><div class="divider">Daft Punk</div><div class="lpspine" style="background:#2b2b2b"></div><div class="lpspine" style="background:#141414"></div><div class="lpspine" style="background:#0b0b0b"></div><div class="divider">Fleetwood Mac</div><div class="lpspine" style="background:#e8e2d4"></div><div class="lpspine" style="background:#8a6a4a"></div><div class="divider">Pink Floyd</div><div class="lpspine" style="background:#0d0d0d"></div><div class="lpspine" style="background:#2a2a2a"></div><div class="lpspine" style="background:#efefef"></div><div class="divider">Radiohead</div><div class="lpspine" style="background:#b9cbd6"></div><div class="lpspine" style="background:#e9e4dc"></div></div><div class="plank"></div></div>
+              <div class="shelf"><div class="shelf__head"><span class="spine" style="background:var(--cat-manga)"></span>Mangas<span class="shelf__sub"><span class="todo" style="color:var(--teal)">· 4 séries à compléter</span></span><span class="shelf__count">486</span><svg class="i shelf__chev"><use href="#i-back"/></svg></div>
+                <div class="shelf__items"><div class="divider">Frieren</div><div class="mvol" style="height:52px;background:#c8d6ea">1</div><div class="mvol" style="height:52px;background:#c8d6ea">2</div><div class="mvol" style="height:52px;background:#c8d6ea">3</div><div class="mvol mvol--miss" style="height:52px">4</div><div class="mvol" style="height:52px;background:#c8d6ea">5</div><div class="mvol" style="height:52px;background:#c8d6ea">6</div><div class="mvol mvol--miss" style="height:52px">7</div><div class="mvol" style="height:52px;background:#c8d6ea">8</div><div class="mvol" style="height:52px;background:#c8d6ea">9</div><div class="divider">One Piece</div><div class="mvol mvol--dark" style="height:55px;background:#C2412D">1</div><div class="mvol mvol--dark" style="height:55px;background:#C2412D">2</div><div class="mvol mvol--dark" style="height:55px;background:#C2412D">3</div><div class="mvol mvol--dark" style="height:55px;background:#C2412D">4</div><div class="mvol mvol--dark" style="height:55px;background:#C2412D">5</div><div class="mvol mvol--dark" style="height:55px;background:#C2412D">6</div><div class="divider">Blue Period</div><div class="mvol mvol--dark" style="height:50px;background:#2E6B4F">1</div><div class="mvol mvol--dark" style="height:50px;background:#2E6B4F">2</div><div class="mvol mvol--dark" style="height:50px;background:#2E6B4F">3</div><div class="mvol mvol--dark" style="height:50px;background:#2E6B4F">4</div><div class="divider">Dungeon Food</div><div class="mvol" style="height:53px;background:#e8c9a0">1</div><div class="mvol" style="height:53px;background:#e8c9a0">2</div><div class="mvol" style="height:53px;background:#e8c9a0">3</div></div><div class="plank"></div></div>
+              <div class="shelf"><div class="shelf__head"><span class="spine" style="background:var(--cat-jeu)"></span>Jeux vidéo<span class="shelf__count">58</span><svg class="i shelf__chev"><use href="#i-back"/></svg></div>
+                <div class="shelf__items"><div class="gamespine gamespine--switch"></div><div class="gamespine gamespine--switch"></div><div class="gamespine gamespine--switch"></div><div class="gamespine gamespine--switch"></div><div class="gamespine gamespine--switch"></div><div class="shelf__gap"></div><div class="gamespine gamespine--ps5"></div><div class="gamespine gamespine--ps5"></div><div class="gamespine gamespine--ps5"></div><div class="shelf__gap"></div><div class="gamespine gamespine--xbox"></div><div class="gamespine gamespine--xbox"></div><div class="shelf__gap"></div><div class="gamespine gamespine--gc"></div><div class="gamespine gamespine--gc"></div><div class="gamespine gamespine--ps2"></div><div class="gamespine gamespine--ps2"></div><div class="gamespine gamespine--ps2"></div><div class="shelf__gap"></div><div class="gamespine gamespine--snes"></div><div class="gamespine gamespine--snes"></div><div class="gamespine gamespine--gb"></div><div class="gamespine gamespine--gb"></div></div><div class="plank"></div></div>
+              <div class="shelf"><div class="shelf__head"><span class="spine" style="background:var(--cat-tcg)"></span>TCG<span class="shelf__count">301</span><svg class="i shelf__chev"><use href="#i-back"/></svg></div>
+                <div class="shelf__items"><div class="deckbox" style="background:#e8743b"></div><div class="deckbox" style="background:#2B7A8A"></div><div class="deckbox" style="background:#5B3FA0"></div><div class="deckbox" style="background:#1e1e1e"></div><div class="deckbox" style="background:#c2412d"></div><div class="deckbox" style="background:#3e5f8a"></div><div class="deckbox" style="background:#d6b04a"></div></div><div class="plank"></div></div>
+              <div class="shelf"><div class="shelf__head"><span class="spine" style="background:var(--cat-livre)"></span>Livres<span class="shelf__count">173</span><svg class="i shelf__chev"><use href="#i-back"/></svg></div>
+                <div class="shelf__items"><div class="bookspine" style="height:52px;background:#7b4b8f"></div><div class="bookspine" style="height:58px;background:#2b4c6f"></div><div class="bookspine" style="height:48px;background:#a8643a"></div><div class="bookspine" style="height:56px;background:#d8c8a8"></div><div class="bookspine" style="height:60px;background:#1f3a2e"></div><div class="bookspine" style="height:50px;background:#8a2f3a"></div><div class="bookspine" style="height:55px;background:#3e5f8a"></div><div class="bookspine" style="height:58px;background:#c9b28f"></div><div class="bookspine" style="height:46px;background:#5a6b3a"></div><div class="bookspine" style="height:57px;background:#2d2d48"></div><div class="bookspine" style="height:52px;background:#b85c38"></div><div class="bookspine" style="height:59px;background:#4a7a8c"></div></div><div class="plank"></div></div>
+            </div>
+          </div>
+          <template data-nav="collection"></template>
+        </div></div>
+        <figcaption class="shot__caption">
+          <strong>L'accueil : tes étagères</strong>
+          Chaque catégorie est une étagère, tout est sur la tranche. Les objets sont regroupés : vinyles par artiste, mangas par série, chaque groupe ouvert par un intercalaire qui porte son nom. Les noms trop longs sont coupés proprement, jamais en dehors de la tranche. Chaque tranche prend la couleur dominante de la vraie pochette ou couverture, calculée depuis son image (modifiable à la main). Les TCG sont rangés en boîtes à decks, les jeux vidéo dans le boîtier de leur console (Switch, PS5, Xbox, GameCube, PS2, cartouches SNES et Game Boy). Les tomes manquants laissent un trou en pointillés. On fait défiler une étagère vers la gauche, on touche son titre pour l'ouvrir.
+        </figcaption>
+      </figure>
+
+      <figure class="shot">
+        <div class="phone"><div class="screen">
+          <div class="status"><span>20:11</span><span class="status__icons"><span></span><span></span></span></div>
+          <div class="appbar"><div class="iconbtn"><svg class="i"><use href="#i-back"/></svg></div><div class="appbar__title">Vinyles</div><div class="iconbtn"><svg class="i"><use href="#i-search"/></svg></div><div class="iconbtn"><svg class="i"><use href="#i-sort"/></svg></div></div>
+          <div class="content" style="padding-top:0">
+            <div class="chips">
+              <span class="chip chip--on">Tous <b>212</b></span><span class="chip">Jazz <b>48</b></span><span class="chip">Rock <b>71</b></span><span class="chip">Électro <b>39</b></span><span class="chip">Soul <b>22</b></span>
+            </div>
+            <div style="display:flex;align-items:center;margin:12px 0 0"><span class="muted small">Par sous-catégorie</span><span class="viewtoggle"><span class="on"><svg class="i i--sm"><use href="#i-shelf"/></svg></span><span><svg class="i i--sm" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1"/></svg></span></span></div>
+            <div class="shelf shelf--big"><div class="shelf__head"><span class="spine" style="background:var(--cat-vinyle)"></span>Jazz<span class="shelf__count">48</span><svg class="i shelf__chev"><use href="#i-back"/></svg></div>
+              <div class="shelf__items"><div class="divider">Miles Davis</div><div class="lpspine" style="background:#20304a">Kind of Blue</div><div class="lpspine" style="background:#b5502a">Sketches of Spain</div><div class="lpspine" style="background:#2d2a55">Bitches Brew</div><div class="divider">John Coltrane</div><div class="lpspine" style="background:#1b1b1b">A Love Supreme</div><div class="lpspine" style="background:#3d7c99">Giant Steps</div><div class="lpspine" style="background:#1f4f7a">Blue Train</div><div class="divider">Herbie Hancock</div><div class="lpspine" style="background:#d9541e">Head Hunters</div><div class="divider">Art Blakey &amp; The Jazz Messengers</div><div class="lpspine" style="background:#6f7a55">Moanin&#x27;</div></div><div class="plank"></div></div>
+            <div class="shelf shelf--big"><div class="shelf__head"><span class="spine" style="background:var(--cat-vinyle)"></span>Rock<span class="shelf__count">71</span><svg class="i shelf__chev"><use href="#i-back"/></svg></div>
+              <div class="shelf__items"><div class="divider">Pink Floyd</div><div class="lpspine" style="background:#0d0d0d">The Dark Side of the Moon</div><div class="lpspine" style="background:#2a2a2a">Wish You Were Here</div><div class="lpspine" style="background:#efefef;color:#1c1838">The Wall</div><div class="divider">Fleetwood Mac</div><div class="lpspine" style="background:#e8e2d4;color:#1c1838">Rumours</div><div class="divider">Radiohead</div><div class="lpspine" style="background:#b9cbd6;color:#1c1838">OK Computer</div><div class="lpspine" style="background:#e9e4dc;color:#1c1838">Kid A</div><div class="divider">Led Zeppelin</div><div class="lpspine" style="background:#8a6a4a">Led Zeppelin IV</div></div><div class="plank"></div></div>
+            <div class="shelf shelf--big"><div class="shelf__head"><span class="spine" style="background:var(--cat-vinyle)"></span>Électro<span class="shelf__count">39</span><svg class="i shelf__chev"><use href="#i-back"/></svg></div>
+              <div class="shelf__items"><div class="divider">Daft Punk</div><div class="lpspine" style="background:#2b2b2b">Homework</div><div class="lpspine" style="background:#141414">Discovery</div><div class="lpspine" style="background:#0b0b0b">Random Access Memories</div><div class="divider">Justice</div><div class="lpspine" style="background:#f2f2f2;color:#1c1838">Cross</div><div class="divider">Air</div><div class="lpspine" style="background:#dfe6ee;color:#1c1838">Moon Safari</div><div class="divider">Massive Attack</div><div class="lpspine" style="background:#222222">Mezzanine</div></div><div class="plank"></div></div>
+            <div class="shelf shelf--big"><div class="shelf__head"><span class="spine" style="background:var(--cat-vinyle)"></span>Soul<span class="shelf__count">22</span><svg class="i shelf__chev"><use href="#i-back"/></svg></div>
+              <div class="shelf__items"><div class="divider">Marvin Gaye</div><div class="lpspine" style="background:#2a3b55">What&#x27;s Going On</div><div class="divider">Stevie Wonder</div><div class="lpspine" style="background:#c8762e">Songs in the Key of Life</div><div class="divider">Aretha Franklin</div><div class="lpspine" style="background:#6a3d7a">Lady Soul</div></div><div class="plank"></div></div>
+                      </div>
+          <div style="position:absolute;right:16px;bottom:92px;width:58px;height:58px;border-radius:18px;background:var(--gold);color:var(--surface);display:grid;place-items:center;box-shadow:0 0 24px rgba(183,166,255,.45)"><svg class="i"><use href="#i-plus"/></svg></div>
+          <template data-nav="collection"></template>
+        </div></div>
+        <figcaption class="shot__caption">
+          <strong>Une catégorie et ses sous-catégories</strong>
+          Une étagère par sous-catégorie (Jazz, Rock, Électro…), avec des tranches plus grandes : l'intercalaire porte l'artiste, chaque tranche le titre de l'album. Les filtres du haut isolent une sous-catégorie. Le bouton à droite bascule en grille classique si tu veux tout voir d'un coup.
+        </figcaption>
+      </figure>
+
+
+      <figure class="shot">
+        <div class="phone"><div class="screen">
+          <div class="status"><span>20:14</span><span class="status__icons"><span></span><span></span></span></div>
+          <div class="appbar"><div class="iconbtn"><svg class="i"><use href="#i-back"/></svg></div><div class="appbar__title">Mangas</div><div class="iconbtn"><svg class="i"><use href="#i-search"/></svg></div><div class="iconbtn"><svg class="i"><use href="#i-sort"/></svg></div></div>
+          <div class="content" style="padding-top:0">
+            <div class="chips"><span class="chip chip--on">Tous <b>486</b></span><span class="chip">Seinen <b>214</b></span><span class="chip">Shōnen <b>241</b></span><span class="chip">Autres <b>31</b></span></div>
+            <div style="display:flex;align-items:center;margin:12px 0 0"><span class="muted small">Par série</span><span class="foldall" onclick="foldAll(this)">Tout replier</span></div>
+            <div class="shelf shelf--big shelf--manga"><div class="shelf__head"><span class="spine" style="background:var(--cat-manga)"></span>Seinen<span class="shelf__count">214</span><svg class="i shelf__chev"><use href="#i-back"/></svg></div><div class="shelf__items"><div class="series"><div class="divider" onclick="toggleSeries(this)">Frieren</div><div class="mvol" style="background:#c8d6ea">1</div><div class="mvol" style="background:#c8d6ea">2</div><div class="mvol" style="background:#c8d6ea">3</div><div class="mvol mvol--miss">4</div><div class="mvol" style="background:#c8d6ea">5</div><div class="mvol" style="background:#c8d6ea">6</div><div class="mvol mvol--miss">7</div><div class="mvol" style="background:#c8d6ea">8</div><div class="mvol" style="background:#c8d6ea">9</div><div class="mvol" style="background:#c8d6ea">10</div><div class="mvol" style="background:#c8d6ea">11</div><div class="mvol" style="background:#c8d6ea">12</div><div class="mvol" style="background:#c8d6ea">13</div><div class="bundle" onclick="toggleSeries(this)" style="background:repeating-linear-gradient(90deg,#c8d6ea 0 5px,rgba(0,0,0,.28) 5px 6px);color:#1c1838"><span class="bundle__alert"></span><span class="bundle__count">11</span><span class="bundle__label">FRIEREN</span></div></div><div class="series is-collapsed"><div class="divider" onclick="toggleSeries(this)">Dungeon Food</div><div class="mvol" style="background:#e8c9a0">1</div><div class="mvol" style="background:#e8c9a0">2</div><div class="mvol" style="background:#e8c9a0">3</div><div class="mvol" style="background:#e8c9a0">4</div><div class="mvol" style="background:#e8c9a0">5</div><div class="mvol" style="background:#e8c9a0">6</div><div class="mvol" style="background:#e8c9a0">7</div><div class="mvol" style="background:#e8c9a0">8</div><div class="mvol" style="background:#e8c9a0">9</div><div class="mvol" style="background:#e8c9a0">10</div><div class="mvol" style="background:#e8c9a0">11</div><div class="mvol" style="background:#e8c9a0">12</div><div class="mvol" style="background:#e8c9a0">13</div><div class="mvol" style="background:#e8c9a0">14</div><div class="bundle" onclick="toggleSeries(this)" style="background:repeating-linear-gradient(90deg,#e8c9a0 0 5px,rgba(0,0,0,.28) 5px 6px);color:#1c1838"><span class="bundle__count">14</span><span class="bundle__label">DUNGEON FOOD</span></div></div><div class="series is-collapsed"><div class="divider" onclick="toggleSeries(this)">Vinland Saga</div><div class="mvol mvol--dark" style="background:#5a4632">1</div><div class="mvol mvol--dark" style="background:#5a4632">2</div><div class="mvol mvol--dark" style="background:#5a4632">3</div><div class="mvol mvol--dark" style="background:#5a4632">4</div><div class="mvol mvol--dark" style="background:#5a4632">5</div><div class="mvol mvol--dark" style="background:#5a4632">6</div><div class="mvol mvol--dark" style="background:#5a4632">7</div><div class="mvol mvol--dark" style="background:#5a4632">8</div><div class="mvol mvol--dark" style="background:#5a4632">9</div><div class="mvol mvol--dark" style="background:#5a4632">10</div><div class="mvol mvol--dark" style="background:#5a4632">11</div><div class="mvol mvol--dark" style="background:#5a4632">12</div><div class="mvol mvol--dark" style="background:#5a4632">13</div><div class="bundle" onclick="toggleSeries(this)" style="background:repeating-linear-gradient(90deg,#5a4632 0 5px,rgba(0,0,0,.28) 5px 6px);color:#fff"><span class="bundle__count">13</span><span class="bundle__label">VINLAND SAGA</span></div></div></div><div class="plank"></div></div>
+            <div class="shelf shelf--big shelf--manga"><div class="shelf__head"><span class="spine" style="background:var(--cat-manga)"></span>Shōnen<span class="shelf__count">241</span><svg class="i shelf__chev"><use href="#i-back"/></svg></div><div class="shelf__items"><div class="series is-collapsed"><div class="divider" onclick="toggleSeries(this)">One Piece</div><div class="mvol mvol--dark" style="background:#C2412D">1</div><div class="mvol mvol--dark" style="background:#C2412D">2</div><div class="mvol mvol--dark" style="background:#C2412D">3</div><div class="mvol mvol--dark" style="background:#C2412D">4</div><div class="mvol mvol--dark" style="background:#C2412D">5</div><div class="mvol mvol--dark" style="background:#C2412D">6</div><div class="mvol mvol--dark" style="background:#C2412D">7</div><div class="mvol mvol--dark" style="background:#C2412D">8</div><div class="mvol mvol--dark" style="background:#C2412D">9</div><div class="mvol mvol--dark" style="background:#C2412D">10</div><div class="mvol mvol--dark" style="background:#C2412D">11</div><div class="mvol mvol--dark" style="background:#C2412D">12</div><div class="mvol mvol--dark" style="background:#C2412D">13</div><div class="mvol mvol--dark" style="background:#C2412D">14</div><div class="mvol mvol--dark" style="background:#C2412D">15</div><div class="mvol mvol--dark" style="background:#C2412D">16</div><div class="mvol mvol--dark" style="background:#C2412D">17</div><div class="mvol mvol--dark" style="background:#C2412D">18</div><div class="mvol mvol--dark" style="background:#C2412D">19</div><div class="mvol mvol--dark" style="background:#C2412D">20</div><div class="mvol mvol--dark" style="background:#C2412D">21</div><div class="mvol mvol--dark" style="background:#C2412D">22</div><div class="mvol mvol--dark" style="background:#C2412D">23</div><div class="mvol mvol--dark" style="background:#C2412D">24</div><div class="mvol mvol--dark" style="background:#C2412D">25</div><div class="mvol mvol--dark" style="background:#C2412D">26</div><div class="mvol mvol--dark" style="background:#C2412D">27</div><div class="mvol mvol--dark" style="background:#C2412D">28</div><div class="mvol mvol--dark" style="background:#C2412D">29</div><div class="mvol mvol--dark" style="background:#C2412D">30</div><div class="mvol mvol--dark" style="background:#C2412D">31</div><div class="mvol mvol--dark" style="background:#C2412D">32</div><div class="mvol mvol--dark" style="background:#C2412D">33</div><div class="mvol mvol--dark" style="background:#C2412D">34</div><div class="mvol mvol--dark" style="background:#C2412D">35</div><div class="mvol mvol--dark" style="background:#C2412D">36</div><div class="mvol mvol--dark" style="background:#C2412D">37</div><div class="mvol mvol--dark" style="background:#C2412D">38</div><div class="mvol mvol--dark" style="background:#C2412D">39</div><div class="mvol mvol--dark" style="background:#C2412D">40</div><div class="mvol mvol--dark" style="background:#C2412D">41</div><div class="mvol mvol--dark" style="background:#C2412D">42</div><div class="mvol mvol--dark" style="background:#C2412D">43</div><div class="mvol mvol--dark" style="background:#C2412D">44</div><div class="mvol mvol--dark" style="background:#C2412D">45</div><div class="mvol mvol--dark" style="background:#C2412D">46</div><div class="mvol mvol--dark" style="background:#C2412D">47</div><div class="mvol mvol--dark" style="background:#C2412D">48</div><div class="mvol mvol--dark" style="background:#C2412D">49</div><div class="mvol mvol--dark" style="background:#C2412D">50</div><div class="mvol mvol--dark" style="background:#C2412D">51</div><div class="mvol mvol--dark" style="background:#C2412D">52</div><div class="mvol mvol--dark" style="background:#C2412D">53</div><div class="mvol mvol--dark" style="background:#C2412D">54</div><div class="mvol mvol--dark" style="background:#C2412D">55</div><div class="mvol mvol--dark" style="background:#C2412D">56</div><div class="mvol mvol--dark" style="background:#C2412D">57</div><div class="mvol mvol--dark" style="background:#C2412D">58</div><div class="mvol mvol--dark" style="background:#C2412D">59</div><div class="mvol mvol--dark" style="background:#C2412D">60</div><div class="mvol mvol--dark" style="background:#C2412D">61</div><div class="mvol mvol--dark" style="background:#C2412D">62</div><div class="mvol mvol--dark" style="background:#C2412D">63</div><div class="mvol mvol--dark" style="background:#C2412D">64</div><div class="mvol mvol--dark" style="background:#C2412D">65</div><div class="mvol mvol--dark" style="background:#C2412D">66</div><div class="mvol mvol--dark" style="background:#C2412D">67</div><div class="mvol mvol--dark" style="background:#C2412D">68</div><div class="mvol mvol--dark" style="background:#C2412D">69</div><div class="mvol mvol--dark" style="background:#C2412D">70</div><div class="mvol mvol--dark" style="background:#C2412D">71</div><div class="mvol mvol--dark" style="background:#C2412D">72</div><div class="mvol mvol--dark" style="background:#C2412D">73</div><div class="mvol mvol--dark" style="background:#C2412D">74</div><div class="mvol mvol--dark" style="background:#C2412D">75</div><div class="mvol mvol--dark" style="background:#C2412D">76</div><div class="mvol mvol--dark" style="background:#C2412D">77</div><div class="mvol mvol--dark" style="background:#C2412D">78</div><div class="mvol mvol--dark" style="background:#C2412D">79</div><div class="mvol mvol--dark" style="background:#C2412D">80</div><div class="mvol mvol--dark" style="background:#C2412D">81</div><div class="mvol mvol--dark" style="background:#C2412D">82</div><div class="mvol mvol--dark" style="background:#C2412D">83</div><div class="mvol mvol--dark" style="background:#C2412D">84</div><div class="mvol mvol--dark" style="background:#C2412D">85</div><div class="mvol mvol--dark" style="background:#C2412D">86</div><div class="mvol mvol--dark" style="background:#C2412D">87</div><div class="mvol mvol--dark" style="background:#C2412D">88</div><div class="mvol mvol--dark" style="background:#C2412D">89</div><div class="mvol mvol--dark" style="background:#C2412D">90</div><div class="mvol mvol--dark" style="background:#C2412D">91</div><div class="mvol mvol--dark" style="background:#C2412D">92</div><div class="mvol mvol--dark" style="background:#C2412D">93</div><div class="mvol mvol--dark" style="background:#C2412D">94</div><div class="mvol mvol--dark" style="background:#C2412D">95</div><div class="mvol mvol--dark" style="background:#C2412D">96</div><div class="mvol mvol--dark" style="background:#C2412D">97</div><div class="mvol mvol--dark" style="background:#C2412D">98</div><div class="mvol mvol--dark" style="background:#C2412D">99</div><div class="mvol mvol--dark" style="background:#C2412D">100</div><div class="mvol mvol--dark" style="background:#C2412D">101</div><div class="mvol mvol--dark" style="background:#C2412D">102</div><div class="mvol mvol--dark" style="background:#C2412D">103</div><div class="mvol mvol--dark" style="background:#C2412D">104</div><div class="mvol mvol--dark" style="background:#C2412D">105</div><div class="mvol mvol--dark" style="background:#C2412D">106</div><div class="mvol mvol--dark" style="background:#C2412D">107</div><div class="bundle" onclick="toggleSeries(this)" style="background:repeating-linear-gradient(90deg,#C2412D 0 5px,rgba(0,0,0,.28) 5px 6px);color:#fff"><span class="bundle__count">107</span><span class="bundle__label">ONE PIECE</span></div></div><div class="series"><div class="divider" onclick="toggleSeries(this)">Chainsaw Man</div><div class="mvol" style="background:#d8d2c4">1</div><div class="mvol" style="background:#d8d2c4">2</div><div class="mvol" style="background:#d8d2c4">3</div><div class="mvol" style="background:#d8d2c4">4</div><div class="mvol" style="background:#d8d2c4">5</div><div class="mvol" style="background:#d8d2c4">6</div><div class="mvol" style="background:#d8d2c4">7</div><div class="mvol" style="background:#d8d2c4">8</div><div class="bundle" onclick="toggleSeries(this)" style="background:repeating-linear-gradient(90deg,#d8d2c4 0 5px,rgba(0,0,0,.28) 5px 6px);color:#1c1838"><span class="bundle__count">8</span><span class="bundle__label">CHAINSAW MAN</span></div></div><div class="series is-collapsed"><div class="divider" onclick="toggleSeries(this)">Jujutsu Kaisen</div><div class="mvol mvol--dark" style="background:#2b3a6b">1</div><div class="mvol mvol--dark" style="background:#2b3a6b">2</div><div class="mvol mvol--dark" style="background:#2b3a6b">3</div><div class="mvol mvol--dark" style="background:#2b3a6b">4</div><div class="mvol mvol--dark" style="background:#2b3a6b">5</div><div class="mvol mvol--dark" style="background:#2b3a6b">6</div><div class="mvol mvol--dark" style="background:#2b3a6b">7</div><div class="mvol mvol--dark" style="background:#2b3a6b">8</div><div class="mvol mvol--dark" style="background:#2b3a6b">9</div><div class="mvol mvol--dark" style="background:#2b3a6b">10</div><div class="mvol mvol--dark" style="background:#2b3a6b">11</div><div class="mvol mvol--dark" style="background:#2b3a6b">12</div><div class="mvol mvol--dark" style="background:#2b3a6b">13</div><div class="mvol mvol--dark" style="background:#2b3a6b">14</div><div class="mvol mvol--dark" style="background:#2b3a6b">15</div><div class="mvol mvol--dark" style="background:#2b3a6b">16</div><div class="mvol mvol--dark" style="background:#2b3a6b">17</div><div class="mvol mvol--dark" style="background:#2b3a6b">18</div><div class="mvol mvol--dark" style="background:#2b3a6b">19</div><div class="mvol mvol--dark" style="background:#2b3a6b">20</div><div class="mvol mvol--dark" style="background:#2b3a6b">21</div><div class="mvol mvol--dark" style="background:#2b3a6b">22</div><div class="mvol mvol--dark" style="background:#2b3a6b">23</div><div class="mvol mvol--dark" style="background:#2b3a6b">24</div><div class="mvol mvol--dark" style="background:#2b3a6b">25</div><div class="mvol mvol--dark" style="background:#2b3a6b">26</div><div class="bundle" onclick="toggleSeries(this)" style="background:repeating-linear-gradient(90deg,#2b3a6b 0 5px,rgba(0,0,0,.28) 5px 6px);color:#fff"><span class="bundle__count">26</span><span class="bundle__label">JUJUTSU KAISEN</span></div></div></div><div class="plank"></div></div>
+            <div class="shelf shelf--big shelf--manga"><div class="shelf__head"><span class="spine" style="background:var(--cat-manga)"></span>Autres<span class="shelf__count">31</span><svg class="i shelf__chev"><use href="#i-back"/></svg></div><div class="shelf__items"><div class="series"><div class="divider" onclick="toggleSeries(this)">Blue Period</div><div class="mvol mvol--dark" style="background:#2E6B4F">1</div><div class="mvol mvol--dark" style="background:#2E6B4F">2</div><div class="mvol mvol--dark" style="background:#2E6B4F">3</div><div class="mvol mvol--dark" style="background:#2E6B4F">4</div><div class="mvol mvol--dark" style="background:#2E6B4F">5</div><div class="bundle" onclick="toggleSeries(this)" style="background:repeating-linear-gradient(90deg,#2E6B4F 0 5px,rgba(0,0,0,.28) 5px 6px);color:#fff"><span class="bundle__count">5</span><span class="bundle__label">BLUE PERIOD</span></div></div><div class="series is-collapsed"><div class="divider" onclick="toggleSeries(this)">L&#x27;Atelier des sorciers</div><div class="mvol mvol--dark" style="background:#3d5a40">1</div><div class="mvol mvol--dark" style="background:#3d5a40">2</div><div class="mvol mvol--dark" style="background:#3d5a40">3</div><div class="mvol mvol--dark" style="background:#3d5a40">4</div><div class="mvol mvol--dark" style="background:#3d5a40">5</div><div class="mvol mvol--dark" style="background:#3d5a40">6</div><div class="mvol mvol--dark" style="background:#3d5a40">7</div><div class="mvol mvol--dark" style="background:#3d5a40">8</div><div class="mvol mvol--miss">9</div><div class="mvol mvol--dark" style="background:#3d5a40">10</div><div class="mvol mvol--dark" style="background:#3d5a40">11</div><div class="bundle" onclick="toggleSeries(this)" style="background:repeating-linear-gradient(90deg,#3d5a40 0 5px,rgba(0,0,0,.28) 5px 6px);color:#fff"><span class="bundle__alert"></span><span class="bundle__count">10</span><span class="bundle__label">L&#x27;ATELIER DES SORCIERS</span></div></div></div><div class="plank"></div></div>
+          </div>
+          <template data-nav="collection"></template>
+        </div></div>
+        <figcaption class="shot__caption">
+          <strong>Les séries sur l'étagère (clique dessus)</strong>
+          Tous les tomes possédés sont visibles, numérotés, les trous en pointillés. Un tap sur l'intercalaire replie la série en un seul bloc épais, nombre de tomes en haut et nom sur la tranche ; un tap sur le bloc la déplie. Un point turquoise sur le bloc signale une série incomplète. « Tout replier » range tout d'un coup ; l'appli se souvient de ce que tu as replié.
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="phone"><div class="screen">
+          <div class="status"><span>20:12</span><span class="status__icons"><span></span><span></span></span></div>
+          <div class="appbar"><div class="iconbtn"><svg class="i"><use href="#i-back"/></svg></div><div class="appbar__title"></div><div class="iconbtn"><svg class="i"><use href="#i-more"/></svg></div></div>
+          <div class="content" style="padding-top:0">
+            <div class="detail__hero">
+              <div class="cover c-kob"><span class="cover__big">Kind<br>of Blue</span></div>
+              <div>
+                <div class="muted small">Vinyles › Jazz</div>
+                <div class="detail__title">Kind of Blue</div>
+                <div class="muted" style="font-size:14px">Miles Davis</div>
+                <div class="muted small">1959 · Columbia</div>
+                <div class="src"><svg class="i i--sm"><use href="#i-link"/></svg>Infos MusicBrainz</div>
+              </div>
+            </div>
+            <div class="stars" style="margin-top:16px"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+            <div class="copies__head"><span class="copies__title">Mes exemplaires<span class="num">2</span></span><span class="copies__add"><svg class="i i--sm"><use href="#i-plus"/></svg>Ajouter un exemplaire</span></div>
+            <div class="copy copy--open">
+              <div class="copy__top"><span class="copy__name">Réédition 2015, 180 g</span><span class="copy__price num">28 €</span></div>
+              <div class="copy__meta"><svg class="i i--sm"><use href="#i-pin"/></svg>Bac 2, salon</div>
+              <div class="condition__part">
+                <div class="condition__label"><span>Disque</span><span class="muted" style="font-weight:600">Très bon</span></div>
+                <div class="scale"><span>Neuf</span><span class="on">Très bon</span><span>Bon</span><span>Correct</span><span>Abîmé</span><span class="miss">Manquant</span></div>
+              </div>
+              <div class="condition__part">
+                <div class="condition__label"><span>Pochette</span><span class="muted" style="font-weight:600">Bon</span></div>
+                <div class="scale"><span>Neuf</span><span>Très bon</span><span class="on">Bon</span><span>Correct</span><span>Abîmé</span><span class="miss">Manquant</span></div>
+              </div>
+            </div>
+            <div class="copy">
+              <div class="copy__top"><span class="copy__name">Pressage original 1959</span><span class="copy__price num">120 €</span></div>
+              <div class="copy__meta"><svg class="i i--sm"><use href="#i-pin"/></svg>Étagère bureau</div>
+              <div class="copy__states"><span>Disque : Bon</span><span>Pochette : Abîmé</span></div>
+            </div>
+          </div>
+          <template data-nav="collection"></template>
+        </div></div>
+        <figcaption class="shot__caption">
+          <strong>La fiche d'un vinyle, avec ses exemplaires</strong>
+          En haut, ce qui vient d'internet et ta note. En dessous, tes exemplaires : chacun a sa propre édition, son prix, son emplacement et son état (disque et pochette pour un vinyle). « Ajouter un exemplaire » en crée un nouveau sans retaper les infos de l'album.
+        </figcaption>
+      </figure>
+
+
+      <figure class="shot">
+        <div class="phone"><div class="screen">
+          <div class="status"><span>20:13</span><span class="status__icons"><span></span><span></span></span></div>
+          <div class="appbar"><div class="iconbtn"><svg class="i"><use href="#i-back"/></svg></div><div class="appbar__title">Kind of Blue</div><div class="iconbtn"><svg class="i"><use href="#i-more"/></svg></div></div>
+          <div class="content" style="padding-top:0">
+            <div class="tabs2"><span>Mes infos</span><span class="on">En savoir plus</span></div>
+            <div class="more">
+              <div class="more__block" style="padding-top:4px">
+                <div class="more__title">Titres <span>MusicBrainz</span></div>
+                <div class="tracks">
+                  <span>A1</span><span>So What</span><span>9:22</span>
+                  <span>A2</span><span>Freddie Freeloader</span><span>9:46</span>
+                  <span>A3</span><span>Blue in Green</span><span>5:37</span>
+                  <span>B1</span><span>All Blues</span><span>11:33</span>
+                  <span>B2</span><span>Flamenco Sketches</span><span>9:26</span>
+                </div>
+              </div>
+              <div class="more__block">
+                <div class="more__title">Ton pressage <span>Discogs</span></div>
+                <div class="bio">Réédition 2015, vinyle 180 g, Columbia / Legacy. Code-barres 8 89853 13541 2.</div>
+                <div class="tags"><span class="tag">Jazz</span><span class="tag">Modal</span><span class="tag">Cool jazz</span></div>
+              </div>
+              <div class="more__block">
+                <div class="more__title">L'album <span>Wikipedia</span></div>
+                <div class="bio">Enregistré en deux sessions en 1959 avec <b>John Coltrane</b>, <b>Cannonball Adderley</b> et <b>Bill Evans</b>. Album de jazz le plus vendu de l'histoire.</div>
+              </div>
+              <div class="links"><span><svg class="i i--sm"><use href="#i-link"/></svg>Wikipedia</span><span><svg class="i i--sm"><use href="#i-link"/></svg>Discogs</span></div>
+              <div class="refresh"><svg class="i i--sm"><use href="#i-refresh"/></svg>Récupéré le 12 sept. · Mettre à jour</div>
+            </div>
+          </div>
+          <template data-nav="collection"></template>
+        </div></div>
+        <figcaption class="shot__caption">
+          <strong>En savoir plus, depuis internet</strong>
+          Un second onglet sur chaque fiche, rempli automatiquement selon la catégorie : titres et pressage pour un vinyle, résumé et tomes parus pour un manga, synopsis et casting pour un film. Gardé sur le téléphone, donc lisible sans connexion, et mis à jour à la demande.
+          <span class="ask">Y a-t-il des infos précises que tu veux voir en priorité, par catégorie ?</span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="phone"><div class="screen">
+          <div class="status"><span>20:15</span><span class="status__icons"><span></span><span></span></span></div>
+          <div class="appbar"><div class="iconbtn"><svg class="i"><use href="#i-back"/></svg></div><div class="appbar__title"></div><div class="iconbtn"><svg class="i"><use href="#i-more"/></svg></div></div>
+          <div class="content" style="padding-top:0">
+            <div class="detail__hero" style="grid-template-columns:96px minmax(0,1fr)">
+              <div class="cover cover--book c-fri" style="width:96px"><span class="cover__big" style="font-size:12px">Frieren</span></div>
+              <div>
+                <div class="muted small">Mangas › Seinen · série</div>
+                <div class="detail__title">Frieren</div>
+                <div class="muted" style="font-size:14px">Kanehito Yamada, Tsukasa Abe</div>
+                <div class="muted small">Ki-oon</div>
+                <div class="src"><svg class="i i--sm"><use href="#i-link"/></svg>Infos AniList</div>
+              </div>
+            </div>
+            <div class="complete">
+              <div class="complete__head"><span class="complete__title">À compléter</span><span class="small muted">11 / 13 parus</span></div>
+              <div class="vols">
+                <div class="vol">1</div><div class="vol">2</div><div class="vol">3</div><div class="vol vol--miss">4</div><div class="vol">5</div><div class="vol">6</div><div class="vol vol--miss">7</div>
+                <div class="vol">8</div><div class="vol">9</div><div class="vol">10</div><div class="vol">11</div><div class="vol">12</div><div class="vol">13</div><div class="vol vol--soon">14</div>
+              </div>
+              <div style="font-size:13px;margin-top:12px">Il te manque les tomes <b>4</b> et <b>7</b>. Le tome 14 n'est pas encore sorti.</div>
+              <div class="btn btn--ink btn--sm" style="margin-top:12px">Ajouter les tomes 4 et 7 à mes envies</div>
+            </div>
+            <div class="sectionlabel"><span>Mes tomes</span><span class="small muted">Ajouter un tome</span></div>
+            <div class="field"><dt>Rangé</dt><dd>Étagère bureau, rang 3</dd></div>
+            <div class="field"><dt>Note</dt><dd><span class="stars" style="display:inline-flex"><svg style="width:16px;height:16px"><use href="#i-star"/></svg><svg style="width:16px;height:16px"><use href="#i-star"/></svg><svg style="width:16px;height:16px"><use href="#i-star"/></svg><svg style="width:16px;height:16px"><use href="#i-star"/></svg><svg style="width:16px;height:16px" class="off"><use href="#i-star"/></svg></span></dd></div>
+          </div>
+          <template data-nav="collection"></template>
+        </div></div>
+        <figcaption class="shot__caption">
+          <strong>Une série de mangas</strong>
+          La recommandation « à compléter » n'est pas mélangée aux découvertes : elle vit sur la fiche de la série, les trous en pointillés. Un geste pour mettre tous les tomes manquants dans tes envies.
+          <span class="ask">Pour une série, tu notes l'état et le prix tome par tome, ou une fois pour toute la série ?</span>
+        </figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <section class="journey">
+    <div class="journey__head">
+      <h2 class="journey__title">Ajouter</h2>
+      <p class="journey__why">Taper trois lettres doit suffire : l'appli complète depuis la bonne source et propose les images trouvées sur internet.</p>
+    </div>
+    <div class="journey__row">
+
+      <figure class="shot">
+        <div class="phone"><div class="screen">
+          <div class="status"><span>18:02</span><span class="status__icons"><span></span><span></span></span></div>
+          <div class="appbar"><div class="iconbtn"><svg class="i"><use href="#i-close"/></svg></div><div class="appbar__title">Ajouter à Vinyles › Électro</div></div>
+          <div class="content" style="padding-top:0">
+            <div class="searchfield searchfield--typed"><svg class="i"><use href="#i-search"/></svg>daft punk random<span class="caret"></span><span style="margin-left:auto"><svg class="i"><use href="#i-barcode"/></svg></span></div>
+            <div class="small faint" style="margin:8px 4px 4px">Résultats MusicBrainz</div>
+            <div class="result result--on"><div class="cover c-ram"></div><div style="flex:1"><div class="result__t">Random Access Memories</div><div class="result__m">Daft Punk · 2013 · 2×LP · Columbia</div></div><svg class="i" style="color:var(--owned)"><use href="#i-check"/></svg></div>
+            <div class="result"><div class="cover c-ram" style="filter:invert(1)"></div><div style="flex:1"><div class="result__t">Random Access Memories (10th Anniv.)</div><div class="result__m">Daft Punk · 2023 · 3×LP</div></div></div>
+            <div class="result"><div class="cover c-lmd"></div><div style="flex:1"><div class="result__t">Random Album Title</div><div class="result__m">deadmau5 · 2008</div></div></div>
+            <div class="sectionlabel"><span>Choisis l'image</span><span class="small muted">Chercher sur le web</span></div>
+            <div class="imgpick">
+              <div class="cover c-ram sel"></div><div class="cover c-ram" style="filter:contrast(1.4) brightness(.8)"></div><div class="cover c-ram" style="filter:sepia(.6)"></div><div class="cover" style="background:var(--surface-2);color:var(--ink-soft);display:grid;place-items:center;padding:0"><svg class="i"><use href="#i-phone"/></svg></div>
+            </div>
+            <div class="sectionlabel"><span>Mes infos</span><span class="small muted">toutes facultatives</span></div>
+            <div class="chips" style="margin-top:8px;flex-wrap:wrap;gap:6px"><span class="chip">+ Note</span><span class="chip">+ Édition</span><span class="chip">+ Prix</span><span class="chip">+ Rangement</span><span class="chip">+ État</span></div>
+          </div>
+          <div style="padding:10px 14px 18px"><div class="btn btn--ink">Ajouter à ma collection</div></div>
+        </div></div>
+        <figcaption class="shot__caption">
+          <strong>Ajouter un objet</strong>
+          Recherche dans la source de la sous-catégorie (MusicBrainz pour les vinyles), ou scan du code-barres depuis le même champ. Images : celles trouvées sur internet, ou le dernier carré pour une photo de ton téléphone (écran suivant). Tes infos s'ajoutent d'un tap, rien n'est obligatoire.
+          <span class="ask">Pour chercher des images sur le web en général, il faut une clé d'API (Google ou Bing, gratuite jusqu'à un certain volume). Les pochettes officielles, elles, sont gratuites sans limite.</span>
+        </figcaption>
+      </figure>
+
+
+      <figure class="shot">
+        <div class="phone"><div class="screen">
+          <div class="status"><span>18:04</span><span class="status__icons"><span></span><span></span></span></div>
+          <div class="appbar"><div class="iconbtn"><svg class="i"><use href="#i-close"/></svg></div><div class="appbar__title">Image de l'objet</div></div>
+          <div class="content" style="padding-top:0">
+            <div style="display:flex;gap:14px;align-items:center">
+              <div class="cover c-ram" style="width:84px;flex:none"></div>
+              <div><div class="detail__title">Random Access Memories</div><div class="muted small" style="margin-top:4px">Image actuelle : pochette officielle</div></div>
+            </div>
+            <div class="sources2">
+              <div class="source2 source2--on"><svg class="i"><use href="#i-globe"/></svg><span class="source2__t">Sur internet</span><span class="source2__d">Pochette officielle et recherche d'images</span></div>
+              <div class="source2"><svg class="i"><use href="#i-phone"/></svg><span class="source2__t">Depuis mon téléphone</span><span class="source2__d">Appareil photo ou galerie</span></div>
+            </div>
+            <div class="sectionlabel"><span>Résultats internet</span><span class="small muted">Cover Art Archive, web</span></div>
+            <div class="webgrid">
+              <div class="c-ram sel" style="position:relative;overflow:hidden"></div><div class="c-ram" style="position:relative;overflow:hidden;filter:contrast(1.4) brightness(.8)"></div><div class="c-ram" style="position:relative;overflow:hidden;filter:invert(1)"></div><div class="c-ram" style="position:relative;overflow:hidden;filter:sepia(.6)"></div>
+            </div>
+            <div class="sectionlabel"><span>Depuis mon téléphone</span></div>
+            <div class="phoneopt"><svg class="i"><use href="#i-camera"/></svg>Prendre une photo</div>
+            <div class="phoneopt"><svg class="i"><use href="#i-gallery"/></svg>Choisir dans la galerie</div>
+          </div>
+          <div style="padding:10px 14px 18px"><div class="btn btn--ink">Utiliser cette image</div></div>
+        </div></div>
+        <figcaption class="shot__caption">
+          <strong>L'image d'un objet</strong>
+          Toujours deux chemins, à l'ajout comme plus tard depuis la fiche : internet (pochette officielle ou recherche d'images), ou une photo de ton téléphone, prise sur le moment ou choisie dans ta galerie.
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="phone"><div class="screen">
+          <div class="status"><span>18:20</span><span class="status__icons"><span></span><span></span></span></div>
+          <div class="appbar"><div class="iconbtn"><svg class="i"><use href="#i-close"/></svg></div><div class="appbar__title">Nouvelle catégorie</div></div>
+          <div class="content" style="padding-top:0">
+            <div class="formrow" style="margin-top:0"><div class="formrow__label">Nom</div><div class="input" style="gap:10px"><span class="spine" style="background:var(--cat-tcg)"></span>TCG</div></div>
+            <div class="formrow"><div class="formrow__label">Remplir les infos depuis</div>
+              <div class="srcopts">
+                <div class="srcopt">Musique</div><div class="srcopt">Livres</div><div class="srcopt">Mangas</div><div class="srcopt">Films</div>
+                <div class="srcopt">Jeux vidéo</div><div class="srcopt">BD</div><div class="srcopt srcopt--on">Cartes</div><div class="srcopt">Libre</div>
+              </div>
+            </div>
+            <div class="formrow"><div class="formrow__label">Sous-catégories</div>
+              <div class="subrow"><svg class="i i--sm faint"><use href="#i-grip"/></svg><span class="subrow__name">Pokémon</span><span class="subrow__src">Pokémon TCG API</span></div>
+              <div class="subrow"><svg class="i i--sm faint"><use href="#i-grip"/></svg><span class="subrow__name">Magic</span><span class="subrow__src">Scryfall</span></div>
+              <div class="subrow"><svg class="i i--sm faint"><use href="#i-grip"/></svg><span class="subrow__name">One Piece</span><span class="subrow__src">Libre, pas de source</span></div>
+              <div class="addcat" style="padding:10px 4px"><svg class="i i--sm"><use href="#i-plus"/></svg>Ajouter une sous-catégorie</div>
+            </div>
+            <div class="formrow"><div class="formrow__label">État noté sur</div>
+              <div class="parts"><span class="chip chip--on">Carte</span><span class="chip">+ partie</span></div>
+              <div class="small muted" style="margin-top:6px">Ex. vinyles : disque, pochette · jeux : jeu, boîte, notice</div>
+            </div>
+          </div>
+          <div style="padding:10px 14px 18px"><div class="btn btn--ink">Créer la catégorie</div></div>
+        </div></div>
+        <figcaption class="shot__caption">
+          <strong>Créer une catégorie</strong>
+          Le type choisi branche la source. Chaque sous-catégorie peut avoir la sienne (Scryfall pour Magic), sinon elle reprend celle du parent. Les parties à évaluer sont pré-remplies selon le type et modifiables.
+        </figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <section class="journey">
+    <div class="journey__head">
+      <h2 class="journey__title">Envies et découvertes</h2>
+      <p class="journey__why">Deux onglets séparés : ce que tu veux déjà, et ce que tu pourrais aimer.</p>
+    </div>
+    <div class="journey__row">
+
+      <figure class="shot">
+        <div class="phone"><div class="screen">
+          <div class="status"><span>21:40</span><span class="status__icons"><span></span><span></span></span></div>
+          <div class="content" style="padding-top:14px">
+            <div class="h1">Envies</div>
+            <div class="chips" style="margin-top:14px"><span class="chip chip--on">Tout <b>23</b></span><span class="chip">Vinyles <b>9</b></span><span class="chip">Mangas <b>8</b></span><span class="chip">TCG <b>4</b></span></div>
+            <div style="margin-top:6px">
+              <div class="wish"><div class="cover c-blue"></div><div class="wish__main"><div class="wish__t">Blue Train</div><div class="wish__m">John Coltrane · Vinyles › Jazz</div><div class="wish__from">Ajouté depuis Découvertes</div></div><svg class="i faint"><use href="#i-more"/></svg></div>
+              <div class="wish"><div class="cover cover--book c-fri" style="width:36px;margin:0 8px"></div><div class="wish__main"><div class="wish__t">Frieren, tomes 4 et 7</div><div class="wish__m">Mangas › Seinen</div><div class="wish__from">Pour compléter la série</div></div><svg class="i faint"><use href="#i-more"/></svg></div>
+              <div class="wish"><div class="cover c-hon" style="filter:hue-rotate(200deg)"></div><div class="wish__main"><div class="wish__t">Sunday at the Village Vanguard</div><div class="wish__m">Bill Evans Trio · Vinyles › Jazz</div><div class="wish__from">Ajouté depuis une recherche</div></div><svg class="i faint"><use href="#i-more"/></svg></div>
+              <div class="wish"><div class="cover" style="background:linear-gradient(135deg,#f6d365,#e8743b);padding:0"></div><div class="wish__main"><div class="wish__t">Display 151 — Écarlate et Violet</div><div class="wish__m">TCG › Pokémon</div><div class="wish__from">Ajouté à la main</div></div><svg class="i faint"><use href="#i-more"/></svg></div>
+            </div>
+          </div>
+          <div class="toast"><svg class="i" style="color:var(--mustard)"><use href="#i-check"/></svg><span><b>Random Access Memories</b> est dans ta collection, retiré de tes envies.</span></div>
+          <template data-nav="wish"></template>
+        </div></div>
+        <figcaption class="shot__caption">
+          <strong>La liste d'envies</strong>
+          On y entre depuis une découverte, une recherche ou un tome manquant. On en sort à la main (glisser ou menu), ou tout seul quand l'objet arrive dans ta collection, avec un message pour le signaler.
+        </figcaption>
+      </figure>
+
+      <figure class="shot">
+        <div class="phone"><div class="screen">
+          <div class="status"><span>21:44</span><span class="status__icons"><span></span><span></span></span></div>
+          <div class="content" style="padding-top:14px">
+            <div class="h1">Découvertes</div>
+            <div class="tabs2" style="margin-top:12px"><span class="on">Pour toi</span><span>Vinyles</span><span>Mangas</span><span>Livres</span></div>
+            <div class="because">
+              <div class="because__head">Parce que tu as<b>Kind of Blue</b></div>
+              <div class="carousel">
+                <div class="reco"><div class="cover c-hon" style="filter:hue-rotate(200deg)"></div><div class="tile__t">Sunday at the Village…</div><div class="tile__a">Bill Evans Trio</div><div class="reco__add reco__add--done"><svg class="i i--sm"><use href="#i-check"/></svg>En envie</div></div>
+                <div class="reco"><div class="cover c-moa" style="filter:hue-rotate(60deg)"></div><div class="tile__t">Somethin' Else</div><div class="tile__a">Cannonball Adderley</div><div class="reco__add"><svg class="i i--sm"><use href="#i-plus"/></svg>Envie</div></div>
+                <div class="reco"><div class="cover c-sun" style="filter:hue-rotate(90deg)"></div><div class="tile__t">Mingus Ah Um</div><div class="tile__a">Charles Mingus</div><div class="reco__add"><svg class="i i--sm"><use href="#i-plus"/></svg>Envie</div></div>
+              </div>
+            </div>
+            <div class="because">
+              <div class="because__head">Parce que tu lis<b>Frieren</b></div>
+              <div class="carousel">
+                <div class="reco reco--book"><div class="cover cover--book" style="background:linear-gradient(170deg,#3d5a40,#16261a);padding:0"></div><div class="tile__t">L'Atelier des sorciers</div><div class="tile__a">Kamome Shirahama</div><div class="reco__add"><svg class="i i--sm"><use href="#i-plus"/></svg>Envie</div></div>
+                <div class="reco reco--book"><div class="cover cover--book" style="background:linear-gradient(170deg,#e8c9a0,#9c5b34);padding:0"></div><div class="tile__t">Dungeon Food</div><div class="tile__a">Ryōko Kui</div><div class="reco__add"><svg class="i i--sm"><use href="#i-plus"/></svg>Envie</div></div>
+                <div class="reco reco--book"><div class="cover cover--book" style="background:linear-gradient(170deg,#c3d8e0,#4a6f8a);padding:0"></div><div class="tile__t">Mushishi</div><div class="tile__a">Yuki Urushibara</div><div class="reco__add"><svg class="i i--sm"><use href="#i-plus"/></svg>Envie</div></div>
+              </div>
+            </div>
+            <div class="small faint" style="margin-top:12px">Suggestions Last.fm et AniList · balaie vers la gauche pour en voir plus</div>
+          </div>
+          <template data-nav="spark"></template>
+        </div></div>
+        <figcaption class="shot__caption">
+          <strong>Les découvertes</strong>
+          Rangées par « parce que tu as… », comme Spotify, pour que tu saches toujours d'où vient une suggestion. Ce que tu possèdes déjà n'y apparaît jamais. Un tap met la suggestion dans tes envies.
+          <span class="ask">Tu veux pouvoir écarter une suggestion (« pas pour moi ») pour qu'elle ne revienne plus ?</span>
+        </figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <section class="questions starfield">
+    <h2>Ce que j'ai besoin que tu me dises</h2>
+    <ol>
+      <li>La typo des titres : Cormorant Garamond (actuelle), Marcellus, Cinzel, Young Serif ou Syne ?</li>
+      <li>Ce qui te plaît, ce qui te gêne, écran par écran.</li>
+      <li>Les infos « En savoir plus » à voir en priorité, par catégorie.</li>
+      <li>La photo de pochette : lecture du texte imprimé (gratuit) suffit-elle ? <span>Sinon il faut un service payant de reconnaissance d'image.</span></li>
+      <li>Un autre exemplaire ou une autre édition du même album : lavande ou nuit au scan ?</li>
+      <li>Séries : état, prix et emplacement par tome, ou pour toute la série ?</li>
+      <li>Pouvoir écarter une découverte pour qu'elle ne revienne plus ?</li>
+    </ol>
+  </section>
+</main>
+
+<script>
+(function () {
+  var navs = {
+    collection: 0, check: 1, wish: 2, spark: 3
+  };
+  var base = document.getElementById('nav-collection');
+  document.querySelectorAll('template[data-nav]').forEach(function (slot) {
+    var nav = base.content.firstElementChild.cloneNode(true);
+    var target = navs[slot.dataset.nav];
+    var items = nav.children;
+    for (var index = 0; index < items.length; index++) {
+      items[index].classList.remove('nav__item--on');
+    }
+    if (target !== 1) items[target].classList.add('nav__item--on');
+    slot.replaceWith(nav);
+  });
+})();
+function toggleSeries(clickedElement) {
+  clickedElement.closest('.series').classList.toggle('is-collapsed');
+}
+function foldAll(foldButton) {
+  var screen = foldButton.closest('.screen');
+  var everySeries = screen.querySelectorAll('.series');
+  var shouldCollapse = foldButton.textContent === 'Tout replier';
+  everySeries.forEach(function (oneSeries) { oneSeries.classList.toggle('is-collapsed', shouldCollapse); });
+  foldButton.textContent = shouldCollapse ? 'Tout déplier' : 'Tout replier';
+}
+</script>
+</body>
+</html>

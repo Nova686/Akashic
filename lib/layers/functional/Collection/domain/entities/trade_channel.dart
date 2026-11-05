@@ -1,0 +1,1 @@
+enum TradeChannel { store, online }

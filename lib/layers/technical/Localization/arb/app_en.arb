@@ -1,0 +1,2929 @@
+{
+  "@@locale": "en",
+  "navCollection": "Collection",
+  "navCheck": "Got it?",
+  "navWishes": "Wishes",
+  "navDiscoveries": "Discoveries",
+  "untitled": "Untitled",
+  "conditionMint": "Mint",
+  "conditionVeryGood": "Very good",
+  "conditionGood": "Good",
+  "conditionFair": "Fair",
+  "conditionDamaged": "Damaged",
+  "conditionMissing": "Missing",
+  "partDisc": "Disc",
+  "partSleeve": "Sleeve",
+  "partGame": "Game",
+  "partBox": "Box",
+  "partManual": "Manual",
+  "partItem": "Item",
+  "myCollection": "My collection",
+  "objectsInCategories": "{objects, plural, =1{1 item} other{{objects} items}} in {categories, plural, =1{1 category} other{{categories} categories}}",
+  "@objectsInCategories": {
+    "placeholders": {
+      "objects": {
+        "type": "int",
+        "format": "decimalPattern"
+      },
+      "categories": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
+  },
+  "newCategory": "New category",
+  "categoryName": "Name",
+  "fillInfoFrom": "Fill in info from",
+  "categoryTypeMusic": "Music",
+  "categoryTypeBooks": "Books",
+  "categoryTypeManga": "Manga",
+  "categoryTypeComics": "Comics",
+  "categoryTypeFilms": "Films",
+  "categoryTypeVideoGames": "Video games",
+  "categoryTypeCards": "Cards",
+  "categoryTypeFree": "Custom",
+  "subcategories": "Subcategories",
+  "addSubcategory": "Add a subcategory",
+  "subcategoryName": "Subcategory name",
+  "conditionRatedOn": "Condition rated on",
+  "addPart": "Add a part",
+  "partName": "Part name",
+  "createCategory": "Create category",
+  "categoryNameRequired": "Give the category a name.",
+  "close": "Close",
+  "settings": "Settings",
+  "appLanguage": "App language",
+  "followDevice": "Same as the phone",
+  "preferredTitleLanguages": "Preferred title languages",
+  "preferredTitleLanguagesHint": "Titles are shown in the first available language of this list.",
+  "addLanguage": "Add a language",
+  "lastLanguageRefused": "Keep at least one language.",
+  "languageFr": "French",
+  "languageEn": "English",
+  "languageJa": "Japanese",
+  "languageEs": "Spanish",
+  "languageDe": "German",
+  "languageIt": "Italian",
+  "languageKo": "Korean",
+  "languageZh": "Chinese",
+  "languagePt": "Portuguese",
+  "addItem": "Add an item",
+  "titles": "Titles",
+  "originalLanguage": "Original",
+  "creator": "Artist or author",
+  "year": "Year",
+  "publisher": "Publisher or label",
+  "image": "Image",
+  "imageFromInternet": "On the internet",
+  "comingSoon": "Coming soon",
+  "imageFromPhone": "From my phone",
+  "takePhoto": "Take a photo",
+  "chooseFromGallery": "Choose from the gallery",
+  "spineColor": "Spine color",
+  "partOfSeries": "Part of a series",
+  "newSeries": "New series",
+  "volumeFrom": "From volume",
+  "volumeTo": "To volume",
+  "volumeRangeInvalid": "Check the volume numbers.",
+  "titleRequired": "Give at least one title.",
+  "myRating": "My rating",
+  "addToCollection": "Add to my collection",
+  "edition": "Edition",
+  "pricePaid": "Price paid",
+  "storedAt": "Stored at",
+  "condition": "Condition",
+  "priceInvalid": "Enter a price like 28.50.",
+  "save": "Save",
+  "editCopy": "Edit the details",
+  "searchCollection": "Search my collection",
+  "allSubcategories": "All",
+  "foldAll": "Fold all",
+  "unfoldAll": "Unfold all",
+  "addFirstItem": "Add your first item",
+  "emptyShelf": "Nothing on this shelf yet.",
+  "noSearchResults": "Nothing found in your collection.",
+  "emptyCollection": "Create your first category to start your shelves.",
+  "seriesToComplete": "{count, plural, =1{1 series to complete} other{{count} series to complete}}",
+  "@seriesToComplete": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "myInfo": "My info",
+  "learnMore": "Learn more",
+  "titleVariants": "Title variants",
+  "myCopies": "Purchase, condition and storage",
+  "copyWithoutDetails": "No details yet",
+  "partCondition": "{part}: {condition}",
+  "@partCondition": {
+    "placeholders": {
+      "part": {
+        "type": "String"
+      },
+      "condition": {
+        "type": "String"
+      }
+    }
+  },
+  "saveFailed": "Saving failed. Check the category and try again.",
+  "photographCover": "Photograph the cover",
+  "seeItem": "See the item",
+  "checking": "Checking…",
+  "searchOnline": "Search online",
+  "webImages": "Images found online",
+  "creatorArtist": "Artist",
+  "creatorAuthor": "Author",
+  "creatorDirector": "Director",
+  "creatorStudio": "Studio",
+  "publisherLabel": "Label",
+  "publisherName": "Publisher",
+  "platformConsole": "Platform (console)",
+  "editItem": "Edit item",
+  "editAction": "Edit",
+  "chainResolving": "Searching…",
+  "chainFound": "Not yours yet",
+  "chainAlreadyOwned": "Already yours",
+  "chainNotFound": "Not found",
+  "addScannedItems": "{count, plural, =0{Nothing to add} =1{Add 1 item} other{Add {count} items}}",
+  "@addScannedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "scannedItemsAdded": "{count, plural, =1{1 item added} other{{count} items added}}",
+  "@scannedItemsAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "scanBarcode": "Scan a barcode",
+  "barcodeValue": "Barcode: {code}",
+  "@barcodeValue": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "toComplete": "To complete",
+  "publishedVolumes": "Published volumes",
+  "updateFromAniList": "Update from AniList",
+  "updateFailed": "The update failed. Check the network and try again.",
+  "ownedVolumes": "My volumes",
+  "seeSeries": "See the series",
+  "missingVolumesList": "Missing: {volumes}",
+  "nextNotReleased": "Volume {number} is not out yet.",
+  "ownedOfPublished": "{owned} / {published} published",
+  "@missingVolumesList": {
+    "placeholders": {
+      "volumes": {
+        "type": "String"
+      }
+    }
+  },
+  "@nextNotReleased": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "@ownedOfPublished": {
+    "placeholders": {
+      "owned": {
+        "type": "int"
+      },
+      "published": {
+        "type": "int"
+      }
+    }
+  },
+  "cardKindExtension": "Extension",
+  "cardKindDeck": "Deck",
+  "editDeck": "Edit the deck",
+  "searchCard": "Search a card",
+  "deckCardsCount": "{count, plural, =1{1 card in the deck} other{{count} cards in the deck}}",
+  "@deckCardsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fetchDetails": "Get the details",
+  "updateDetails": "Update",
+  "fetchedOn": "Fetched on {date}",
+  "detailsUnavailable": "Couldn’t fetch the details. Check the network and try again.",
+  "noDetailsYet": "Nothing fetched yet.",
+  "sectionSummary": "Summary",
+  "sectionTracks": "Tracks",
+  "sectionGenres": "Genres",
+  "sectionLinks": "Links",
+  "factLabel": "Label",
+  "factStatus": "Status",
+  "factVolumes": "Volumes",
+  "factChapters": "Chapters",
+  "factRuntime": "Runtime",
+  "factDirector": "Director",
+  "factStudio": "Studio",
+  "factPlatforms": "Platforms",
+  "@fetchedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sectionFacts": "Facts",
+  "factLine": "{label}: {value}",
+  "publicationStatusFinished": "Finished",
+  "publicationStatusReleasing": "Ongoing",
+  "publicationStatusNotYetReleased": "Not yet released",
+  "publicationStatusCancelled": "Cancelled",
+  "publicationStatusHiatus": "On hiatus",
+  "@factLine": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "wishesEmpty": "No wishes yet. Add some from a check, a search, a discovery or a series.",
+  "wishOriginDiscovery": "From a discovery",
+  "wishOriginSearch": "From a search",
+  "wishOriginMissingVolume": "Missing volume",
+  "wishOriginManual": "Added by hand",
+  "wishFulfilled": "{title} is in your collection, removed from your wishes.",
+  "@wishFulfilled": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "addToWishes": "Add to my wishes",
+  "addedToWishes": "Added to your wishes.",
+  "wishRemoved": "Wish removed.",
+  "removeWish": "Remove from my wishes",
+  "wishVolumeTitle": "{title}, vol. {number}",
+  "@wishVolumeTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "addMissingToWishes": "Add the missing volumes to my wishes",
+  "missingAddedToWishes": "{count, plural, =0{These volumes were already in your wishes} =1{1 volume added to your wishes} other{{count} volumes added to your wishes}}",
+  "@missingAddedToWishes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "wished": "Wished",
+  "allTypes": "All",
+  "becauseYouHave": "Because you have {title}",
+  "@becauseYouHave": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "discoveriesComputedOn": "Computed on {date}",
+  "@discoveriesComputedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "discoveriesOffline": "No network: here are the last discoveries kept.",
+  "discoveriesOfflineEmpty": "No network. Discoveries will come back with the connection.",
+  "discoveriesNeedSeeds": "Add items found online (with their source) to get discoveries.",
+  "discoveriesNothingNew": "Nothing new for now.",
+  "notForMe": "Not for me",
+  "addWishShort": "+ Wish",
+  "refreshDiscoveries": "Refresh the discoveries",
+  "suggestionDismissed": "It won’t be suggested again.",
+  "wishesFulfilled": "{count, plural, =1{1 wish is in your collection, removed from your wishes.} other{{count} wishes are in your collection, removed from your wishes.}}",
+  "@wishesFulfilled": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "wishOriginOn": "{origin} · {date}",
+  "@wishOriginOn": {
+    "placeholders": {
+      "origin": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "newChapterNotificationTitle": "{title}: new chapter",
+  "@newChapterNotificationTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "newChaptersNotificationBody": "{count, plural, =1{Chapter {chapters} is out} other{Chapters {chapters} are out}}",
+  "@newChaptersNotificationBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "chapters": {
+        "type": "String"
+      }
+    }
+  },
+  "scanAlertsChannelName": "New chapters",
+  "scanAlertsChannelDescription": "Alerts when a followed series gets a new chapter.",
+  "physicalTab": "Physical",
+  "scansTab": "Scans",
+  "notFollowedInScans": "You don’t follow this series in scans yet.",
+  "followInScans": "Follow in scans",
+  "stopFollowingInScans": "Stop following in scans",
+  "lastChapterRead": "Last chapter read",
+  "newChaptersCount": "{count, plural, =0{Up to date} =1{1 new chapter} other{{count} new chapters}}",
+  "@newChaptersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "readUpToChapter": "Read up to chapter…",
+  "markRead": "Mark",
+  "chaptersRead": "Chapters",
+  "showAllChapters": "Show all chapters",
+  "readingSite": "Reading site (link)",
+  "openReadingSite": "Open the reading site",
+  "translationTeam": "Translation team",
+  "linkedToMangaUpdates": "Linked to MangaUpdates",
+  "unlinkMangaUpdates": "Unlink",
+  "searchMangaUpdates": "Find this series on MangaUpdates",
+  "manualTrackingHint": "Without MangaUpdates, tracking stays manual and there are no alerts.",
+  "checkReleases": "Check new chapters",
+  "chapterAlerts": "Alert me when a chapter comes out",
+  "onlyMyTeam": "Only my team’s releases",
+  "releasesCheckFailed": "MangaUpdates can’t be reached. Try again later.",
+  "notificationsRefused": "Notifications are turned off for Akashic in the phone settings.",
+  "noReleaseSeriesFound": "No series found.",
+  "noScanFollows": "No series followed in scans yet.",
+  "followSeriesInScans": "Follow a series in scans",
+  "newSeriesTitle": "New series title",
+  "createAndFollow": "Create and follow",
+  "lastReadChapterShort": "Last read: chapter {chapter}",
+  "@lastReadChapterShort": {
+    "placeholders": {
+      "chapter": {
+        "type": "String"
+      }
+    }
+  },
+  "nothingReadYet": "Nothing read yet",
+  "stopFollowingQuestion": "Stop following this series in scans? Your read chapters are kept.",
+  "cancel": "Cancel",
+  "loans": "Current loans",
+  "noLoans": "Nothing is lent at the moment.",
+  "lendCopy": "Lend",
+  "returnCopy": "Returned",
+  "borrowerName": "Lent to",
+  "lentToSince": "Lent to {borrower} since {date}",
+  "@lentToSince": {
+    "placeholders": {
+      "borrower": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "statistics": "Statistics",
+  "totalPaid": "Total paid",
+  "byCategory": "By category",
+  "purchasesByMonth": "Purchases by month",
+  "noStatsYet": "Add items to see your statistics.",
+  "monthSummary": "{month}: {count, plural, =0{no purchase} =1{1 item} other{{count} items}}, {amount}",
+  "@monthSummary": {
+    "placeholders": {
+      "month": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "importCollection": "Import a spreadsheet",
+  "importDestination": "Destination category",
+  "chooseSpreadsheet": "Choose a file (.xlsx, .csv)",
+  "downloadTemplate": "Download the template",
+  "templateSaved": "Template saved.",
+  "unreadableSpreadsheet": "This file can’t be read. Use a .xlsx or .csv file.",
+  "matchColumns": "Match the columns",
+  "continueWithRows": "{count, plural, =0{No row to import} =1{Continue with 1 row} other{Continue with {count} rows}}",
+  "@continueWithRows": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importFieldIgnored": "Ignore",
+  "importFieldTitle": "Title",
+  "importFieldCreator": "Artist or author",
+  "importFieldBarcode": "Barcode",
+  "importFieldEdition": "Edition",
+  "importFieldPrice": "Price paid",
+  "importFieldLocation": "Location",
+  "importFieldCondition": "Condition",
+  "importFieldYear": "Year",
+  "importFieldSeries": "Series",
+  "importFieldVolume": "Volume",
+  "resolvingRows": "Looking up {done} of {total}…",
+  "@resolvingRows": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "importFound": "Found",
+  "importNotFound": "Not found: added as is if ticked",
+  "importAlreadyOwned": "Already in your collection",
+  "addImportedRows": "{count, plural, =0{Nothing to add} =1{Add 1 item} other{Add {count} items}}",
+  "@addImportedRows": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importedCount": "{count, plural, =0{Nothing was added} =1{1 item added} other{{count} items added}}",
+  "@importedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importRowStatus": "Row {number} · {status}",
+  "@importRowStatus": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "collectionData": "Collection data",
+  "backup": "Google Drive backup",
+  "lastBackupOn": "Last backup: {date}",
+  "@lastBackupOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "noBackupYet": "No backup yet.",
+  "backupExplanation": "Your collection and its images are saved in a private Akashic folder of your Google Drive. A backup also runs on its own once a week while the Google connection is valid.",
+  "backupReconnectReminder": "The Google connection has expired: reconnect to resume the weekly backups.",
+  "backUpNow": "Back up now",
+  "restoreBackup": "Restore a backup",
+  "reconnectGoogle": "Reconnect to Google",
+  "backupDone": "Backup saved to Google Drive.",
+  "backupUnavailable": "Google Drive can’t be reached. Try again later.",
+  "backupAuthorizationRefused": "Google didn’t give access to Drive.",
+  "backupCorrupt": "This backup is damaged and can’t be restored.",
+  "noRemoteBackup": "No backup found on Google Drive.",
+  "restoreQuestion": "Replace your current collection with the backup of {date}?",
+  "@restoreQuestion": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "restoreConfirm": "Replace",
+  "restoreReady": "The backup is ready. Akashic closes now; open it again to finish the restore.",
+  "closeAkashic": "Close Akashic",
+  "restoreFailed": "The last restore couldn’t be finished. Your collection was kept as it was.",
+  "importDuplicateInFile": "Already earlier in this file",
+  "importAdded": "Added",
+  "importFailed": "Couldn’t be added",
+  "factPages": "Pages",
+  "factPublisher": "Publisher",
+  "factFormat": "Format",
+  "dataSources": "Data sources",
+  "dataSourcesList": "Music: Discogs and MusicBrainz (Cover Art Archive covers) · Books and comics: Google Books and Open Library, US comics: Comic Vine · Manga: AniList and Jikan (MyAnimeList), with Google Books for ISBN scans · ISBN backup: BnF catalogue (Licence Ouverte) · Films: TMDB · TV series: TVmaze (CC BY-SA) · Video games and consoles: IGDB · LEGO: Rebrickable · amiibo: AmiiboAPI · Product barcodes: UPCitemdb · Board games: BoardGameGeek · Pokémon: TCGdex · Magic: Scryfall, MTGJSON · Yu-Gi-Oh!: YGOPRODeck · Lorcana: Lorcast · Riftbound: Riftcodex · One Piece: OPTCG API · Scans: MangaUpdates · Backups when a quota is reached: Deezer (music), MangaDex (manga), Wikidata (films, video games, board games)",
+  "tmdbNotice": "This product uses the TMDB API but is not endorsed or certified by TMDB.",
+  "apiLimits": "API limits",
+  "noApiPaused": "No API is paused.",
+  "apiPausedCountdown": "{source}: available again in {remaining}",
+  "@apiPausedCountdown": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      },
+      "remaining": {
+        "type": "String"
+      }
+    }
+  },
+  "apiPausedSeveral": "{count, plural, =1{1 API paused} other{{count} APIs paused}} · next one back in {remaining}",
+  "@apiPausedSeveral": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "remaining": {
+        "type": "String"
+      }
+    }
+  },
+  "apiBlockedAtRetryAt": "Limit reached at {blockedAt} · next connection at {retryAt}",
+  "@apiBlockedAtRetryAt": {
+    "placeholders": {
+      "blockedAt": {
+        "type": "String"
+      },
+      "retryAt": {
+        "type": "String"
+      }
+    }
+  },
+  "apiLimitsExplanation": "When a source refuses requests because its free limit is reached, Akashic waits until it accepts them again.",
+  "searchingImages": "Looking for images…",
+  "tapToSearchImages": "Tap to search",
+  "groupItemCount": "{count, plural, =1{1 item} other{{count} items}}",
+  "@groupItemCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "missingVolumeShort": "Vol. {number}",
+  "@missingVolumeShort": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "missingVolumesMore": "{count} missing",
+  "@missingVolumesMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "otherItems": "Others",
+  "cameraUnavailable": "The camera cannot be opened. Check the camera permission in the phone settings.",
+  "removeLanguage": "Remove this language",
+  "typeCardName": "Card name",
+  "noApiForThisGame": "No online catalogue for this game: cards are entered by hand.",
+  "addCardAsTyped": "Add “{name}” as typed",
+  "@addCardAsTyped": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "noApiForThisCategory": "No online catalogue for this category: fill in the sheet by hand, the image search still works.",
+  "add": "Add",
+  "cardGamesWithCatalogue": "Games with an online catalogue",
+  "otherCardGamesByHand": "Any other game works too: its cards are entered by hand.",
+  "categoryTypeBoardGames": "Board games",
+  "partComponents": "Components",
+  "aimBarcodeOrShootCover": "Aim at a barcode, or shoot the cover",
+  "delete": "Delete",
+  "deleteCopy": "Remove from the collection",
+  "deleteLastCopyTitle": "Remove this item from the collection?",
+  "deleteLastCopyExplanation": "The item will be deleted, with its titles, cover, details and deck.",
+  "noOnlineDetailsForItem": "No online catalogue describes this item: it was entered by hand or comes from a source without details.",
+  "customCategoryExplanation": "A category you name, with no online catalogue: every item is entered by hand, with the image search for its cover. Add below the parts whose condition you want to rate.",
+  "chainScanHint": "Scan barcodes or shoot covers: you see straight away whether you own them, then add the ones you keep.",
+  "scannedCodes": "Scanned codes",
+  "chainRateLimited": "Quota exceeded",
+  "chainUnreachable": "Catalogue unreachable",
+  "chainUnreadable": "Unreadable cover",
+  "coverBeingRead": "Reading the cover…",
+  "coverEntryLabel": "Cover: {title}",
+  "@coverEntryLabel": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "chainFailureNotFound": "Nothing found for {label}.",
+  "@chainFailureNotFound": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "chainFailureUnreadable": "The cover couldn't be read: take the photo again, closer and without reflections.",
+  "chainFailureRateLimited": "Call quota exceeded: {label} couldn't be checked.",
+  "@chainFailureRateLimited": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "chainFailureUnreachable": "Catalogues unreachable: {label} couldn't be checked.",
+  "@chainFailureUnreachable": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "scannedItemsPartlyAdded": "{added} added, {failed} couldn't be added.",
+  "@scannedItemsPartlyAdded": {
+    "placeholders": {
+      "added": {
+        "type": "int"
+      },
+      "failed": {
+        "type": "int"
+      }
+    }
+  },
+  "unexpectedError": "Something went wrong. Try again.",
+  "unexpectedErrorWithDetail": "Something went wrong: {detail}",
+  "@unexpectedErrorWithDetail": {
+    "placeholders": {
+      "detail": {
+        "type": "String"
+      }
+    }
+  },
+  "sourceRateLimitedToast": "{source}: call quota exceeded, try again later.",
+  "@sourceRateLimitedToast": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "sourceUnreachableToast": "{source} can't be reached: check the network.",
+  "@sourceUnreachableToast": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "itemSaveFailedToast": "The item couldn't be saved.",
+  "discoveriesFailedToast": "Discoveries couldn't be refreshed: the catalogues can't be reached.",
+  "automaticBackupFailedToast": "The automatic backup failed.",
+  "importLineFailedToast": "Line {row} couldn't be checked.",
+  "@importLineFailedToast": {
+    "placeholders": {
+      "row": {
+        "type": "int"
+      }
+    }
+  },
+  "appVersionLabel": "Akashic {version}",
+  "@appVersionLabel": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "editCategory": "Edit the category",
+  "reorderCategories": "Change the order",
+  "deleteCategory": "Delete the category",
+  "categoryActions": "Category actions",
+  "deleteCategoryTitle": "Delete “{name}”?",
+  "@deleteCategoryTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteEmptyCategoryExplanation": "This category is empty.",
+  "deleteCategoryExplanation": "Everything it holds will be deleted too: {items, plural, =0{no item} =1{1 item} other{{items} items}}, {series, plural, =0{no series} =1{1 series} other{{series} series}} and {subcategories, plural, =0{no subcategory} =1{1 subcategory} other{{subcategories} subcategories}}, with their covers. This can't be undone.",
+  "@deleteCategoryExplanation": {
+    "placeholders": {
+      "items": {
+        "type": "int"
+      },
+      "series": {
+        "type": "int"
+      },
+      "subcategories": {
+        "type": "int"
+      }
+    }
+  },
+  "moveItem": "Move to another category",
+  "moveSeriesQuestion": "Move the whole series?",
+  "moveSeriesExplanation": "This item belongs to a series. Move the series with all its volumes, or only this one, which then leaves the series.",
+  "moveThisVolumeOnly": "This one only",
+  "moveWholeSeries": "The whole series",
+  "movedInto": "Moved into {category}.",
+  "@movedInto": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "backupFileSection": "Backup file",
+  "backupFileExplanation": "The same full archive as the Drive backup (collection and covers), saved where you choose: phone, SD card, another cloud app.",
+  "exportToFile": "Export to a file",
+  "restoreFromFile": "Restore from a file",
+  "exportDone": "Collection exported.",
+  "progressTitle": "Progress",
+  "progressNotStarted": "Not started",
+  "progressToRead": "To read",
+  "progressToPlay": "To play",
+  "progressToWatch": "To watch",
+  "progressToListen": "To listen",
+  "progressInProgress": "In progress",
+  "progressFinished": "Finished",
+  "progressRead": "Read",
+  "progressPlayed": "Completed",
+  "progressWatched": "Watched",
+  "progressListened": "Listened",
+  "progressAbandoned": "Dropped",
+  "progressChapter": "Chapter",
+  "progressPage": "Page",
+  "progressBookmark": "Chapter {chapter} · page {page}",
+  "@progressBookmark": {
+    "placeholders": {
+      "chapter": {
+        "type": "String"
+      },
+      "page": {
+        "type": "String"
+      }
+    }
+  },
+  "arrangeShelf": "Sort and filter",
+  "sortTitle": "Sort",
+  "sortBySeries": "By series",
+  "sortByTitle": "Title",
+  "sortByCreator": "Author or artist",
+  "sortNewest": "Most recent",
+  "sortOldest": "Oldest",
+  "sortBestRated": "Best rated",
+  "sortRecentlyAdded": "Recently added",
+  "filterAll": "All",
+  "filterMinimumRating": "Rating",
+  "filterAtLeastStars": "{stars}★ and more",
+  "@filterAtLeastStars": {
+    "placeholders": {
+      "stars": {
+        "type": "int"
+      }
+    }
+  },
+  "resetArrangement": "Reset",
+  "applyArrangement": "Apply",
+  "noItemMatchesArrangement": "No item matches these filters.",
+  "photosTitle": "Photos",
+  "addPhoto": "Add a photo",
+  "pickFromGallery": "Choose from the gallery",
+  "deletePhotoQuestion": "Delete this photo?",
+  "photosHint": "Tap to enlarge, long press to delete.",
+  "loanRemindersChannelName": "Loan reminders",
+  "loanRemindersChannelDescription": "Reminds you of items lent for a month.",
+  "loanReminderTitle": "{title} is still lent",
+  "@loanReminderTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "loanReminderBody": "{borrower} has had it for {days} days.",
+  "@loanReminderBody": {
+    "placeholders": {
+      "borrower": {
+        "type": "String"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "selectedItemsCount": "{count, plural, =1{1 selected} other{{count} selected}}",
+  "@selectedItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "clearSelection": "Cancel the selection",
+  "setStorageLocation": "Set the storage location",
+  "locationApplied": "Storage location updated.",
+  "deleteSelectedItemsTitle": "{count, plural, =1{Delete 1 item?} other{Delete {count} items?}}",
+  "@deleteSelectedItemsTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deleteSelectedItemsExplanation": "Their photos, covers, details and loans go with them. This can't be undone.",
+  "shareWishlist": "Share my wishes",
+  "wishlistShareHeading": "My wishes, from Akashic",
+  "wishlistShareSubject": "My wish list",
+  "discogsImportTitle": "Import my Discogs collection",
+  "discogsImportExplanation": "Every record of your Discogs collection is added with its cover. Records already in Akashic are skipped, so you can import again later to bring in the new ones.",
+  "discogsImportTarget": "Music category",
+  "discogsImportStart": "Import",
+  "discogsImportReading": "Reading your Discogs collection…",
+  "discogsImportProgress": "{done} of {total} records",
+  "@discogsImportProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "discogsImportOutcome": "{added} added, {owned} already there, {failed} failed.",
+  "@discogsImportOutcome": {
+    "placeholders": {
+      "added": {
+        "type": "int"
+      },
+      "owned": {
+        "type": "int"
+      },
+      "failed": {
+        "type": "int"
+      }
+    }
+  },
+  "discogsImportNeedsToken": "No Discogs token is configured.",
+  "discogsImportNeedsMusicCategory": "Create a music category first.",
+  "widgetItemCount": "{count, plural, =0{No item yet} =1{1 item} other{{count} items}}",
+  "@widgetItemCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "widgetLatestAdditions": "Latest: {titles}",
+  "@widgetLatestAdditions": {
+    "placeholders": {
+      "titles": {
+        "type": "String"
+      }
+    }
+  },
+  "widgetLoans": "{count, plural, =1{1 loan in progress} other{{count} loans in progress}}",
+  "@widgetLoans": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "widgetNoLoan": "No loan in progress",
+  "updateCardPrices": "Update prices",
+  "deckEstimatedValue": "Estimated value: {value}",
+  "@deckEstimatedValue": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "deckValueUnknown": "No price yet",
+  "categoryTypeLego": "LEGO",
+  "categoryTypeAmiibo": "amiibo",
+  "categoryTypeConsoles": "Consoles & hardware",
+  "creatorTheme": "Theme",
+  "creatorAmiiboSeries": "amiibo series",
+  "creatorManufacturer": "Manufacturer",
+  "upcomingReleases": "Upcoming releases",
+  "refreshReleases": "Refresh releases",
+  "releasesFailedToast": "Upcoming releases can’t be fetched right now.",
+  "releasesOfflineEmpty": "Upcoming releases couldn’t be loaded. Try again once you’re online.",
+  "releasesNeedInterests": "File numbered volumes in a series, create a card game category (Pokémon, Magic, Yu-Gi-Oh!, Lorcana, Riftbound) or add records with their artist to follow their releases.",
+  "releasesNothingAnnounced": "No release announced for what you collect.",
+  "releaseAlertsChannelName": "Upcoming releases",
+  "releaseAlertsChannelDescription": "Lets you know when an expansion, an album or the next volume of a series is announced.",
+  "releaseAlertTitle": "Release announced: {title}",
+  "@releaseAlertTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "releaseAlertBody": "{subject} · on {date}",
+  "@releaseAlertBody": {
+    "placeholders": {
+      "subject": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "releaseAlertSummaryTitle": "{count, plural, =1{1 new release announced} other{{count} new releases announced}}",
+  "@releaseAlertSummaryTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "chooseCategory": "Choose a category",
+  "navReleases": "Releases",
+  "seeAll": "See all",
+  "tutorialNext": "Next",
+  "replayTutorial": "Replay the tutorial",
+  "helpSection": "Help",
+  "addItemShort": "Add",
+  "tourPrevious": "Previous",
+  "tourDone": "Done",
+  "tourProgress": "{current} / {total}",
+  "@tourProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "tourWelcomeTitle": "Welcome to Akashic",
+  "tourWelcomeText": "Your physical collection laid out like your shelves: books, manga, music, films, games, cards, LEGO… A quick tour of the controls.",
+  "tourNewCategoryTitle": "Create your categories",
+  "tourNewCategoryText": "Pick a type (manga, records, card game…): it decides which catalogues are searched. Each category becomes a shelf; tap it to open it.",
+  "tourSearchTitle": "Find an item",
+  "tourSearchText": "Search your whole collection by title, author or barcode.",
+  "tourScanTitle": "Scan",
+  "tourScanText": "Aim at barcodes one after another or shoot a cover: you instantly see whether you own it, then add what you keep in one go.",
+  "tourMenuTitle": "Everything else is here",
+  "tourMenuText": "Loans, statistics and settings: Drive backup, import, languages… and “Replay the tutorial” to take this tour again.",
+  "tourWishesTitle": "Your wishes",
+  "tourWishesText": "What you are still looking for, shareable in one tap.",
+  "tourDiscoveriesTitle": "Discoveries",
+  "tourDiscoveriesText": "Suggestions drawn from your collection; tap a card to see its details.",
+  "tourReleasesTitle": "Releases",
+  "tourReleasesText": "The next volumes of your series, the expansions of your card games and the new albums of your artists.",
+  "releasesAlreadyOut": "Already out",
+  "addPreconDeck": "Add a preconstructed deck",
+  "searchPreconDeck": "Deck name, set or type",
+  "noPreconDeckFound": "No preconstructed deck matches.",
+  "preconDeckAdded": "{count, plural, =1{1 card added from {deck}} other{{count} cards added from {deck}}}",
+  "@preconDeckAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "deck": {
+        "type": "String"
+      }
+    }
+  },
+  "commanderDeckGroup": "Commander deck",
+  "preconDeckGroup": "Preconstructed deck",
+  "addToWhichSubcategory": "Add to which subcategory?",
+  "deckHasNoCards": "This deck holds no card yet.",
+  "progressPlayedOnce": "Played",
+  "progressToBuild": "To build",
+  "progressBuilding": "Building",
+  "progressBuilt": "Built",
+  "savePhoto": "Save to the gallery",
+  "photoSaved": "Photo saved to the Akashic album.",
+  "photoNotSaved": "The photo could not be saved.",
+  "missingVolumeLabel": "Volume {number} missing",
+  "@missingVolumeLabel": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "ratingLabel": "Rating",
+  "notRated": "Not rated",
+  "ratingValue": "{stars} out of 5",
+  "@ratingValue": {
+    "placeholders": {
+      "stars": {
+        "type": "int"
+      }
+    }
+  },
+  "removeOneCard": "Remove one copy of the card",
+  "addOneCard": "Add one copy of the card",
+  "deleteCard": "Remove the card from the deck",
+  "photoNumber": "Photo {number}",
+  "@photoNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "incompleteSeries": "Incomplete series",
+  "estimatedValue": "Estimated value",
+  "estimatedValueExplanation": "Low estimate: lowest Discogs price for records, card prices for decks, otherwise the price paid.",
+  "valuedItemsSummary": "{market} priced · {purchase} at price paid · {unvalued} without value",
+  "@valuedItemsSummary": {
+    "placeholders": {
+      "market": {
+        "type": "int"
+      },
+      "purchase": {
+        "type": "int"
+      },
+      "unvalued": {
+        "type": "int"
+      }
+    }
+  },
+  "updateMarketValues": "Update prices",
+  "updatingMarketValues": "Updating prices… {done}/{total}",
+  "@updatingMarketValues": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "marketValuedOn": "Prices from {date}",
+  "@marketValuedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "marketValuesIncomplete": "Update stopped by the request limit, try again later.",
+  "valueByCategory": "Value by category",
+  "duplicatesTitle": "Duplicates",
+  "duplicatesCount": "Duplicates ({count})",
+  "@duplicatesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sameWorkSection": "Same work added several times",
+  "noDuplicates": "No duplicates",
+  "searchLoans": "Search a title or a borrower",
+  "noLoanMatches": "No loan matches.",
+  "additionsByYear": "Additions by year",
+  "seriesCompletionTitle": "Complete series",
+  "seriesCompletionSummary": "{complete} of {total} series complete",
+  "@seriesCompletionSummary": {
+    "placeholders": {
+      "complete": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryShare": "{category} {percent}%",
+  "@categoryShare": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "yearAdditions": "{year}: {count} additions",
+  "@yearAdditions": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "estimatedReleaseAround": "estimate: around {date}",
+  "@estimatedReleaseAround": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "estimateBadge": "Estimate",
+  "wishedRelease": "On your wish list",
+  "wishedReleaseOutTitle": "{title} is out",
+  "@wishedReleaseOutTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "wishedReleaseOutBody": "The {subject} volume you were waiting for is available.",
+  "@wishedReleaseOutBody": {
+    "placeholders": {
+      "subject": {
+        "type": "String"
+      }
+    }
+  },
+  "volumeOwnedLabel": "Volume {number}, owned",
+  "@volumeOwnedLabel": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "volumeMissingLabel": "Volume {number}, missing",
+  "@volumeMissingLabel": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "volumeUnreleasedLabel": "Volume {number}, not out yet",
+  "@volumeUnreleasedLabel": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "paletteColorName": "{index, select, 0{Blue} 1{Pink} 2{Green} 3{Turquoise} 4{Purple} 5{Orange} 6{Yellow} other{Lavender}}",
+  "@paletteColorName": {
+    "placeholders": {
+      "index": {
+        "type": "String"
+      }
+    }
+  },
+  "cardsWithoutTraits": "{count, plural, =1{1 card without type or colour} other{{count} cards without type or colour}}",
+  "@cardsWithoutTraits": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fetchCardTraits": "Fetch",
+  "cardFamilyCreature": "Creatures",
+  "cardFamilyPlaneswalker": "Planeswalkers",
+  "cardFamilyBattle": "Battles",
+  "cardFamilyInstant": "Instants",
+  "cardFamilySorcery": "Sorceries",
+  "cardFamilyArtifact": "Artifacts",
+  "cardFamilyEnchantment": "Enchantments",
+  "cardFamilyLand": "Lands",
+  "cardFamilyOther": "Other",
+  "manaWhite": "white",
+  "manaBlue": "blue",
+  "manaBlack": "black",
+  "manaRed": "red",
+  "manaGreen": "green",
+  "colorIdentityTitle": "Colour identity",
+  "colorIdentityLabel": "Colour identity: {colors}",
+  "@colorIdentityLabel": {
+    "placeholders": {
+      "colors": {
+        "type": "String"
+      }
+    }
+  },
+  "manaCurveTitle": "Mana curve",
+  "manaCurveSummary": "Mana curve · average {average}",
+  "@manaCurveSummary": {
+    "placeholders": {
+      "average": {
+        "type": "String"
+      }
+    }
+  },
+  "manaCurveEntry": "cost {cost}: {count}",
+  "@manaCurveEntry": {
+    "placeholders": {
+      "cost": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "commanderRulesTitle": "Commander rules",
+  "noCommanderChosen": "No commander chosen",
+  "chooseCommander": "Choose the commander",
+  "commanderRuleSize": "Exactly 100 cards (currently {count})",
+  "@commanderRuleSize": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "commanderRuleCommander": "A commander chosen",
+  "commanderRuleSingleton": "One copy of each card, basic lands aside",
+  "commanderRuleDuplicates": "Several copies: {names}",
+  "@commanderRuleDuplicates": {
+    "placeholders": {
+      "names": {
+        "type": "String"
+      }
+    }
+  },
+  "commanderRuleIdentity": "Every card within the commander's colour identity",
+  "commanderRuleOutsideIdentity": "Outside the colour identity: {names}",
+  "@commanderRuleOutsideIdentity": {
+    "placeholders": {
+      "names": {
+        "type": "String"
+      }
+    }
+  },
+  "commanderRuleIdentityUnknown": "Colour identity to check: choose a commander and fetch the card colours",
+  "ruleMet": "Met",
+  "ruleNotMet": "Not met",
+  "ruleUnknown": "To check",
+  "photographShelf": "Photograph a shelf (several items at once)",
+  "shelfBeingRead": "Reading the spines…",
+  "deckCardsTab": "Cards",
+  "deckAnalysisTab": "Analysis",
+  "primaryCommander": "Main",
+  "secondaryCommander": "Secondary",
+  "primaryCommanderIs": "Main commander: {name}",
+  "@primaryCommanderIs": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "secondaryCommanderIs": "Secondary commander: {name}",
+  "@secondaryCommanderIs": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "swapCommanders": "Swap main and secondary",
+  "commanderCandidatesNeedTraits": "Only legendary creatures are offered. Fetch the card types first to see them all.",
+  "noLegendaryCreature": "No legendary creature in this deck.",
+  "accountImportTitle": "Import from an account",
+  "accountImportSubtitle": "Steam, itch.io, Trakt, AniList, MyAnimeList, Open Library, BoardGameGeek, Rebrickable, Playnite",
+  "steamImportExplanation": "Adds every game of your Steam library. Your profile game details must be public (Steam › Profile › Edit › Privacy).",
+  "traktImportExplanation": "Adds the films and shows of your Trakt collection (what you own). Your Trakt profile must be public.",
+  "anilistImportExplanation": "Adds the manga of your AniList list with your progress (reading, read, dropped). It is your reading list: remove what you do not own afterwards.",
+  "openLibraryImportExplanation": "Adds the books of your Open Library shelves (read, reading, want to read) with your progress. Your reading log must be public.",
+  "accountNameLabel": "Account name",
+  "accountNameHint": "Your name on the site",
+  "steamAccountHint": "steamcommunity.com/id/… or SteamID",
+  "accountImportNeedsKey": "{service} is not set up: its API key is missing from the build.",
+  "@accountImportNeedsKey": {
+    "placeholders": {
+      "service": {
+        "type": "String"
+      }
+    }
+  },
+  "accountImportNeedsCategory": "Create a category of this type first to hold the import.",
+  "accountImportReading": "Reading the library…",
+  "accountNotFound": "{service} account not found or private.",
+  "@accountNotFound": {
+    "placeholders": {
+      "service": {
+        "type": "String"
+      }
+    }
+  },
+  "playniteImportExplanation": "Playnite (PC) gathers Steam, Epic, GOG, Ubisoft Connect, EA, Battle.net, Amazon, Xbox… Install the “Library Exporter Advanced” extension, tick Developers, Platforms, Source and Release date, then export the whole library as CSV. Copy the file to your phone and pick it here. Each game is looked up on IGDB for its cover; the launcher becomes its edition.",
+  "chooseExportFile": "Choose the CSV export",
+  "exportFileUnreadable": "This file cannot be read as a Playnite export.",
+  "boardGameGeekImportExplanation": "Adds the games marked “owned” in your BoardGameGeek collection, expansions included. BGG sometimes prepares the collection first: the import waits a few seconds.",
+  "itchIoImportExplanation": "Adds the games bought or claimed on your itch.io account. Create a key in itch.io › Settings › API keys and paste it here: it is only used for this import and is not kept.",
+  "myAnimeListImportExplanation": "Adds the manga of your MyAnimeList list with your progress (reading, read, dropped). It is your reading list: remove what you do not own afterwards.",
+  "rebrickableImportExplanation": "Adds the LEGO sets of your Rebrickable collection. Your password is used once to access your collection: it is neither kept nor sent anywhere but Rebrickable.",
+  "personalApiKeyLabel": "Your personal API key",
+  "personalApiKeyHint": "Pasted from the site settings",
+  "accountPasswordLabel": "Password",
+  "accountPasswordNotKept": "Used once, never saved",
+  "importDeckList": "Import a deck from Archidekt",
+  "deckListLink": "Deck link",
+  "deckListNotFound": "Deck not found: check the link and that the deck is public.",
+  "accountImportTarget": "Add to",
+  "steamAccountLabel": "Your Steam profile link or SteamID",
+  "steamAccountHelper": "Steam › your profile › right-click the page › Copy page URL. Your display name does not work: only the name in the address (steamcommunity.com/id/…) or the number (…/profiles/7656…) is recognised.",
+  "steamProfileNotFound": "No Steam profile has the address “{name}”. Paste your profile link (Steam › your profile › Copy page URL): your display name is not the address.",
+  "@steamProfileNotFound": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "steamLibraryPrivate": "Profile found, but your game list is private. Steam › Profile › Edit Profile › Privacy Settings › “Game details”: Public.",
+  "libraryPrivate": "{service} account found, but its library is private.",
+  "@libraryPrivate": {
+    "placeholders": {
+      "service": {
+        "type": "String"
+      }
+    }
+  },
+  "keepAccountSynced": "Sync automatically",
+  "keepAccountSyncedExplanation": "New additions on this account arrive in Akashic on their own (at launch, every 6 h at most). What you delete here does not come back.",
+  "linkedAccountsTitle": "Synced accounts",
+  "lastSyncedAt": "synced {date}",
+  "@lastSyncedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "syncNow": "Sync now",
+  "stopSyncing": "Stop syncing",
+  "rarityCommon": "Common",
+  "rarityRare": "Rare",
+  "rarityEpic": "Epic",
+  "rarityLegendary": "Legendary",
+  "achievementsTab": "Achievements",
+  "achievementsAll": "All",
+  "achievementsUnlocked": "Unlocked",
+  "achievementsLocked": "To unlock",
+  "achievementsRare": "Rare",
+  "achievementsSummary": "{unlocked} of {total} achievements unlocked, {percent}%",
+  "@achievementsSummary": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "achievementsRemaining": "{remaining, plural, =0{Every achievement unlocked} =1{1 left} other{{remaining} left}}{legendary, plural, =0{} =1{, 1 legendary} other{, {legendary} legendary}}",
+  "@achievementsRemaining": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      },
+      "legendary": {
+        "type": "int"
+      }
+    }
+  },
+  "achievementPlayersPercent": "unlocked by {percent}% of players",
+  "@achievementPlayersPercent": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "achievementUnlockedOn": "Unlocked on {date}",
+  "@achievementUnlockedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "achievementLocked": "To unlock",
+  "hiddenAchievement": "Hidden achievement",
+  "steamAchievementsNeedAccount": "Link your Steam account (Settings › Import from an account) to see your achievements.",
+  "steamAchievementsUnavailable": "Steam is not answering right now.",
+  "steamNoAchievements": "This game has no Steam achievements.",
+  "achievementsListCaption": "{count} achievements{lockedFirst, select, yes{ · to unlock first} other{}} · sorted by {sortLabel}",
+  "@achievementsListCaption": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "lockedFirst": {
+        "type": "String"
+      },
+      "sortLabel": {
+        "type": "String"
+      }
+    }
+  },
+  "achievementSortRarity": "rarity",
+  "achievementSortDate": "date",
+  "achievementSortName": "name",
+  "retry": "Try again",
+  "steamStorePageMissing": "Steam has no store page for this game in your region.",
+  "steamNewsTitle": "News",
+  "steamDlcTitle": "Downloadable content",
+  "steamDlcOwnershipNote": "Steam does not say which DLC you own: only those in your Akashic collection are marked.",
+  "steamAboutTitle": "About",
+  "steamDeveloper": "Developer",
+  "steamPublisher": "Publisher",
+  "steamReleaseDate": "Release",
+  "steamMediaTitle": "Screenshots and trailer",
+  "steamTrailer": "Trailer, opens on Steam",
+  "steamScreenshot": "Screenshot {number}",
+  "@steamScreenshot": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "steamFeaturesTitle": "Modes and features",
+  "steamLanguagesTitle": "Languages",
+  "steamRequirementsTitle": "System requirements",
+  "steamOpenStore": "View on Steam",
+  "steamFree": "Free",
+  "steamNoPrice": "No price given",
+  "steamPriceBefore": "instead of {price}",
+  "@steamPriceBefore": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "steamPriceToday": "Steam price today",
+  "steamDlcInCollection": "In your collection",
+  "steamComingOn": "Release: {date}",
+  "@steamComingOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "steamDlcWished": "Added to your wishes",
+  "steamWishAction": "Wish",
+  "steamPlaytime": "Playtime",
+  "steamPlaytimeSummary": "Playtime: {total} in total, {recent} in the last 14 days",
+  "@steamPlaytimeSummary": {
+    "placeholders": {
+      "total": {
+        "type": "String"
+      },
+      "recent": {
+        "type": "String"
+      }
+    }
+  },
+  "steamRecentPlaytime": "{duration} in the last 14 days",
+  "@steamRecentPlaytime": {
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "steamNotPlayedRecently": "Not played in the last 14 days",
+  "steamLastPlayed": "Last played on {date}",
+  "@steamLastPlayed": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "steamNeverPlayed": "Never launched",
+  "steamStatus": "Status",
+  "steamNoStatus": "None",
+  "steamStatusChange": "Status: {status}. Tap for the next one.",
+  "@steamStatusChange": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "steamStatusAutomatic": "auto · Steam",
+  "steamStatusManual": "set by hand",
+  "steamDeck": "Steam Deck",
+  "steamDeckVerified": "Verified",
+  "steamDeckPlayable": "Playable",
+  "steamDeckUnsupported": "Unsupported",
+  "steamDeckUnknown": "Unknown",
+  "steamDeckVerifiedDetail": "Controls, display and text checked",
+  "steamDeckPlayableDetail": "Some manual tweaking",
+  "steamDeckUnsupportedDetail": "Does not run on Steam Deck",
+  "steamDeckUnknownDetail": "Not yet reviewed by Valve",
+  "steamMyCopy": "My game",
+  "steamCopyPlatform": "Platform",
+  "steamCopyPrice": "Price paid",
+  "steamCopyAdded": "Added on",
+  "steamUpdatedAt": "Updated from Steam on {date}",
+  "@steamUpdatedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "steamRarestAchievement": "Rarest",
+  "steamNoRareAchievement": "No achievement unlocked yet",
+  "steamStatsTitle": "Video games",
+  "steamTotalPlaytime": "Playtime",
+  "steamGameCount": "{count, plural, =1{1 Steam game} other{{count} Steam games}}",
+  "@steamGameCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "steamAverageCompletion": "Achievements done",
+  "steamAverageCompletionCaption": "on average across launched games",
+  "steamShelfOfShame": "Pile of shame",
+  "steamNeverLaunchedCount": "{count, plural, =1{1 game never launched} other{{count} games never launched}}",
+  "@steamNeverLaunchedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "steamTopPlayed": "Most played",
+  "steamLibraryValue": "Steam library value",
+  "steamLibraryValueNote": "at today's Steam store price, not a resale value",
+  "steamPricesOf": "prices of {date}",
+  "@steamPricesOf": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "syncReading": "Syncing {service}…",
+  "@syncReading": {
+    "placeholders": {
+      "service": {
+        "type": "String"
+      }
+    }
+  },
+  "syncProgress": "Syncing {service} · {done} / {total}",
+  "@syncProgress": {
+    "placeholders": {
+      "service": {
+        "type": "String"
+      },
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "syncRefreshingDetails": "{service} · updating statistics…",
+  "@syncRefreshingDetails": {
+    "placeholders": {
+      "service": {
+        "type": "String"
+      }
+    }
+  },
+  "cardKindSealed": "Sealed",
+  "tradeHistory": "Purchases and sales",
+  "tradeSpent": "Spent",
+  "tradeEarned": "Sales",
+  "tradeMargin": "Margin",
+  "tradeMarginCaption": "on sales with a known purchase price",
+  "noTrades": "No purchases or sales yet. Fill in what you paid for an item, or sell one from its page.",
+  "tradePurchase": "Purchase",
+  "tradeSale": "Sale",
+  "channelStore": "In store",
+  "channelOnline": "Online",
+  "sealedState": "Sealed",
+  "openedState": "Opened",
+  "productOpened": "Opened product",
+  "marginOf": "{amount} margin",
+  "@marginOf": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "purchaseDate": "Purchase date",
+  "purchaseChannel": "Bought",
+  "boughtOn": "Bought on {when}",
+  "@boughtOn": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "noDateSet": "Not set",
+  "sellCopy": "Sell",
+  "salePrice": "Sale price",
+  "saleDate": "Sale date",
+  "saleChannel": "Sold",
+  "sell": "Sell",
+  "sellLastCopyExplanation": "The item leaves your collection, the sale stays in the history.",
+  "clearPurchaseDate": "Clear the purchase date",
+  "sealedMarketPrice": "Cardmarket price",
+  "sealedMarketPriceSealedOnly": "Sealed product",
+  "sealedPriceTrend": "Trend",
+  "sealedPriceLow": "Lowest",
+  "sealedPriceAverage": "Average sale",
+  "sealedPriceAverage1": "1-day average",
+  "sealedPriceAverage7": "7-day average",
+  "sealedPriceAverage30": "30-day average",
+  "sealedPricedOn": "Prices of {when}",
+  "@sealedPricedOn": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "sealedPriceMissing": "No price for this product yet: update the prices.",
+  "sealedOpenedHasNoPrice": "Cardmarket only prices sealed products: an opened product has no separate price.",
+  "refreshSealedPrices": "Update prices",
+  "meteredDownloadTitle": "Mobile data",
+  "meteredDownloadBody": "You are on mobile data. The update downloads about {size} from Cardmarket. Continue?",
+  "@meteredDownloadBody": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "meteredDownloadUnknownSize": "You are on mobile data. The update downloads the Cardmarket price file, about 16 MB per game. Continue?",
+  "continueAnyway": "Continue",
+  "sealedPricesUpdated": "{count, plural, =0{No price found} =1{1 price updated} other{{count} prices updated}}",
+  "@sealedPricesUpdated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sealedPricesUnavailable": "Cardmarket cannot be reached right now, try again later.",
+  "scanModeBarcode": "Barcode",
+  "scanModeCover": "Cover",
+  "scanModeShelf": "Shelf",
+  "scanHintBarcodeTitle": "Aim at the barcode",
+  "scanHintBarcodeDetail": "Read automatically, no tap needed",
+  "scanHintCoverTitle": "Frame the cover, then tap",
+  "scanHintCoverDetail": "One item per photo",
+  "scanHintShelfTitle": "Line the spines up in the frame",
+  "scanHintShelfDetail": "Up to 24 items at once",
+  "continuousReading": "Reading continuously",
+  "scansPileHere": "Your scans will pile up here",
+  "toAdd": "to add",
+  "chainScannedCount": "{count, plural, =1{1 scanned} other{{count} scanned}}",
+  "@chainScannedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "chainOwnedCount": "{count} already yours",
+  "@chainOwnedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "chainMissingCount": "{count, plural, =1{1 not found} other{{count} not found}}",
+  "@chainMissingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shelfSpinesRead": "{count, plural, =1{1 spine read} other{{count} spines read}}",
+  "@shelfSpinesRead": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shelfSpinesSearching": "{count} being searched",
+  "@shelfSpinesSearching": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "chainGroupToAdd": "To add",
+  "chainGroupOwned": "Already in your collection",
+  "chainGroupMissing": "Not found",
+  "chainSourceBarcode": "Barcode",
+  "chainSourceCover": "Cover",
+  "chainSourceShelf": "Shelf",
+  "shelfUnreadableTitle": "No readable spine",
+  "shelfUnreadableHint": "Move closer and line the spines up in the frame.",
+  "coverUnreadableHint": "Take the photo again, closer and without glare.",
+  "showScannedList": "Show the scan list",
+  "hideScannedList": "Fold the scan list",
+  "addAnotherItem": "I own another one",
+  "anotherItemAdded": "Added once more",
+  "fillObjectDetails": "Fill in purchase, condition, storage",
+  "itemCount": "{count, plural, =1{1 item} other{{count} items}}",
+  "@itemCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "wishOriginSteamWishlist": "Steam wishlist",
+  "steamWishlistUnavailable": "The Steam wishlist could not be read: check that your profile and wishlist are public.",
+  "discoveriesSearchHint": "Title, author, starting item",
+  "filterNotWished": "Not wished",
+  "filterRecent": "Recent",
+  "noFilteredDiscoveries": "No discovery matches the filters.",
+  "resetFilters": "Clear the filters",
+  "releasesSearchHint": "Title, series, artist",
+  "filterConfirmedDates": "Confirmed dates",
+  "filterWished": "Wished",
+  "releaseKindCardSet": "Card sets",
+  "releaseKindNextVolume": "Volumes",
+  "releaseKindAlbum": "Albums",
+  "noFilteredReleases": "No release matches the filters.",
+  "stepSearch": "Search",
+  "stepCheck": "Check",
+  "enterByHand": "Enter by hand",
+  "addToNamedCategory": "Add to {category}",
+  "@addToNamedCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "moreDetails": "More details",
+  "detailsSection": "Details",
+  "coverSection": "Cover",
+  "volumeShort": "Vol. {number}",
+  "@volumeShort": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "searchResultsEmpty": "Type a title, scan a barcode, or enter the item by hand.",
+  "categoryTypeStepTitle": "What will you shelve?",
+  "categoryDetailsStepTitle": "Category details",
+  "continueAction": "Continue",
+  "changeAction": "Change",
+  "categoryPreviewEmpty": "New category",
+  "categoryTypeLabel": "Type",
+  "categoryDangerZone": "Delete the category",
+  "categoryDangerZoneExplanation": "Its items, series and subcategories go with it. This can’t be undone.",
+  "exportSpreadsheet": "Export as a spreadsheet (CSV)",
+  "exportSpreadsheetDone": "Collection exported: {count, plural, =1{1 item} other{{count} items}}.",
+  "@exportSpreadsheetDone": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "exportSpreadsheetFailed": "The export could not be saved.",
+  "exportHeaders": "Category|Subcategory|Title|Creator|Year|Publisher|Series|Volume|Platform|Edition|Barcode|Price paid|Purchase date|Bought|Location|Condition|Rating|Lent to|Estimated value|Currency|Added on",
+  "steamAlertsChannelName": "Steam",
+  "steamAlertsChannelDescription": "Sales and releases of your Steam wishes, new DLC for your games",
+  "steamWishOnSaleTitle": "{title} is on sale",
+  "@steamWishOnSaleTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "steamWishOnSaleBody": "-{percent}%: {price} on Steam",
+  "@steamWishOnSaleBody": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "steamWishReleasedTitle": "{title} is out",
+  "@steamWishReleasedTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "steamWishReleasedBody": "A game from your wishes is available on Steam.",
+  "steamNewDlcTitle": "New DLC for {title}",
+  "@steamNewDlcTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "steamNewDlcBodyUnnamed": "New content is available on Steam.",
+  "steamWishComingSoon": "Coming soon on Steam",
+  "priceAlertsChannelName": "Price alerts",
+  "priceAlertsChannelDescription": "When a sealed product's price crosses your threshold",
+  "priceAlertAboveTitle": "{title} went above your threshold",
+  "@priceAlertAboveTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "priceAlertBelowTitle": "{title} went below your threshold",
+  "@priceAlertBelowTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "priceAlertBody": "Cardmarket price: {price} (threshold {threshold})",
+  "@priceAlertBody": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      },
+      "threshold": {
+        "type": "String"
+      }
+    }
+  },
+  "priceAlert": "Price alert",
+  "priceAlertAbove": "Above",
+  "priceAlertBelow": "Below",
+  "priceAlertThreshold": "Threshold",
+  "priceAlertSummary": "Alert {direction} {threshold}",
+  "@priceAlertSummary": {
+    "placeholders": {
+      "direction": {
+        "type": "String"
+      },
+      "threshold": {
+        "type": "String"
+      }
+    }
+  },
+  "removePriceAlert": "Remove the alert",
+  "displaySection": "Display",
+  "highContrast": "High contrast",
+  "highContrastExplanation": "Brighter text and more visible borders, handy outdoors or in a shop.",
+  "recentSearches": "Recent searches",
+  "forgetSearch": "Remove this search",
+  "searchOnlineAction": "Search online",
+  "sortByPricePaid": "Price paid",
+  "sortByLocation": "Location",
+  "filterLent": "Lent",
+  "filtersTitle": "Filters",
+  "clearArrangement": "Clear sort and filters",
+  "valueOverTime": "Value over time",
+  "lastSixMonths": "6 months",
+  "lastYear": "1 year",
+  "wholeHistory": "All",
+  "valueHistoryFilling": "The curve fills in month after month: the collection value is recorded at the start of each month.",
+  "valueHistoryNote": "Cardmarket, Steam and card prices, recorded at the start of each month.",
+  "biggestRises": "Biggest rises",
+  "biggestFalls": "Biggest falls",
+  "missingVolumesTitle": "Missing volumes",
+  "noMissingVolumes": "All your series are complete up to the latest volume out.",
+  "youAreMissing": "You are missing",
+  "volumesInSeries": "{volumes, plural, =1{volume} other{volumes}} in {series, plural, =1{1 series} other{{series} series}}",
+  "@volumesInSeries": {
+    "placeholders": {
+      "volumes": {
+        "type": "int"
+      },
+      "series": {
+        "type": "int"
+      }
+    }
+  },
+  "wishAllMissing": "Add all to my wishes ({count})",
+  "@wishAllMissing": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "missingVolumesWished": "{count, plural, =0{Nothing new in your wishes} =1{1 volume added to your wishes} other{{count} volumes added to your wishes}}",
+  "@missingVolumesWished": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "ownedVolumesRun": "Volumes {from} to {to}: owned",
+  "@ownedVolumesRun": {
+    "placeholders": {
+      "from": {
+        "type": "int"
+      },
+      "to": {
+        "type": "int"
+      }
+    }
+  },
+  "wishedVolumesRun": "Volumes {from} to {to}: in your wishes",
+  "@wishedVolumesRun": {
+    "placeholders": {
+      "from": {
+        "type": "int"
+      },
+      "to": {
+        "type": "int"
+      }
+    }
+  },
+  "missingVolumesRun": "Volumes {from} to {to}: missing, tap to wish them",
+  "@missingVolumesRun": {
+    "placeholders": {
+      "from": {
+        "type": "int"
+      },
+      "to": {
+        "type": "int"
+      }
+    }
+  },
+  "ownedVolume": "Volume {number}: owned",
+  "@ownedVolume": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "wishedVolume": "Volume {number}: in your wishes",
+  "@wishedVolume": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "missingVolume": "Volume {number}: missing, tap to wish it",
+  "@missingVolume": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "shelfRead": "Shelf read",
+  "shelfPhotoGone": "This shelf photo is no longer available.",
+  "tapFrameToFindLine": "Tap a frame to find its line.",
+  "seeShelf": "See the shelf",
+  "scanHistory": "Scan history",
+  "noScanSessions": "Your scan sessions will show up here.",
+  "scanAddedCount": "{count} added",
+  "@scanAddedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "scanGroupAdded": "Added",
+  "scanGroupOwned": "Already yours",
+  "scanGroupMissed": "Not found",
+  "saveFailedRetry": "Saving failed. Try again.",
+  "selectItem": "Select",
+  "unselectItem": "Unselect",
+  "scanResultAnnouncement": "{title}: {status}",
+  "@scanResultAnnouncement": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "webImageNumber": "Web image {number}",
+  "@webImageNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "valueChartSummary": "Value curve: from {first} to {last}, lowest {lowest}, highest {highest}. Swipe up or down to change month.",
+  "@valueChartSummary": {
+    "placeholders": {
+      "first": {
+        "type": "String"
+      },
+      "last": {
+        "type": "String"
+      },
+      "lowest": {
+        "type": "String"
+      },
+      "highest": {
+        "type": "String"
+      }
+    }
+  },
+  "loadingInProgress": "Loading",
+  "goalAllCategories": "the whole collection",
+  "goalFinishLabel": "Finish {target} · {scope}",
+  "@goalFinishLabel": {
+    "placeholders": {
+      "target": {
+        "type": "int"
+      },
+      "scope": {
+        "type": "String"
+      }
+    }
+  },
+  "goalAddLabel": "Add {target} · {scope}",
+  "@goalAddLabel": {
+    "placeholders": {
+      "target": {
+        "type": "int"
+      },
+      "scope": {
+        "type": "String"
+      }
+    }
+  },
+  "goalReached": "Goal reached",
+  "goalAhead": "{count} ahead",
+  "@goalAhead": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "goalBehind": "{count} behind",
+  "@goalBehind": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "goalOnPace": "Right on pace",
+  "goalsOfYear": "{year} goals",
+  "@goalsOfYear": {
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "noGoalsYet": "Set yourself a goal for the year: finish books, games, fill your shelves.",
+  "newGoal": "New goal",
+  "deleteGoal": "Delete the goal",
+  "goalBarLabel": "{done} of {target}, {expected} expected today",
+  "@goalBarLabel": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      },
+      "expected": {
+        "type": "int"
+      }
+    }
+  },
+  "goalProjection": "At this pace: {count} by the end of December",
+  "@goalProjection": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "goalMeasureFinished": "Finish",
+  "goalMeasureAdded": "Add",
+  "goalCategory": "Category",
+  "goalTarget": "How many this year",
+  "decrease": "Less",
+  "increase": "More",
+  "createGoal": "Create the goal",
+  "tonightTitle": "Tonight, I…",
+  "tonightAny": "Anything",
+  "tonightRead": "Read",
+  "tonightPlay": "Play",
+  "tonightWatch": "Watch",
+  "tonightListen": "Listen",
+  "tonightAnyLength": "Any length",
+  "tonightShort": "Short",
+  "tonightMedium": "Medium",
+  "tonightLong": "Long",
+  "tonightAnother": "Another",
+  "tonightStart": "Start it",
+  "tonightStarted": "“{title}” is in progress.",
+  "@tonightStarted": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "tonightNothingWaiting": "Nothing waiting: everything is started or finished.",
+  "tonightNothingMatches": "Nothing matches these filters. Widen the length or activity.",
+  "tonightWaitingSince": "{months, plural, =1{waiting for 1 month} other{waiting for {months} months}}",
+  "@tonightWaitingSince": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "monthlyRecap": "Monthly recap",
+  "previousMonth": "Previous month",
+  "nextMonth": "Next month",
+  "recapEmptyMonth": "Nothing added or finished that month.",
+  "yearRecapOf": "{year} in review",
+  "@yearRecapOf": {
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "recapAdded": "Added",
+  "recapSpent": "Spent",
+  "recapFinished": "Finished",
+  "recapSeriesCompleted": "Series completed",
+  "recapMostValued": "Most valued",
+  "recapValueChange": "Value",
+  "recapBusiestMonth": "Busiest month",
+  "recapTopValued": "Most valued of the year",
+  "shareImage": "Share the image",
+  "tonightMenu": "Tonight, I…",
+  "goalsMenu": "Goals",
+  "tagsTitle": "Tags",
+  "saveFilterAsShelf": "Save this filter as a shelf",
+  "saveFilterAsShelfHint": "It will show at the top of home and fill itself.",
+  "smartShelfName": "Shelf name",
+  "smartShelfSaved": "Shelf “{name}” added to home.",
+  "@smartShelfSaved": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "smartShelfLabel": "Smart shelf {name}, {count} items",
+  "@smartShelfLabel": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "smartShelfEmpty": "Nothing matches this filter yet.",
+  "deleteSmartShelf": "Delete the shelf",
+  "tagSigned": "signed",
+  "tagToSell": "to sell",
+  "tagGift": "gift",
+  "tagToReread": "to reread",
+  "tagLimitedEdition": "limited edition",
+  "newTag": "New tag",
+  "tagName": "Tag name",
+  "removeTag": "Remove the tag {tag}",
+  "@removeTag": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "addTag": "Add the tag {tag}",
+  "@addTag": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "storagePlan": "Storage plan",
+  "storagePlanHint": "Rooms, furniture and shelves: then pick where an item lives in two taps.",
+  "storagePlanEmpty": "Start with a room, for example “Living room”.",
+  "newRoom": "New room",
+  "newFurniture": "New furniture",
+  "newShelf": "New shelf",
+  "renamePlace": "Rename",
+  "deletePlace": "Delete",
+  "placeName": "Name",
+  "placeNameHint": "Living room, Bookcase, Shelf 3…",
+  "placeItemCount": "{count, plural, =0{Empty} =1{1 item} other{{count} items}}",
+  "@placeItemCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "placeActions": "Actions for {name}",
+  "@placeActions": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "placeChildren": "{count, plural, =1{1 place} other{{count} places}}",
+  "@placeChildren": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "chooseStoragePlace": "Pick from the plan",
+  "goUp": "Go up",
+  "storeHere": "Store here",
+  "whereIs": "Where is…?",
+  "whereIsHint": "Title or author",
+  "whereIsNothing": "Nothing in your collection has that name.",
+  "lentToBorrower": "At {name}'s",
+  "@lentToBorrower": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notStoredYet": "Not stored yet: open the item to pick a place",
+  "journal": "Journal",
+  "journalAdded": "Added",
+  "journalSales": "Sales",
+  "journalLoans": "Loans",
+  "journalValues": "Values",
+  "journalFinished": "Finished",
+  "journalEmpty": "Nothing to tell yet.",
+  "today": "Today",
+  "yesterday": "Yesterday",
+  "journalEntryAdded": "Added to the collection",
+  "journalEntryReceived": "Preorder received",
+  "journalEntryStarted": "Started",
+  "journalEntryFinished": "Finished",
+  "journalEntrySold": "Sold for {amount}",
+  "@journalEntrySold": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "journalEntryLent": "Lent to {name}",
+  "@journalEntryLent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "journalEntryReturned": "Returned by {name}",
+  "@journalEntryReturned": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "journalEntryValueRose": "Value up {amount}",
+  "@journalEntryValueRose": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "journalEntryValueFell": "Value down {amount}",
+  "@journalEntryValueFell": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "journalEntryMerged": "Duplicates merged",
+  "wishUnderMaximumTitle": "{title} is under your maximum",
+  "@wishUnderMaximumTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "wishUnderMaximumBody": "{price} today, your maximum was {maximum}.",
+  "@wishUnderMaximumBody": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      },
+      "maximum": {
+        "type": "String"
+      }
+    }
+  },
+  "wishPriorityMustHave": "Must have",
+  "wishPriorityWant": "Want",
+  "wishPrioritySomeday": "Someday",
+  "wishPriority": "Priority",
+  "wishMaximumLabel": "Maximum price",
+  "wishMaximumHelp": "An alert when the value or a Steam sale goes below it.",
+  "wishMaximumPrice": "Max {price}",
+  "@wishMaximumPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "wishUnderYourMaximum": "Under your max of {price}",
+  "@wishUnderYourMaximum": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "shareAsImage": "Image",
+  "shareAsPdf": "PDF",
+  "shareAsText": "Share as text",
+  "wishlistColumnWish": "Wish",
+  "wishlistColumnType": "Type",
+  "budget": "Budget",
+  "budgetAlertTitle": "Monthly budget almost reached",
+  "budgetAlertBody": "Only {remaining} left of {ceiling} this month.",
+  "@budgetAlertBody": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "ceiling": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetOverBody": "The {ceiling} ceiling is exceeded this month.",
+  "@budgetOverBody": {
+    "placeholders": {
+      "ceiling": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetChannelName": "Budget",
+  "budgetChannelDescription": "Warns when monthly spending nears the ceiling.",
+  "budgetLeft": "{amount} left",
+  "@budgetLeft": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetOverBy": "Over by {amount}",
+  "@budgetOverBy": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetOnlyLeft": "Only {amount} left for the remaining {days} days",
+  "@budgetOnlyLeft": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "budgetDaysLeft": "{days, plural, =0{last day} =1{1 day left} other{{days} days left}}",
+  "@budgetDaysLeft": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "budgetOutOf": "of {ceiling}",
+  "@budgetOutOf": {
+    "placeholders": {
+      "ceiling": {
+        "type": "String"
+      }
+    }
+  },
+  "budgetGaugeLabel": "{percent}% of the ceiling spent, alert at {alert}%",
+  "@budgetGaugeLabel": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      },
+      "alert": {
+        "type": "int"
+      }
+    }
+  },
+  "budgetNoCeiling": "Set a ceiling to follow the month and be warned as you near it.",
+  "budgetSpendingOfMonth": "This month's spending",
+  "budgetNothingSpent": "No priced purchase this month.",
+  "budgetCeiling": "Monthly ceiling",
+  "budgetCeilingHelp": "Reset on the 1st of each month",
+  "budgetNone": "None",
+  "budgetAlertAt": "Warn me at",
+  "budgetAlertAtHelp": "One notification, once a month",
+  "budgetCountSteam": "Count Steam games",
+  "budgetCountSteamHelp": "Purchase prices imported with the library",
+  "insuranceInventory": "Insurance inventory",
+  "insuranceNothing": "Add items to be able to list them.",
+  "insuranceIntro": "A PDF to keep or send to your insurer: each item with its photo, purchase, estimated value and place.",
+  "insuranceCategories": "Categories to include",
+  "insuranceCategoryLine": "{count, plural, =1{1 item} other{{count} items}} · {value}",
+  "@insuranceCategoryLine": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "insuranceWithPhotos": "With photos",
+  "insuranceWithPhotosHelp": "A thumbnail per item, the file is heavier",
+  "insurancePreview": "Preview",
+  "insurancePages": "{count, plural, =1{about 1 page} other{about {count} pages}}",
+  "@insurancePages": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "insuranceMoreLines": "and {count} more…",
+  "@insuranceMoreLines": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "insuranceItemCount": "{count, plural, =1{1 item} other{{count} items}}",
+  "@insuranceItemCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "insuranceEstimatedTotal": "{amount} estimated",
+  "@insuranceEstimatedTotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "insuranceGenerate": "Generate the PDF",
+  "insuranceGenerating": "Generating…",
+  "insuranceDocumentTitle": "Collection inventory",
+  "insuranceDocumentSubtitle": "Made on {date} · {count} items · estimated value: market value, else purchase price",
+  "@insuranceDocumentSubtitle": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "insuranceColumnItem": "Item",
+  "insuranceColumnBought": "Bought",
+  "insuranceColumnPaid": "Paid",
+  "insuranceColumnEstimated": "Estimated",
+  "insuranceItems": "Items",
+  "insuranceSubtotal": "Subtotal ({count})",
+  "@insuranceSubtotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "insuranceFooter": "Values in euros, market values on export day. Made with Akashic.",
+  "notStoredYetShort": "No place",
+  "loanInOneWeek": "1 week",
+  "loanInTwoWeeks": "2 weeks",
+  "loanInOneMonth": "1 month",
+  "loanNoDate": "No date",
+  "loanPickDate": "Other date",
+  "loanReturnBy": "Return by",
+  "loanDueOn": "Due back on {date}",
+  "@loanDueOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "loanRemindAtDue": "Remind me when due",
+  "loanFollowUp": "Then follow up",
+  "loanFollowUpHelp": "A week later, if it still hasn't come back",
+  "loansLate": "Late",
+  "loansOngoing": "Ongoing",
+  "loanLateBy": "At {name}'s · {days, plural, =1{1 day late} other{{days} days late}}",
+  "@loanLateBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "loanDueBy": "At {name}'s · due {date}",
+  "@loanDueBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "calendarSync": "Releases in the calendar",
+  "calendarSyncSwitch": "Send releases to the calendar",
+  "calendarSyncSwitchHelp": "An all-day event, editable from the calendar",
+  "calendarTarget": "Calendar",
+  "calendarDefaultName": "Collection",
+  "calendarKinds": "Release types",
+  "calendarKindVolumes": "Volumes",
+  "calendarKindAlbums": "Albums",
+  "calendarKindCardSets": "Card sets",
+  "calendarSubjects": "By series or artist",
+  "calendarEventSettings": "Event settings",
+  "calendarReminder": "Reminder the evening before at 6 pm",
+  "calendarRemovedWhenAdded": "The event is removed when the item joins your collection or the release goes away.",
+  "calendarPreview": "Preview in the calendar",
+  "calendarNextSent": "Next releases sent",
+  "calendarEventTitle": "Release · {title}",
+  "@calendarEventTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "calendarEventEstimated": "Estimated date",
+  "calendarEventFooter": "Added by Akashic",
+  "calendarAllDay": "{date} · all day",
+  "@calendarAllDay": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "calendarAccessDenied": "Without calendar access, releases cannot be added.",
+  "calendarSyncFailed": "The calendar could not be updated.",
+  "tabletPickAnItem": "Pick an item on the left to see it here.",
+  "voiceSearch": "Search by voice",
+  "voiceListening": "Listening…",
+  "voiceUnavailable": "Speech recognition isn't available on this phone.",
+  "voiceTapToRetry": "Tap the mic to speak",
+  "voiceStop": "Stop listening",
+  "voiceHint": "Say a title, an author, an artist…",
+  "voiceUseWords": "Search this",
+  "offline": "Offline",
+  "offlineExplained": "Offline: the collection stays available, prices shown are from the last check.",
+  "priceOn": "price on {date}",
+  "@priceOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "preorderArrivesTodayTitle": "Arriving today: {title}",
+  "@preorderArrivesTodayTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "preordersArriveTodayTitle": "{count} preorders arrive today",
+  "@preordersArriveTodayTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "preorderArrivesTodayBody": "Tap “Received” on the item once you have it.",
+  "preorderChannelName": "Preorders",
+  "preorderChannelDescription": "Warns on the day a preorder is due.",
+  "preorderToday": "Today",
+  "preorderInDays": "{days, plural, =1{in 1 day} other{in {days} days}}",
+  "@preorderInDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "preorderTitle": "Preorder",
+  "preorderPickDate": "Pick the delivery date",
+  "preorderDeliveryOn": "Due on {date}",
+  "@preorderDeliveryOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "preorderDeposit": "Deposit paid (optional)",
+  "preorderDepositPaid": "Deposit: {amount}",
+  "@preorderDepositPaid": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "markPreordered": "Mark as preordered",
+  "preordered": "Preordered",
+  "preorderReceived": "Received",
+  "preorderChangeDate": "Change the date",
+  "preorderCancel": "No longer a preorder",
+  "toReceive": "To receive",
+  "preorderDepositsTotal": "{amount} in deposits paid",
+  "@preorderDepositsTotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "mergeTitle": "Merge duplicates",
+  "mergeAction": "Merge",
+  "mergeKeepWhat": "Pick what the merged item keeps, field by field.",
+  "mergeFieldTitle": "Title",
+  "mergeFieldCover": "Cover",
+  "mergeFieldPurchase": "Purchase, condition and place",
+  "mergeFieldRating": "Rating",
+  "mergeFieldProgress": "Progress",
+  "mergeHasCover": "Has a cover",
+  "mergeHasProgress": "Progress tracked",
+  "mergeEmpty": "empty",
+  "mergeJoinPhotos": "Keep the photos of both items",
+  "mergeResult": "Result: {title}",
+  "@mergeResult": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "mergeConfirmTitle": "Merge these two items?",
+  "mergeConfirmBody": "Item B goes away: what you picked joins item A.",
+  "mergeDone": "Duplicates merged.",
+  "deckValue": "Deck value",
+  "deckPricedCards": "{priced} of {total} cards priced",
+  "@deckPricedCards": {
+    "placeholders": {
+      "priced": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "deckPricedOn": "prices from {date}",
+  "@deckPricedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "deckPriciestCards": "The priciest cards",
+  "deckTopShare": "They make {percent}% of the deck's value.",
+  "@deckTopShare": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "trackSide": "Side {side}",
+  "@trackSide": {
+    "placeholders": {
+      "side": {
+        "type": "String"
+      }
+    }
+  },
+  "albumLength": "Total length: {length}",
+  "@albumLength": {
+    "placeholders": {
+      "length": {
+        "type": "String"
+      }
+    }
+  },
+  "compareTitle": "Compare with a friend",
+  "compareIntro": "Ask for their export (Settings › Export the collection) and open the file here.",
+  "compareNothingSent": "Nothing is sent: the comparison happens on your phone.",
+  "compareChooseFile": "Choose their file",
+  "compareOtherFile": "Another file",
+  "compareUnreadable": "This file couldn't be read. A CSV or XLSX export is needed.",
+  "compareCounts": "You: {mine} · Your friend: {theirs}",
+  "@compareCounts": {
+    "placeholders": {
+      "mine": {
+        "type": "int"
+      },
+      "theirs": {
+        "type": "int"
+      }
+    }
+  },
+  "compareInCommon": "In common · {count}",
+  "@compareInCommon": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "compareOnlyFriend": "They have · {count}",
+  "@compareOnlyFriend": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "compareOnlyMine": "You have · {count}",
+  "@compareOnlyMine": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "compareExchangeIdeas": "{count, plural, =1{1 swap idea} other{{count} swap ideas}}",
+  "@compareExchangeIdeas": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "compareCopyList": "Copy",
+  "compareCopied": "List copied.",
+  "compareNothingHere": "Nothing in this tab.",
+  "compareFillsMissing": "you're missing it",
+  "compareInWishes": "in your wishes",
+  "missingCovers": "Missing covers",
+  "coverProposals": "Proposals",
+  "noMissingCovers": "All your items have a cover.",
+  "itemsWithoutCover": "{count, plural, =1{1 item without a cover} other{{count} items without a cover}}",
+  "@itemsWithoutCover": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchCovers": "{count, plural, =1{Find 1 cover} other{Find {count} covers}}",
+  "@searchCovers": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "acceptAllCovers": "Accept all · {count}",
+  "@acceptAllCovers": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "coverSearchProgress": "Searching: {done} / {total} · {accepted} accepted",
+  "@coverSearchProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "accepted": {
+        "type": "int"
+      }
+    }
+  },
+  "coverSearching": "Searching…",
+  "coverNothingFound": "Nothing found",
+  "coverAccepted": "Cover added",
+  "coverRefused": "Skipped",
+  "coverAccept": "Accept",
+  "coverRefuse": "Refuse",
+  "coverAnother": "Another image"
+}

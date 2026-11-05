@@ -1,0 +1,58 @@
+{
+ "id": 6276183,
+ "title": "Kind Of Blue",
+ "year": 1959,
+ "genres": [
+  "Jazz"
+ ],
+ "styles": [
+  "Modal"
+ ],
+ "labels": [
+  {
+   "name": "Columbia",
+   "catno": "CL 1355",
+   "entity_type": "1",
+   "entity_type_name": "Label",
+   "id": 1866,
+   "resource_url": "https://api.discogs.com/labels/1866",
+   "thumbnail_url": "https://i.discogs.com/JuO51-lZvasOtw8-yLUjsen-4O17uPH1A9SILCO-lG4/rs:fit/g:sm/q:90/h:300/w:299/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9MLTE4NjYt/MTIzMzE5MzU1Ny5q/cGVn.jpeg"
+  }
+ ],
+ "formats": [
+  {
+   "name": "Vinyl",
+   "qty": "1",
+   "descriptions": [
+    "LP",
+    "Album",
+    "Misprint",
+    "Mono"
+   ]
+  }
+ ],
+ "tracklist": [
+  {
+   "position": "A1",
+   "type_": "track",
+   "title": "So What",
+   "duration": "9:22"
+  },
+  {
+   "position": "A2",
+   "type_": "track",
+   "title": "Freddie Freeloader",
+   "duration": "9:46"
+  },
+  {
+   "position": "A3",
+   "type_": "track",
+   "title": "Blue In Green",
+   "duration": "5:37"
+  }
+ ],
+ "notes": "Recorded on March 2 & April 22, 1959.\nLabels are both side US Mono 6-Eye with Deep Groove, 'Made in U. S. A.' printed below.\n\n• On front cover, we read 'Adderly' instead of 'Adderley' (pic. 1).\n• Same mistake on back cover (pic. 2).\n• Tracks B1 & B2 are reversed on back cover. B1 is supposed to read 'All Blues' but reads 'Flamenco Sketches'. Vice versa for B2 (pic. 2).\n• Same thing on label side 2 (pic. 4).\n\nThis copy is earlier than [r6129028] because it does not have 'CBS' below Columbia on labels (later issues do).",
+ "uri": "https://www.discogs.com/release/6276183-Miles-Davis-Kind-Of-Blue",
+ "country": "US",
+ "master_id": 5460
+}

@@ -1,0 +1,63 @@
+[
+ {
+  "id": "base1",
+  "name": "Set de Base",
+  "cardCount": {
+   "total": 102,
+   "official": 102
+  }
+ },
+ {
+  "id": "basep",
+  "name": "Wizards Black Star Promos",
+  "symbol": "https://assets.tcgdex.net/univ/base/basep/symbol",
+  "cardCount": {
+   "total": 53,
+   "official": 53
+  }
+ },
+ {
+  "id": "2013bw",
+  "name": "Collection McDonald's 2013",
+  "cardCount": {
+   "total": 12,
+   "official": 12
+  }
+ },
+ {
+  "id": "2014xy",
+  "name": "Collection McDonald's 2014",
+  "cardCount": {
+   "total": 12,
+   "official": 12
+  }
+ },
+ {
+  "id": "swsh1",
+  "name": "Épée et Bouclier",
+  "logo": "https://assets.tcgdex.net/fr/swsh/swsh1/logo",
+  "symbol": "https://assets.tcgdex.net/univ/swsh/swsh1/symbol",
+  "cardCount": {
+   "total": 216,
+   "official": 202
+  }
+ },
+ {
+  "id": "sv03.5",
+  "name": "151",
+  "logo": "https://assets.tcgdex.net/fr/sv/sv03.5/logo",
+  "symbol": "https://assets.tcgdex.net/univ/sv/sv03.5/symbol",
+  "cardCount": {
+   "total": 207,
+   "official": 165
+  }
+ },
+ {
+  "id": "2024sv",
+  "name": "Collection McDonald's 2024",
+  "cardCount": {
+   "total": 15,
+   "official": 15
+  }
+ }
+]

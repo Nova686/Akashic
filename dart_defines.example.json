@@ -1,0 +1,17 @@
+{
+  "DISCOGS_TOKEN": "",
+  "TMDB_API_KEY": "",
+  "GOOGLE_BOOKS_API_KEY": "",
+  "GOOGLE_SERVER_CLIENT_ID": "",
+  "IGDB_CLIENT_ID": "",
+  "IGDB_CLIENT_SECRET": "",
+  "API_CONTACT": "",
+  "DRIVE_BACKUP_FOLDER": "",
+  "BGG_TOKEN": "",
+  "COMIC_VINE_API_KEY": "",
+  "REBRICKABLE_API_KEY": "",
+  "STEAM_API_KEY": "",
+  "STEAMGRIDDB_API_KEY": "",
+  "TRAKT_CLIENT_ID": "",
+  "MAL_CLIENT_ID": ""
+}
